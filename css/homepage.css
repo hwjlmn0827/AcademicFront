@@ -1,0 +1,173 @@
+/*
+* @Author: Administrator
+* @Date:   2017-11-28 18:56:33
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-06-02 12:39:37
+*/
+
+.multipleSearch {
+	position: fixed;
+    background-color: white;
+    top: 115px;
+    left: 0px;
+    z-index: 1000;
+    padding: 20px 85px;
+    box-shadow: 0px 0px 3px #ccc;
+    border-radius: 4px;
+}
+.homePageContent {
+	background-color:white;
+	    top: 116px;
+	height: 2400px;
+}
+.HomeStatistic {
+	height: 720px;
+	color: rgba(51, 51, 51, 0.74);
+	/* border:1px solid yellow; */
+}
+.HomeStatistic span {
+	position: relative;
+	font-size: 25px;
+	font-weight: bold;
+	left: 33px;
+	top: 30px;
+}
+.HomeStatistic span .fa {
+	margin-right: 10px;
+}
+.statisticChart {
+	float: left;
+	margin:5px 8px;
+	border: 1px solid #eee;
+	box-shadow: 6px 6px 4px -1px #eee;
+}
+.HomeTeacherScience {
+	/* padding-top: 60px */
+}
+
+.stuffType_selected {
+color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+/* 教师科研 */
+.teacherList {
+	float: left;
+	margin: 50px 1% 20px 38px;
+	width: 32%;
+	height: 283px;
+	border: 1px solid rgba(128, 128, 128, 0.37);
+	font-size: 20px;
+	box-shadow: 6px 6px 4px -1px #eee;
+}
+.teacherList tbody tr td {
+	padding:12px;
+}
+.arrow-left {
+	width: 0;
+	height: 0;
+	border-top: 9px solid transparent;
+	border-bottom: 9px solid transparent;
+	border-right: 7px solid white;
+	float: right;
+	clear: both;
+	margin-right: -12px;
+	margin-top: 5px;
+}
+.filter-category .fa{
+	color: white;
+
+}
+.filter-category {
+	text-align: center;
+}
+#container-1 {
+	height: 275px;
+	margin-left: 45px;
+}
+#container-a {
+	height: 302px;
+	position: relative;
+	top: 44px;
+}
+
+/* 学生科研 */
+.HomeStudentScience {
+	height: 485px
+}
+.widget {
+	position: relative;
+	left: 235px;
+	top: -12px;
+}
+.item {
+	margin-bottom: 20px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	margin: 0 15px;
+	float: left;
+}
+.student-widget {
+	font-weight: 200;
+	color: white;
+	text-align: center;
+	height: 100px;
+}
+#container-2 {
+	height: 300px;
+	margin-left: 3%;
+}
+#container-b {
+	height: 300px;
+}
+
+/* 教学平台 */
+#container-31 {
+	height: 320px;
+	margin-top: 50px;
+	margin-left: 3%
+}
+#container-32{
+	height: 320px;
+	margin-top: 12px;
+	margin-left: 3%
+}
+#container-c {
+	height: 220px;
+	margin-top: 12px;
+	margin-left: 3%
+}
+
+
+.pageScroll {
+	position: fixed !important;
+	top: 130px;
+	left: 85%;
+	width: 122px;
+	border: 7px solid #fff;
+	list-style-type:circle;
+	border-radius: 15px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .3);
+	padding-left: 25px;
+	line-height: 30px;
+	background-color: white;
+}
+
+ .modal-content{
+	height: 440px;
+	padding-bottom: 30px
+}
+.btn_stuffType {
+	position: absolute;
+}
+table.dataTable .homepageModalTable  {
+    border-bottom: 1px solid #9A9A9A;
+}
+
+table.dataTable .homepageModalTable thead th {
+    border-bottom: 1px solid #9A9A9A;
+}
+
+.tables {
+	height: 800px;
+}

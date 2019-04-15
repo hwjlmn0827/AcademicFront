@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>学术资源管理平台</title>
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="../css/login.css" rel="stylesheet">
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body>
+
+  <div class="contain">
+
+    <div class="login-container">
+      <div class="theTitle">
+        <h1>学术资源管理平台</h1>
+      </div>
+      <form class="form-signin">
+        <h2 class="form-signin-heading">欢迎登录</h2>
+        <label for="inputUserName" class="sr-only">用户名</label>
+        <input type="text" id="inputUserName" class="form-control" placeholder="请输入用户名" required autofocus>
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required>
+        <button class="btn btn-lg btn-primary btn-block signInBtn" type="submit">登录</button>
+      </form>
+    </div>
+  </div> <!-- /container -->
+
+
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.signInBtn').click(function(event) {
+      /* Act on the event */
+    var usn = $("#inputUserName").value
+    var psw = $("#inputPassword").val()
+    console.log(usn)
+    console.log(psw)
+    $.ajax({
+      type: "POST",
+      url: "https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/login",
+      data:
+      {
+        "username": usn,
+        "password": psw
+      },
+      async: true,
+      dataType: "json",
+      success: function(obj) {
+        console.log(obj)
+        window.location.href="admin/HomePage/adminHomePage.html";
+      },
+      Error: function() {
+        alert("服务器出错");
+      }
+    })
+    });
+  })
+</script>

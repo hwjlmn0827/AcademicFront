@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<!--第一步：引入Javascript / CSS （CDN）-->
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+ 
+ 
+<!--或者下载到本地，下面有下载地址-->
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="../datatables/media/css/jquery.dataTables.css">
+ 
+<!-- jQuery -->
+<script type="text/javascript" charset="utf8" src="../datatables/media/js/jquery.js"></script>
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="../datatables/media/js/jquery.dataTables.js"></script>
+</head>
+<body>
+
+ 
+ 
+ 
+ 
+<!--第二步：添加如下 HTML 代码-->
+<table id="table_id_example" class="display">
+    <thead>
+        <tr>
+            <th>
+                比赛名
+            </th>
+            <th>
+                第一作者
+            </th>
+            <th>
+                项目编号
+            </th>
+            <th>
+                时间
+            </th>
+            <th>
+                项目来源
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+ 
+ 
+ 
+<!--第三步：初始化Datatables-->
+<script type="text/javascript">
+    var url = 'http://localhost:8080/dissertation/data/assets?categoryLeafName=科研项目'
+    $(document).ready(function() {
+        $("#table_id_example").dataTable({
+            "bProcessing": false, // 是否显示取数据时的那个等待提示
+            "bServerSide": true,//这个用来指明是通过服务端来取数据
+            "sAjaxSource": url,//这个是请求的地址
+            "searchable":true,
+            "fnServerData": function ( sSource111,aoData111, fnCallback111) {
+                $.ajax({
+                    url : sSource111,//这个就是请求地址对应sAjaxSource
+                    data : JSON.stringify(aoData111),//这个是把datatable的一些基本数据传给后台,比如起始位置,每页显示的行数
+                    type : 'post',
+                    dataType : 'json',
+                    async : false,
+                    success : function(result) {
+                        fnCallback111(result);//把返回的数据传给这个方法就可以了,datatable会自动绑定数据的
+                    },
+                    error : function(msg) {
+                        console.log(msg)
+                    }
+                });
+            } // 获取数据的处理函数
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>

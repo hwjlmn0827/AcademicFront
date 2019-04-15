@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学术资源管理平台</title>
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/global.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/RecycleBin.css">
+  <link rel="stylesheet" type="text/css" href="../../../font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../datatables/media/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+</head>
+<body>
+	
+
+
+  <div class="">
+    <!-- 导航栏 -->
+    <div class="navbar navbar-fixed-top scroll-hide">
+     <!-- 顶上导航栏 -->
+     <div class="container-fluid top-bar topnav"></div>
+     <!-- 横向导航栏 -->
+     <div id="main-nav" class="container-fluid main-nav"></div>
+   </div>
+   <div class="container-fluid" >
+     <div class="row" id="wrapper" >
+      <div class="mainContent2 col-md-8 col-md-offset-2 tables">
+      <div class="col-md-6 multipleSearch_block" >
+          <select  class="form-control"  name="type" placeholder="请选择科研类型" >
+            <option value="author">姓名</option>
+            <option value="date">时间</option>
+            <option value="categoryLeafName">科研类型</option>
+            <option value="name">项目名称</option>
+            <option value="tag">标签</option>
+          </select>
+          <input type="text" class="form-control" name="projectNumber" placeholder="请输入关键字">
+          <button class="btn btn-primary search">搜索</button>
+          <button class="btn btn-primary search_inresult" disabled="true">在结果中搜索</button>
+        </div>
+        <table id="multipleTable" class="globalTable table table-bordered"></table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer navbar-fixed-bottom"></footer>
+
+
+<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../js/index.js"></script>
+<script type="text/javascript" src="../../../js/admin/RecycleBin.js"></script>
+<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+</body>
+<script type="text/javascript"> 
+  $(function() {
+    var dsdf = "教学平台"
+    catagoryAjax()
+    multiple_buildTable()
+    console.log("../../html/"+"/"+map['科研项目']+".html")
+  })
+</script>
+</html>

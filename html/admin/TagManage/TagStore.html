@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学术资源管理平台</title>
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../datatables/media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/global.css">
+</head>
+<body>
+	<div class="modal fade textInput" id="newTag" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+				<span>请输入标签名称</span>
+					<input type="text" id="tagName" name="tagName" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger fa fa-check sureTagYes" >确认</button>
+					<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade textInput" id="renameTag" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+				<span>请输入标签名称</span>
+					<input type="text" id="tagName2" name="tagName" />
+				</div>
+				<div class="modal-footer temp">
+					<button type="button" class="btn btn-danger fa fa-check sureTagYes2" >确认</button>
+					<button type="button" class="btn btn-primary fa fa-remove cancelTagYes2" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="">
+		<!-- 导航栏 -->
+		<div class="navbar navbar-fixed-top scroll-hide">
+			<!-- 顶上导航栏 -->
+			<div class="container-fluid top-bar topnav"></div>
+			<!-- 横向导航栏 -->
+			<div id="main-nav" class="container-fluid main-nav"></div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!-- 侧边导航栏 -->
+				<div id="sub-nav" class="col-md-2 subnav"></div>
+				<div class="col-md-offset-2 mainContent tagContent" >
+					<div class="panel panel-info col-md-5">
+						<div class="panel-heading">标签云</div>
+						<div class="panel-body">
+							<div id="tagsList"> 
+								<!-- <a href="#/Article.aspx?kid=1" title="星级评分">星级评分</a> 
+								<a href="#/Article.aspx?kid=2" title="层特效">层特效</a> 
+								<a href="#/Article.aspx?kid=3" title="关键字">关键字</a> 
+								<a href="#/Article.aspx?kid=4" title="拖拽">拖拽</a> 
+								<a href="#/Article.aspx?kid=5" title="分页插件">分页插件</a> 
+								<a href="#/Article.aspx?kid=6" title="时间插件">时间插件</a> 
+								<a href="#/Article.aspx?kid=7" title="弹出层">弹出层</a> 
+								<a href="#/Article.aspx?kid=8" title="数据统计">数据统计</a> 
+								<a href="#/Article.aspx?kid=10" title="置顶特效">置顶特效</a> 
+								<a href="#/Article.aspx?kid=11" title="选项卡">选项卡</a> 
+								<a href="#/Article.aspx?kid=12" title="导航菜单">导航菜单</a> 
+								<a href="#/Article.aspx?kid=13" title="原创">原创</a> 
+								<a href="#/Article.aspx?kid=14" title="动画插件">动画插件</a> 
+								<a href="#/Article.aspx?kid=15" title="实用特效">实用特效</a> 
+								<a href="#/Article.aspx?kid=16" title="table插件">table插件</a> 
+								<a href="#/Article.aspx?kid=17" title="文字特效">文字特效</a> 
+								<a href="#/Article.aspx?kid=18" title="图片特效">图片特效</a>  -->
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="panel panel-info">
+							<div class="panel-heading">语义标签库</div>
+							<div class="panel-body">
+								<button type="button" id="newTagbtn" class="btn btn-primary" data-toggle="modal" data-target="#newTag">新增</button>
+								<table class="table table-bordered table-striped tagTable" id="tagStoreTable">
+								</table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer navbar-fixed-bottom"></footer>
+
+	<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../../../js/index.js"></script>
+	<script type="text/javascript" src="../../../js/admin/TagStore.js"></script>
+	<script type="text/javascript" src="../../../js/tags.js"></script>
+</body>
+</html>

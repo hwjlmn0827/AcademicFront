@@ -1,0 +1,23 @@
+/*
+* @Author: Administrator
+* @Date:   2018-05-10 12:59:34
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-05-30 00:45:44
+*/
+.collectCategory {
+	margin-right: 10px;
+	height: 300px; 
+}
+.mainContent {
+	height: 100%;
+	background-color: rgba(255,255,255,0.9);
+	position: relative;
+	padding: 20px;
+	left: 40px;
+	top: 141px;
+	padding-bottom: 100px;
+	margin-right: 10px;
+}
+.modal-content{
+    height: 116px!important;
+}

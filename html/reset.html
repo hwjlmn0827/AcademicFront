@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>学术资源管理平台</title>
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="../css/reset.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/progression.css">
+  <link rel="stylesheet" type="text/css" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="contain">
+
+    <div class="login-container">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">修改密码</h2>
+        <div>
+          <label for="inputPassword0" class="sr-only">原密码</label>
+          <input type="password" id="inputPassword0" class="form-control" placeholder="请输入原密码" required autofocus>
+        </div>
+        <div>
+          <label for="inputPassword1" class="sr-only">新密码</label>
+          <input type="password" id="inputPassword1" class="form-control" placeholder="请输入新密码" required>
+        </div>
+        <div>
+          <label for="inputPassword2" class="sr-only">再次输入密码</label>
+          <input type="password" id="inputPassword2" class="form-control" placeholder="再次输入新密码" required>
+          <i class="fa fa-check check" aria-hidden="true"></i>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block signInBtn" type="submit" id="savePassword">保存</button>
+      </form>
+    </div>
+  </div> <!-- /container -->
+
+
+</body>
+<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="../js/strength.js"></script>
+<script type="text/javascript">
+ $(document).ready(function($) {
+  jQuery('#inputPassword1').strength({
+    strengthClass: 'strength',
+    strengthMeterClass: 'strength_meter',
+    strengthButtonClass: 'button_strength',
+    strengthButtonText: '显示密码',
+    strengthButtonTextToggle: '隐藏密码'
+  });
+  $("#inputPassword2").bind("input propertychange change",function(event){
+   if ($("#inputPassword2").val()==$("#inputPassword1").val()) {
+    $('.check').css('visibility', 'visible');
+  };
+  if ($("#inputPassword2").val()!=$("#inputPassword1").val()) {
+    $('.check').css('visibility', 'hidden');
+  };
+});
+  $('#savePassword').click(function(event) {
+  //   $.ajax({
+  //     type: "PUT",
+  //     url: "http://123.206.190.167:8080/dissertation/user",
+  //     data: {
+  //       "password": "J4YaShDoyi",
+  //       "uniqueName": "pjLMwyISpa"
+  //     },
+  //     async: true,
+  //     dataType: "json",
+  //     contentType: "application/json",
+  //     success: function(obj) {
+  //       console.log(obj)
+  //     },
+  //     Error: function() {
+  //       alert("服务器出错");
+  //     }
+  //   })
+     
+    // window.location.replace("");
+  });
+});
+</script>
+</html>

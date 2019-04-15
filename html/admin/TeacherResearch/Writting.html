@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学术资源管理平台</title>
+	<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../datatables/media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/global.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/jquery.autocomplete.css">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+
+
+	<div>
+		<!-- 导航栏 -->
+		<div class="navbar navbar-fixed-top scroll-hide">
+			<!-- 顶上导航栏 -->
+			<div class="container-fluid top-bar topnav"></div>
+			<!-- 横向导航栏 -->
+			<div id="main-nav" class="container-fluid main-nav"></div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!-- 侧边导航栏 -->
+				<div id="sub-nav" class="col-md-2 subnav"></div>
+				<div class="col-md-offset-2 mainContent" >
+					<div class="InportExport">
+						<button type="button" class="btn btn-primary btn_inport" data-toggle="modal" data-target="#myModalInport">导入</button>
+						<div class="btn-group">
+							<button type="button"  onclick="makeURL()" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								导出 <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownload()">
+									<a href="http://123.206.190.167:8080/dissertation/excel/assetsTemplate?categoryLeafName=著作&uniqueName=教师科研&fileName=著作.xlsx">导出模板</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownloadAll()">
+									<a href="http://123.206.190.167:8080/dissertation/excel/assetsAll?categoryLeafName=著作&uniqueName=教师科研&fileName=著作.xlsx">导出全部数据</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li data-toggle="modal"  data-target="#myModalExport"><a id="import_selected" href="#">导出选中数据</a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn btn-info btn-collection" data-toggle="modal" data-target="#sureMoveIn_data">收藏</button>
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sureDelete_data">删除</button>
+					</div>
+
+					<div class="accurateSelect col-md-5 ">
+						<div class="form-group">
+							<div class="col-md-6">
+								<div class="input-group input-medium datepicker input-daterange doubleTime " data-date-format="yyyy-mm-dd">
+									<input name="dtBegin" class="form-control dateInput1" style="font-size: 13px;" type="text" value="" placeholder="开始日期">
+									<span class="input-group-addon">至</span>
+									<input name="dtEnd" class="form-control dateInput1" style="font-size: 13px;" type="text" value="" placeholder="结束日期">
+								</div>
+							</div>
+							<label class="control-label col-md-1 dateLable">/</label>
+							<div class="col-md-4 singleTime">
+								<div class="input-group date datepicker" data-date-autoclose="true" data-date-format="yyyy-mm-dd">
+									<input class="form-control dateInput2" type="text" placeholder="请选择日期" ><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								</div>
+							</div>
+							<div class="col-md-1"><button class="btn btn-primary dateSearch">日期搜索</button></div>
+						</div>
+					</div>
+					<table class="mainTable table table-bordered" >
+					</table>
+				</div>
+			</div>
+		</div>
+		<footer class="footer navbar-fixed-bottom"></footer>
+	</div>
+
+
+	<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../../../js/admin/Writting.js"></script>
+	<script type="text/javascript" src="../../../js/index.js"></script>
+	<script type="text/javascript" src="../../../js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="../../../js/jquery.autocomplete.js"></script>
+</body>
+</html>
