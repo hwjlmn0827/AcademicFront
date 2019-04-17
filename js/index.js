@@ -19,8 +19,8 @@ var map = {
 
 	"项目":"StudentProject",
 	"竞赛获奖":"CompetitionAward",
-	//"学术论文":"AcademicPapers",
-	//"专利":"Patent",
+	"学术论文":"AcademicPapers",
+	"专利":"Patent",
 	
 	"教学平台":"TeachState",
 	"教学平台":"TeachState",
@@ -279,39 +279,39 @@ var mainNav = '<div class="nav-collapse"><ul class="nav"><li id="adminHomePage">
 function setCategoryTree(obj){
 	$.each(obj.data, function(index, val) {
 		switch (val.uniqueName){
-			case "教师科研":
+			case "TeacherResearch":
 			mainNav = mainNav+'<li id="'+val.uniqueName+'">\
 			<a href="../TeacherResearch/ScienceProject.html"><span aria-hidden="true" class="fa fa-pencil-square-o""></span>教师科研</a>\
 			</li>';
 			var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
 			$.each(val.categoryLeaves, function(index, item) {
 				switch (item.categoryLeafName){
-					case "科研项目":
+					case "ScienceProject":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'">\
 					<a href="ScienceProject.html">科研项目</a>\
 					</li>'
 					break;
-					case "学术论文":
+					case "AcademicPapers":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
 					<a href="AcademicPapers.html">学术论文</a>\
 					</li>'
 					break;
-					case "成果采纳":
+					case "AchievementAdoption":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
 					<a href="AchievementAdoption.html">成果采纳</a>\
 					</li>'
 					break;
-					case "专利":
+					case "Patent":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
 					<a href="Patent.html">专利</a>\
 					</li>'
 					break;
-					case "获奖":
+					case "Reward":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
 					<a href="Reward.html">获奖</a>\
 					</li>'
 					break;
-					case "著作":
+					case "Writting":
 					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
 					<a href="Writting.html">著作</a>\
 					</li>'
@@ -515,15 +515,15 @@ function fillDetail(obj) {
 
 }
 
-$(document).on('click', '#main-nav li', function() {
-	var subNavId = $(this).attr('id');
+// $(document).on('click', '#main-nav li', function() {
+// 	var subNavId = $(this).attr('id');
 	// alert($(this).attr('id'));
 	// $("#sub-nav").children('.nav').css('display', 'none');
 	// $("."+subNavId).css('display', 'block');
 	//样式
 	// $('.current').removeClass('current')
 	// $(this).children('a').addClass('current');
-})
+// })
 
 Date.prototype.Format = function (fmt) { //author: meizz   
 	var o = {  
@@ -596,28 +596,28 @@ function timeSearch(LeafName) {
 
 }
 
-// //显示收藏夹
-$(document).on('click', '.btn-collection', function(event) {
-	$.ajax({
-		type: "GET",
-		url: "http://123.206.190.167:8080/dissertation/collection/columns",
-		async: true,
-		dataType: "json",
-		contentType: "application/json",
-		success: function(obj) {
-			console.log(obj.data)
-			$('#collectName').AutoComplete({
-				'data':  obj.data,
-				'itemHeight': 20,
-				'width': 180
-			});
-		},
-		Error: function() {
-			alert("服务器出错");
-		}
-	})
-
-});
+//显示收藏夹
+// $(document).on('click', '.btn-collection', function(event) {
+// 	$.ajax({
+// 		type: "GET",
+// 		url: "http://123.206.190.167:8080/dissertation/collection/columns",
+// 		async: true,
+// 		dataType: "json",
+// 		contentType: "application/json",
+// 		success: function(obj) {
+// 			console.log(obj.data)
+// 			$('#collectName').AutoComplete({
+// 				'data':  obj.data,
+// 				'itemHeight': 20,
+// 				'width': 180
+// 			});
+// 		},
+// 		Error: function() {
+// 			alert("服务器出错");
+// 		}
+// 	})
+//
+// });
 
 
 
@@ -651,8 +651,8 @@ $(document).on('click', '.sureMoveIn_dataYes', function() {
 	})
 });
 
-
-$(function(){
+function indexStart() {
+    console.log('indexStart')
 	header()
 	footer()
 	alertModal()
@@ -696,50 +696,8 @@ $(function(){
 			});;
 			$('#sureDelete').modal('hide')
 		})
-	});  
-
-
-	
-
-	
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	});
+}
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------小功能-----------------------------------------*/
