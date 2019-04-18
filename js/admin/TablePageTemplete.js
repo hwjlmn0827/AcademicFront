@@ -10,10 +10,46 @@
 var cmap = {
     TeacherResearch: {
         ScienceProject: {
-            columns: ['序号', '科研项目名称', '科研项目类型', '主持人', '等级', '立项时间', '信息完整度'],
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '科研项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '科研项目类型',
+                    name: 'type',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '主持人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '等级',
+                    name: 'lavel',
+                    flatten: true
+                }, {
+                    id: 6,
+                    title: '立项时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 7,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
             importColumns: [{"title": "科研项目名称"}, {"title": "科研项目类型"}, {"title": "第一责任人"}, {"title": "立项时间"}],
             orderable: [0, 2, 3, 4, 5, 7],
-            flatten: [3, 4, 5],
         }
     }
 };
@@ -53,7 +89,7 @@ function buildTable(mainDirectory, subDirectory) {
         if (i == 0) {
             columns.push({'title': ''})
         }
-        var titleObj = {'title': mapColums[i]}
+        var titleObj = {'title': mapColums[i].title}
         columns.push(titleObj)
     }
 
@@ -63,9 +99,10 @@ function buildTable(mainDirectory, subDirectory) {
         orderableList.push({"orderable": false, "targets": orderable[i]})
     }
 
-    var flatten = cmap[mainDirectory][subDirectory]['flatten'];
-
-    console.log('buildTable', columns, orderable, flatten)
+    var flattenObj = mapColums.filter(function(item, index){
+        return mapColums[index].flatten == true;
+    })
+    var flatten = flattenObj.map(x => x.id)
 
     $('#' + subDirectory).DataTable({
         responsive: true,
@@ -100,9 +137,8 @@ function buildTable(mainDirectory, subDirectory) {
     $('tr').children("th:first").removeClass('sorting');
 }
 
-
-//填充数据 TODO test
-function fillTableDataAjax(subDirectory, requestDataSource) {
+//填充数据 OK
+function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
     console.log('fillTableDataAjax')
     $.ajax({
         type: "get",
@@ -113,7 +149,7 @@ function fillTableDataAjax(subDirectory, requestDataSource) {
         contentType: "application/json",
         success: function (obj) {
             console.log('fillTableDataAjax', obj)
-            setTableData(subDirectory, obj)
+            setTableData(mainDirectory, subDirectory, obj)
         },
         Error: function () {
             alert("服务器出错");
@@ -121,40 +157,67 @@ function fillTableDataAjax(subDirectory, requestDataSource) {
     })
 }
 
-
-//填充数据具体操作
-function setTableData(subDirectory, obj) {
+//填充数据具体操作 OK
+function setTableData(mainDirectory, subDirectory, obj) {
     console.log('setTableData')
     $('#' + subDirectory).dataTable().fnClearTable();
-    var option_array = [];
+    var mapColums = cmap[mainDirectory][subDirectory]['columns'];
+
+
+    var option_array = []
+    var flattenObj = mapColums.filter(function(item, index){
+        return mapColums[index].flatten == true;
+    })
+    var flattenCount = flattenObj.length
+
+    for (var i = 0; i < flattenCount; i++) {
+        option_array[i] = [];
+    }
+    console.log(flattenObj)
+
     $.each(obj.data, function (index, item) {
-        if ($.inArray(item.author, option_array) < 0) {
-            option_array.push(item.author)
-            $("#th4").append("<option value='" + item.author + "'>" + item.author + "</option>");
-            $("#th5").append("<option value='" + item.author + "'>" + item.author + "</option>");
-        }
-        ;
+
+        $.each(flattenObj, function (idx, obj) {
+            if ($.inArray(item[obj.name], option_array[idx]) < 0) {
+                option_array[idx].push(item[obj.name])
+                $("#th" + obj.id).append("<option value='" + item[obj.name] + "'>" + item[obj.name] + "</option>");
+            }
+        })
+
         order = index + 1;
         var completeRate = Math.round(item.completeRate * 100)
-        $('#' + item.categoryLeafName).dataTable().fnAddData([
-            '<input type="checkbox">',
-            '<span>' + order + '</span>',
-            '<a href="ScienceProjectDetail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>',
-            '<span>' + item.type + '</span>',
-            '<span>' + item.author + '</span>',
-            '<span>' + item.lavel + '</span>',
-            '<span>' + item.date + '</span>',
-            '<div class="progress tableProgress">\
-            <div class="progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width: ' + completeRate + '%">\
-			' + completeRate + '%\
-			</div>\
-			</div>',
-        ])
+
+        var columnContent = []
+        columnContent.push('<input type="checkbox">')
+        columnContent.push('<span>' + order + '</span>')
+        $.each(mapColums, function (idx, para) {
+            switch(para.name) {
+                case 'name':
+                    columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
+                    break;
+                case 'type':
+                case 'author':
+                case 'lavel':
+                case 'date':
+                    columnContent.push('<span>' + item[para.name] + '</span>')
+                    break;
+                case 'completeRate':
+                    columnContent.push(
+                        '<div class="progress tableProgress">\
+                        <div class="progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="width: ' + completeRate + '%">\
+			            ' + completeRate + '%\
+			            </div>\
+			            </div>')
+                    break;
+                default:
+                    break;
+            }
+        })
+        $('#' + subDirectory).dataTable().fnAddData(columnContent)
     });
 }
 
-
-// 上传组件
+// 上传组件 TODO para? @ziyi
 function fileupload() {
     var formdata = new FormData($("form[name='uploadForm']")[0])
     $.ajax({
@@ -182,15 +245,14 @@ function makeURL(mainDirectory, subDirectory, fileName) {
     if (ids.length > 0) {
         ids = ids.substring(0, ids.length - 1)
     }
-    console.log(ids)
     $("#import_selected").attr("href", url + ids)
 
 }
 
-// TODO OK without TEST
+// TODO OK without TEST @ziyi
 function importResult(mainDirectory, subDirectory) {
-    //给table加一个id 是二级目录的名字
     var importColumns = cmap[mainDirectory][subDirectory]['importColumns'];
+    // var importLen = importColumns.length
     $('#importResult').DataTable({
         responsive: false,
         searching: false,
@@ -200,15 +262,13 @@ function importResult(mainDirectory, subDirectory) {
         bSort: false,
         bInfo: false,
         "columns": importColumns,
-        "bLengthChange": false,
         "bRetrieve": false,
         "bFilter": false, //过滤功能
     });
 }
 
-// 选中序号构造url TODO @ziyi
-function makeURL() {
-    // var url = 'http://localhost:8080/dissertation/excel/scientificProjectSelected?categoryLeafName=科研项目' +
+// 选中序号构造url TODO caturl @ziyi
+function makeURL(mainDirectory, subDirectory, fileName) {
     var url = 'http://123.206.190.167:8080/dissertation/excel/scientificProjectSelected?categoryLeafName=科研项目' +
         '&uniqueName=教师科研&fileName=教师信息.xlsx&ids='
     var ids = ""
@@ -219,13 +279,16 @@ function makeURL() {
     if (ids.length > 0) {
         ids = ids.substring(0, ids.length - 1)
     }
-    console.log(ids)
     $("#import_selected").attr("href", url + ids)
-
 }
 
 //批量删除
 $(document).on('click', '.sureDelete_dataYes', function () {
+    var subDirectory = 'ScienceProject'
+    deleteData(subDirectory)
+});
+
+function deleteData(subDirectory) {
     var idd = [];
     $("input[type='checkbox']:checked").each(function (i) {
         idd.push($(this).parents("tr").children('td:eq(2)').children('a').attr('id'));
@@ -245,23 +308,22 @@ $(document).on('click', '.sureDelete_dataYes', function () {
         success: function (data) {
             console.log(data)
             if (data.err) {
-                $('#科研项目').DataTable().rows('.tr_selected').remove().draw(false);
+                $('#' + subDirectory).DataTable().rows('.tr_selected').remove().draw(false);
             }
             ;
         },
         Error: function () {
             alert("服务器出错");
         }
-
     })
-});
+}
 
 $(function () {
     indexStart()
     importResult("TeacherResearch", "ScienceProject")
     catagoryAjax("TeacherResearch", "ScienceProject")
     buildTable("TeacherResearch", "ScienceProject")
-    fillTableDataAjax('ScientificProject', 'ScientificProject')
+    fillTableDataAjax('TeacherResearch', 'ScienceProject', 'ScientificProject')
 
     $(".datepicker").datepicker({endDate: new Date()});
     $('.dateSearch').click(function (event) {

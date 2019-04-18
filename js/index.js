@@ -21,7 +21,7 @@ var map = {
 	"竞赛获奖":"CompetitionAward",
 	"学术论文":"AcademicPapers",
 	"专利":"Patent",
-	
+
 	"教学平台":"TeachState",
 	"教学平台":"TeachState",
 	"教学平台":"TeachState",
@@ -273,9 +273,8 @@ function alertModal() {
 	$('body').prepend(alertModal)
 }
 
-
-
 var mainNav = '<div class="nav-collapse"><ul class="nav"><li id="adminHomePage"><a href="../HomePage/adminHomePage.html"><span aria-hidden="true" class="fa fa-home"></span>首页</a></li>';
+
 function setCategoryTree(obj){
 	$.each(obj.data, function(index, val) {
 		switch (val.uniqueName){
@@ -318,104 +317,103 @@ function setCategoryTree(obj){
 					break;
 				}
 			});
-subNav=subNav+'</ul>';
-$("#sub-nav").append(subNav);
-break;
+			subNav=subNav+'</ul>';
+			$("#sub-nav").append(subNav);
+			break;
 
-case "学生科研":
-mainNav = mainNav+'<li id="'+val.uniqueName+'">\
-<a href="../StudentResearch/StudentProject.html"><span aria-hidden="true" class="fa fa-file-text"></span>学生科研</a>\
-</li>';
-var subNav = '<ul class="nav nav-pills nav-stacked TeacherResearch '+val.uniqueName+'" style="display:none">';
-$.each(val.categoryLeaves, function(index, item) {
-	switch (item.categoryLeafName){
-		case "学术论文":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="AcademicPapers.html">学术论文</a>\
-		</li>'
-		break;
-		case "竞赛获奖":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="CompetitionAward.html">竞赛获奖</a>\
-		</li>'
-		break;
-		case "项目":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="StudentProject.html">项目</a>\
-		</li>'
-		break;
-		case "专利":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="Patent.html">专利</a>\
-		</li>'
-		break;
-	}
-});
-subNav=subNav+'</ul>';
-$("#sub-nav").append(subNav);
-break;
+			case "StudentResearch":
+			mainNav = mainNav+'<li id="'+val.uniqueName+'">\
+			<a href="../StudentResearch/StudentProject.html"><span aria-hidden="true" class="fa fa-file-text"></span>学生科研</a>\
+			</li>';
+			var subNav = '<ul class="nav nav-pills nav-stacked TeacherResearch '+val.uniqueName+'" style="display:none">';
+			$.each(val.categoryLeaves, function(index, item) {
+				switch (item.categoryLeafName){
+				case "学术论文":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="AcademicPapers.html">学术论文</a>\
+					</li>'
+                    break;
+                case "竞赛获奖":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="CompetitionAward.html">竞赛获奖</a>\
+					</li>'
+                    break;
+                case "项目":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="StudentProject.html">项目</a>\
+					</li>'
+                    break;
+                case "专利":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="Patent.html">专利</a>\
+					</li>'
+                    break;
+                }
+            });
+			subNav=subNav+'</ul>';
+			$("#sub-nav").append(subNav);
+			break;
 
-case "教学平台":
-mainNav = mainNav+'<li id="'+val.uniqueName+'">\
-<a href="../TeachState/EducationaReform.html"><span aria-hidden="true" class="fa fa-book"></span>教学平台</a>\
-</li>'
-var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
-$.each(val.categoryLeaves, function(index, item) {
-	switch (item.categoryLeafName){
-		case "教改项目":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="EducationaReform.html">教改项目</a>\
-		</li>'
-		break;
-		case "教学论文":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="EducationPaper.html">教学论文</a>\
-		</li>'
-		break;
-		case "教材":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href=TeachingMaterial.html">教材</a>\
-		</li>'
-		break;
-		case "教师培训":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="TeacherTraining.html">教师培训</a>\
-		</li>'
-		break;
-		case "教师获奖":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="TeacherAward.html">教师获奖</a>\
-		</li>'
-		break;
-		case "竞赛指导":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="CompetitionGuidance.html">竞赛指导</a>\
-		</li>'
-		break;
-		case "实习基地":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="PracticeBase.html">实习基地</a>\
-		</li>'
-		break;
-		case "实验室":
-		subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		<a href="Laboratory.html">实验室</a>\
-		</li>'
-		break;
-	}
-});
-subNav=subNav+'</ul>';
-$("#sub-nav").append(subNav);
-break;
-
-}
-});
-mainNav = mainNav+'<li id="人员管理">\
-<a href="../StuffManage/TeacherInfo.html"><span aria-hidden="true" class="fa fa-users"></span>人员管理</a>\
-</li><li id="标签管理">\
-<a href="../TagManage/TagStore.html"><span aria-hidden="true" class="fa fa-tags"></span>标签管理</a>\
-</li></ul></div>'
-$("#sub-nav").append('<ul class="nav nav-pills nav-stacked 人员管理" style="display:none">\
+			case "教学平台":
+			mainNav = mainNav+'<li id="'+val.uniqueName+'">\
+			<a href="../TeachState/EducationaReform.html"><span aria-hidden="true" class="fa fa-book"></span>教学平台</a>\
+			</li>'
+ 			var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
+            $.each(val.categoryLeaves, function(index, item) {
+                switch (item.categoryLeafName){
+                case "教改项目":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="EducationaReform.html">教改项目</a>\
+					</li>'
+                    break;
+                case "教学论文":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="EducationPaper.html">教学论文</a>\
+					</li>'
+                    break;
+				case "教材":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href=TeachingMaterial.html">教材</a>\
+					</li>'
+                    break;
+		 		case "教师培训":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+		 			<a href="TeacherTraining.html">教师培训</a>\
+					</li>'
+                    break;
+				case "教师获奖":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="TeacherAward.html">教师获奖</a>\
+					</li>'
+                    break;
+				case "竞赛指导":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="CompetitionGuidance.html">竞赛指导</a>\
+					</li>'
+                    break;
+				case "实习基地":
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="PracticeBase.html">实习基地</a>\
+					</li>'
+                    break;
+				case "实验室":
+					subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
+					<a href="Laboratory.html">实验室</a>\
+					</li>'
+					break;
+                }
+            });
+            subNav=subNav+'</ul>';
+            $("#sub-nav").append(subNav);
+            break;
+		}
+    });
+    mainNav = mainNav+'<li id="人员管理">\
+	<a href="../StuffManage/TeacherInfo.html"><span aria-hidden="true" class="fa fa-users"></span>人员管理</a>\
+	</li><li id="标签管理">\
+	<a href="../TagManage/TagStore.html"><span aria-hidden="true" class="fa fa-tags"></span>标签管理</a>\
+	</li></ul></div>'
+    $("#sub-nav").append('<ul class="nav nav-pills nav-stacked 人员管理" style="display:none">\
 	<li id="TeacherInfo" class="教师信息">\
 	<a href="TeacherInfo.html">教师信息</a>\
 	</li>\
@@ -437,10 +435,8 @@ $("#sub-nav").append('<ul class="nav nav-pills nav-stacked 人员管理" style="
 	</li>\
 	</ul>');
 
-
-$("#main-nav").html(mainNav);
+    $("#main-nav").html(mainNav);
 }
-
 
 function fillDetail(obj) {
 	$.each(obj.data, function(key, val) {
@@ -515,18 +511,18 @@ function fillDetail(obj) {
 
 }
 
-// $(document).on('click', '#main-nav li', function() {
-// 	var subNavId = $(this).attr('id');
-	// alert($(this).attr('id'));
-	// $("#sub-nav").children('.nav').css('display', 'none');
-	// $("."+subNavId).css('display', 'block');
-	//样式
-	// $('.current').removeClass('current')
-	// $(this).children('a').addClass('current');
-// })
+$(document).on('click', '#main-nav li', function() {
+	var subNavId = $(this).attr('id');
+	alert($(this).attr('id'));
+	$("#sub-nav").children('.nav').css('display', 'none');
+	$("."+subNavId).css('display', 'block');
+	样式
+	$('.current').removeClass('current')
+	$(this).children('a').addClass('current');
+})
 
 Date.prototype.Format = function (fmt) { //author: meizz   
-	var o = {  
+	var o = {
         "M+": this.getMonth() + 1, //月份   
         "d+": this.getDate(), //日   
         "H+": this.getHours(), //小时   
@@ -534,12 +530,12 @@ Date.prototype.Format = function (fmt) { //author: meizz
         "s+": this.getSeconds(), //秒   
         "q+": Math.floor((this.getMonth() + 3) / 3), //季度   
         "S": this.getMilliseconds() //毫秒   
-    };  
-    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));  
-    for (var k in o)  
-    	if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));  
-    return fmt;  
-}  
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+    	if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
 
 //时间搜索
 function timeSearch(LeafName) {
@@ -597,29 +593,26 @@ function timeSearch(LeafName) {
 }
 
 //显示收藏夹
-// $(document).on('click', '.btn-collection', function(event) {
-// 	$.ajax({
-// 		type: "GET",
-// 		url: "http://123.206.190.167:8080/dissertation/collection/columns",
-// 		async: true,
-// 		dataType: "json",
-// 		contentType: "application/json",
-// 		success: function(obj) {
-// 			console.log(obj.data)
-// 			$('#collectName').AutoComplete({
-// 				'data':  obj.data,
-// 				'itemHeight': 20,
-// 				'width': 180
-// 			});
-// 		},
-// 		Error: function() {
-// 			alert("服务器出错");
-// 		}
-// 	})
-//
-// });
-
-
+$(document).on('click', '.btn-collection', function(event) {
+	$.ajax({
+		type: "GET",
+		url: "http://123.206.190.167:8080/dissertation/collection/columns",
+		async: true,
+		dataType: "json",
+		contentType: "application/json",
+		success: function(obj) {
+			console.log(obj.data)
+			$('#collectName').AutoComplete({
+				'data':  obj.data,
+				'itemHeight': 20,
+				'width': 180
+			});
+		},
+		Error: function() {
+			alert("服务器出错");
+		}
+	})
+});
 
 // //批量收藏
 $(document).on('click', '.sureMoveIn_dataYes', function() {
@@ -712,7 +705,6 @@ $(document).on('click', 'tr td:not(:first)', function() {
 	}
 })
 
-
 // 保证只有一个选框有日期
 $(".dateInput1").click(function(event) {
 	$(".dateInput2").val("")
@@ -720,7 +712,6 @@ $(".dateInput1").click(function(event) {
 $(".dateInput2").click(function(event) {
 	$(".dateInput1").val("")
 });
-
 
 function setCookie ( name, value, expdays ){    var expdate = new Date();    //设置Cookie过期日期
     expdate.setDate(expdate.getDate() + expdays) ;    //添加Cookie
