@@ -7,7 +7,7 @@
 function catagoryAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/categoryTree",
+		url: prefixUrl + "categoryTree",
 		data: {
 		},
 		async: true,
@@ -15,10 +15,10 @@ function catagoryAjax() {
 		contentType: "application/json",
 		success: function(data) {
 			setCategoryTree(data)
-			$('#标签管理 a').addClass('current');
-			$("#sub-nav").children('.nav').css('display', 'none');
-			$('.标签管理').css('display','block')
-			$('.语义标签文档').addClass('active');
+            $('#TagManage a').addClass('current');
+            $("#sub-nav").children('.nav').css('display', 'none');
+            $('.TagManage').css('display','block')
+            $('#TagDocument').addClass('active');
 		},
 		Error: function() {
 			alert("服务器出错");
@@ -26,7 +26,7 @@ function catagoryAjax() {
 	})
 }
 
-function tagdoc_buildTable() {
+function tagdocBuildTable() {
 	var columns =[{"title":""},{"title":"序号"},{"title":"科研项目名称"},{"title":"第一责任人"},{"title":"项目类型"},{"title":"时间"},{"title":"语义标签"}];
 	//给table加一个id 是二级目录的名字
 	$('#tagdocTable').DataTable({
@@ -71,7 +71,7 @@ function tagdoc_buildTable() {
 function tagdocTableDataAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/assets/tags/all",
+		url: prefixUrl + "assets/tags/all",
 		data: {
 		},
 		async: true,
@@ -113,3 +113,10 @@ function tagdocTable_setTableData(obj) {
 			])
 	});
 }
+
+$(function() {
+	indexStart()
+    catagoryAjax()
+    tagdocBuildTable()
+    tagdocTableDataAjax()
+})

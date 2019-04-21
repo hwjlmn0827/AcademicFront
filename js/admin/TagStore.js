@@ -16,10 +16,10 @@ function catagoryAjax() {
         contentType: "application/json",
         success: function(data) {
             setCategoryTree(data)
-            $('#标签管理 a').addClass('current');
+            $('#TagManage a').addClass('current');
             $("#sub-nav").children('.nav').css('display', 'none');
-            $('.标签管理').css('display','block')
-            $('.语义标签库').addClass('active');
+            $('.TagManage').css('display','block')
+            $('#TagStore').addClass('active');
         },
         Error: function() {
             alert("服务器出错");
@@ -65,7 +65,7 @@ function searchTags(){
 function setTags(data) {
     for (var i = 0; i <= data.length; i++) {
         var tagOrder = i+1
-        $('#tagsList').append('<a class='+data[i].id+' href="#/Article.aspx?kid='+i+'" title="相关项目：'+data[i].count+'">'+data[i].uniqueName+'</a>')
+        $('#tagsList').append('<a href="#/Article.aspx?kid='+i+'">'+data[i].uniqueName+'</a>')
         $('#tagStoreTable').dataTable().fnAddData([
             '<span id='+data[i].id+'>'+tagOrder+'</span>',
             '<span id='+data[i].uniqueName+'>'+data[i].uniqueName+'</span>',

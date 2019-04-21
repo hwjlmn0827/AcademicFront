@@ -8,7 +8,7 @@ $(function(){
 	function catagoryAjax() {
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/categoryTree",
+			url: prefixUrl + "categoryTree",
 			data: {
 			},
 			async: true,
@@ -35,7 +35,7 @@ $(function(){
 	function scienceFillDetailAjax(id) {
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/Achievements/"+id+"",
+			url: prefixUrl + "Achievements/"+id+"",
 			data: {
 			},
 			async: true,
@@ -97,7 +97,7 @@ $(function(){
 		});
 		$.ajax({
 			type: "put",
-			url: "http://123.206.190.167:8080/dissertation/ScientificProject",
+			url: prefixUrl + "ScientificProject",
 			data: {
 				"name": $("input[name='name']").val,
 				"type": $("input[name='type']").val,				

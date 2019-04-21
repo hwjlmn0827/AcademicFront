@@ -21,7 +21,7 @@ $(function() {
 function catagoryAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/categoryTree",
+		url: prefixUrl + "categoryTree",
 		data: {
 		},
 		async: true,
@@ -89,7 +89,7 @@ function teacherTableDataAjax(type,name) {
 	if (type==0) {
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/relative",
+			url: prefixUrl + "assets/relative",
 			data: {
 				"name":usrName
 			},
@@ -108,7 +108,7 @@ function teacherTableDataAjax(type,name) {
 	}else if(type==1){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/author",
+			url: prefixUrl + "assets/author",
 			data: {
 				"name":usrName
 			},
@@ -126,7 +126,7 @@ function teacherTableDataAjax(type,name) {
 	}else if(type==2){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/participant",
+			url: prefixUrl + "assets/participant",
 			data: {
 				"name":usrName
 			},
@@ -228,7 +228,7 @@ function studentTableDataAjax(type,name) {
 	if (type==0) {
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/relative",
+			url: prefixUrl + "assets/relative",
 			data: {
 				"name":usrName
 			},
@@ -247,7 +247,7 @@ function studentTableDataAjax(type,name) {
 	}else if(type==1){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/author",
+			url: prefixUrl + "assets/author",
 			data: {
 				"name":usrName
 			},
@@ -265,7 +265,7 @@ function studentTableDataAjax(type,name) {
 	}else if(type==2){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/participant",
+			url: prefixUrl + "assets/participant",
 			data: {
 				"name":usrName
 			},
@@ -362,7 +362,7 @@ function teacherStateTableDataAjax(type,name) {
 	if (type==0) {
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/relative",
+			url: prefixUrl + "assets/relative",
 			data: {
 				"name":usrName
 			},
@@ -381,7 +381,7 @@ function teacherStateTableDataAjax(type,name) {
 	}else if(type==1){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/author",
+			url: prefixUrl + "assets/author",
 			data: {
 				"name":usrName
 			},
@@ -399,7 +399,7 @@ function teacherStateTableDataAjax(type,name) {
 	}else if(type==2){
 		$.ajax({
 			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/assets/participant",
+			url: prefixUrl + "assets/participant",
 			data: {
 				"name":usrName
 			},

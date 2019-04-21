@@ -7,7 +7,7 @@
 function catagoryAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/categoryTree",
+		url: prefixUrl + "categoryTree",
 		data: {
 		},
 		async: true,
@@ -68,7 +68,7 @@ function recycle_buildTable() {
 function recycleTableDataAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/assets/deleted",
+		url: prefixUrl + "assets/deleted",
 		data: {
 		},
 		async: true,
@@ -123,7 +123,7 @@ $(document).on('click','.sureRecover_dataYes',function(){
 	console.log(ids);
 	$.ajax({
 		type: "post",
-		url: "http://123.206.190.167:8080/dissertation/assets/recover",
+		url: prefixUrl + "assets/recover",
 		data: JSON.stringify({
 			"ids":ids
 		}),
@@ -195,7 +195,7 @@ function multiple_buildTable() {
 function multipleTableDataAjax_search(field,val) {
 	$.ajax({
 		type: "POST",
-		url: "http://123.206.190.167:8080/dissertation/assets/keyword",
+		url: prefixUrl + "assets/keyword",
 		data: JSON.stringify({
 			"baseParams": [
 			{
@@ -229,7 +229,7 @@ function multipleTableDataAjax_search(field,val) {
 function multipleTableDataAjax_search_inresult(data) {
 	$.ajax({
 		type: "POST",
-		url: "http://123.206.190.167:8080/dissertation/assets/keyword",
+		url: prefixUrl + "assets/keyword",
 		data: JSON.stringify(data),
 		async: true,
 		dataType: "json",
@@ -308,3 +308,9 @@ $('.search_inresult').click(function(event) {
 
 });
 
+$(function() {
+    indexStart()
+    catagoryAjax()
+    recycle_buildTable()
+    recycleTableDataAjax()
+})

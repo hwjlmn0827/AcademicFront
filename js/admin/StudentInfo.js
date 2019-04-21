@@ -7,7 +7,7 @@
 function catagoryAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/categoryTree",
+		url: prefixUrl + "categoryTree",
 		data: {
 		},
 		async: true,
@@ -48,7 +48,7 @@ function buildTable(categoryLeafName) {
 function scienceTableDataAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/",
+		url: prefixUrl + "",
 		data: {
 		},
 		async: true,

@@ -9,7 +9,7 @@
 function catagoryAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/categoryTree",
+		url: prefixUrl + "categoryTree",
 		data: {
 		},
 		async: true,
@@ -79,7 +79,7 @@ function buildTable(categoryLeafName) {
 function writtingTableDataAjax() {
 	$.ajax({
 		type: "get",
-		url: "http://123.206.190.167:8080/dissertation/Work",
+		url: prefixUrl + "Work",
 		data: {
 		},
 		async: true,
@@ -134,7 +134,7 @@ function setTableData(obj) {
 function fileupload() {
 	var formdata = new FormData($("form[name='uploadForm']")[0])
 	$.ajax({
-		url:"http://123.206.190.167:8080/dissertation/excel/importScientificProject",
+		url:prefixUrl + "excel/importScientificProject",
 		type:"post",
 		data:formdata,
 		contentType: false, 
@@ -195,7 +195,7 @@ $(document).on('click', '.sureDelete_dataYes', function() {
 	console.log(idd);
 	$.ajax({
 		type: "POST",
-		url: "http://123.206.190.167:8080/dissertation/assets/deleted",
+		url: prefixUrl + "assets/deleted",
 		data: JSON.stringify({
 			"ids": idd
 		}),

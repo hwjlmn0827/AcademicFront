@@ -3,12 +3,62 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c54a1d-a01e-4932-ae22-7c92dff58e78" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/html/admin/Collection/Collection.html" afterPath="$PROJECT_DIR$/html/admin/Collection/Collection.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html" afterPath="$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/RecycleBin/RecycleBin.html" afterPath="$PROJECT_DIR$/html/admin/RecycleBin/RecycleBin.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/StudentResearch/AcademicPapers.html" afterPath="$PROJECT_DIR$/html/admin/StudentResearch/AcademicPapers.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/StudentResearch/CompetitionAward.html" afterPath="$PROJECT_DIR$/html/admin/StudentResearch/CompetitionAward.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/StudentResearch/Patent.html" afterPath="$PROJECT_DIR$/html/admin/StudentResearch/Patent.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/StudentResearch/StudentProject.html" afterPath="$PROJECT_DIR$/html/admin/StudentResearch/StudentProject.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TablePageTemplate.html" afterPath="$PROJECT_DIR$/html/admin/TablePageTemplate.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TagManage/TagDocument.html" afterPath="$PROJECT_DIR$/html/admin/TagManage/TagDocument.html" />
       <change beforePath="$PROJECT_DIR$/html/admin/TagManage/TagStore.html" afterPath="$PROJECT_DIR$/html/admin/TagManage/TagStore.html" />
-      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/CompetitionGuidance.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/CompetitionGuidance.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/EducationPaper.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/EducationPaper.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/EducationaReform.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/EducationaReform.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/Laboratory.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/Laboratory.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/PracticeBase.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/PracticeBase.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/TeacherAward.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/TeacherAward.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/TeacherTraining.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/TeacherTraining.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeachState/TeachingMaterial.html" afterPath="$PROJECT_DIR$/html/admin/TeachState/TeachingMaterial.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/AcademicPapers.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/AcademicPapers.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/AchievementAdoption.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/AchievementAdoption.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/AchievementAdoptionDetail.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/AchievementAdoptionDetail.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/Patent.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/Patent.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/Reward.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/Reward.html" />
       <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" />
+      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/Writting.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/Writting.html" />
+      <change beforePath="$PROJECT_DIR$/html/reset.html" afterPath="$PROJECT_DIR$/html/reset.html" />
+      <change beforePath="$PROJECT_DIR$/js/admin/AcademicPapers.js" afterPath="$PROJECT_DIR$/js/admin/AcademicPapers.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/AcademicPapers_student.js" afterPath="$PROJECT_DIR$/js/admin/AcademicPapers_student.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/AchievementAdoption.js" afterPath="$PROJECT_DIR$/js/admin/AchievementAdoption.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js" afterPath="$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/Collection.js" afterPath="$PROJECT_DIR$/js/admin/Collection.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/CompetitionAward.js" afterPath="$PROJECT_DIR$/js/admin/CompetitionAward.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/CompetitionGuidance.js" afterPath="$PROJECT_DIR$/js/admin/CompetitionGuidance.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/EducationPaper.js" afterPath="$PROJECT_DIR$/js/admin/EducationPaper.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/EducationaReform.js" afterPath="$PROJECT_DIR$/js/admin/EducationaReform.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/Laboratory.js" afterPath="$PROJECT_DIR$/js/admin/Laboratory.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/OtherTeacherInfo.js" afterPath="$PROJECT_DIR$/js/admin/OtherTeacherInfo.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/Patent.js" afterPath="$PROJECT_DIR$/js/admin/Patent.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/PracticeBase.js" afterPath="$PROJECT_DIR$/js/admin/PracticeBase.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/RecycleBin.js" afterPath="$PROJECT_DIR$/js/admin/RecycleBin.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/Reward.js" afterPath="$PROJECT_DIR$/js/admin/Reward.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/ScienceProject.js" afterPath="$PROJECT_DIR$/js/admin/ScienceProject.js" />
       <change beforePath="$PROJECT_DIR$/js/admin/ScienceProjectDetail.js" afterPath="$PROJECT_DIR$/js/admin/ScienceProjectDetail.js" />
-      <change beforePath="$PROJECT_DIR$/js/admin/TablePageTemplete.js" afterPath="$PROJECT_DIR$/js/admin/TablePageTemplete.js" />
-      <change beforePath="$PROJECT_DIR$/js/admin/tagStore.js" afterPath="$PROJECT_DIR$/js/admin/TagStore.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/StudentAccount.js" afterPath="$PROJECT_DIR$/js/admin/StudentAccount.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/StudentInfo.js" afterPath="$PROJECT_DIR$/js/admin/StudentInfo.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/StudentPatent.js" afterPath="$PROJECT_DIR$/js/admin/StudentPatent.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/StudentProject.js" afterPath="$PROJECT_DIR$/js/admin/StudentProject.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TagDocument.js" afterPath="$PROJECT_DIR$/js/admin/TagDocument.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TagStore.js" afterPath="$PROJECT_DIR$/js/admin/TagStore.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TeacherAward.js" afterPath="$PROJECT_DIR$/js/admin/TeacherAward.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TeacherInfo.js" afterPath="$PROJECT_DIR$/js/admin/TeacherInfo.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TeacherTraining.js" afterPath="$PROJECT_DIR$/js/admin/TeacherTraining.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/TeachingMaterial.js" afterPath="$PROJECT_DIR$/js/admin/TeachingMaterial.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/Writting.js" afterPath="$PROJECT_DIR$/js/admin/Writting.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/adminHomePage.js" afterPath="$PROJECT_DIR$/js/admin/adminHomePage.js" />
+      <change beforePath="$PROJECT_DIR$/js/admin/adminHomePageTable.js" afterPath="$PROJECT_DIR$/js/admin/adminHomePageTable.js" />
       <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,148 +72,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.64612955">
+    <splitter split-orientation="horizontal" split-proportion="0.53501844">
       <split-first>
-        <leaf>
-          <file leaf-file-name="Laboratory.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/admin/Laboratory.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                    <marker date="1537430108000" expanded="true" signature="3076:3242" ph="..." />
-                    <marker date="1537430108000" expanded="false" signature="3173:3197" ph="..." />
-                    <marker date="1537430108000" expanded="true" signature="3198:3231" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TablePageTemplete.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/admin/TablePageTemplete.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1350">
-                  <caret line="1042" column="0" lean-forward="false" selection-start-line="1042" selection-start-column="0" selection-end-line="1042" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                    <element signature="e#153#743#0" expanded="false" />
-                    <element signature="e#779#2101#0" expanded="false" />
-                    <element signature="n#!!block;n#header#0" expanded="false" />
-                    <element signature="n#!!block;n#footer#0" expanded="false" />
-                    <element signature="n#!!block;n#alertModal#0" expanded="false" />
-                    <element signature="n#!!block;n#setCategoryTree#0" expanded="false" />
-                    <element signature="e#18117#18382#0" expanded="false" />
-                    <element signature="n#!!block;n#catagoryAjax#0" expanded="false" />
-                    <element signature="n#!!block;n#buildTable#0" expanded="false" />
-                    <element signature="n#!!block;n#fillTableDataAjax#0" expanded="false" />
-                    <element signature="n#!!block;n#setTableData#0" expanded="false" />
-                    <element signature="n#!!block;n#fileupload#0" expanded="false" />
-                    <element signature="n#!!block;n#makeURL#0" expanded="false" />
-                    <element signature="n#!!block;n#importResult#0" expanded="false" />
-                    <element signature="n#!!block;n#makeURL#1" expanded="false" />
-                    <element signature="e#26408#26480#0" expanded="false" />
-                    <element signature="n#!!block;n#deleteData#0" expanded="false" />
-                    <element signature="n#!!block;n#timeSearch#0" expanded="false" />
-                    <element signature="e#28612#28991#0" expanded="false" />
-                    <element signature="e#29063#29708#0" expanded="false" />
-                    <element signature="n#!!block;n#fillDetailAjax#0" expanded="false" />
-                    <element signature="n#!!block;n#fillDetail#0" expanded="false" />
-                    <element signature="n#!!block;n#upFileFunc1#0" expanded="false" />
-                    <element signature="n#!!block;n#upFileFunc2#0" expanded="false" />
-                    <element signature="n#!!block;n#upFileFunc3#0" expanded="false" />
-                    <element signature="e#35751#36027#0" expanded="false" />
-                    <element signature="n#!!block;n#indexStart#0" expanded="false" />
-                    <element signature="e#37828#38442#0" expanded="false" />
-                    <element signature="e#38508#38721#0" expanded="false" />
-                    <element signature="n#!!block;n#setCookie#0" expanded="false" />
-                    <element signature="n#!!block;n#getCookie#0" expanded="false" />
-                    <element signature="n#!!block;n#delCookie#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ScienceProject.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/admin/ScienceProject.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="593">
-                  <caret line="234" column="17" lean-forward="false" selection-start-line="234" selection-start-column="17" selection-end-line="234" selection-end-column="17" />
-                  <folding>
-                    <marker date="1537430108000" expanded="true" signature="3334:3500" ph="..." />
-                    <marker date="1537430108000" expanded="false" signature="3431:3455" ph="..." />
-                    <marker date="1537430108000" expanded="true" signature="3456:3489" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ScienceProjectDetail.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="49" column="65" lean-forward="false" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TagStore.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/html/admin/TagManage/TagStore.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="60" column="79" lean-forward="false" selection-start-line="60" selection-start-column="79" selection-end-line="60" selection-end-column="79" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TagStore.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/admin/TagStore.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
-                  <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ScienceProject.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="8" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="9" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ScienceProjectDetail.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/admin/ScienceProjectDetail.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1755">
-                  <caret line="117" column="18" lean-forward="false" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -172,9 +89,60 @@
             <entry file="file://$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="445">
-                  <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                  <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="853">
+                  <caret line="849" column="58" lean-forward="false" selection-start-line="849" selection-start-column="58" selection-end-line="849" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#153#815#0" expanded="false" />
+                    <element signature="n#!!block;n#header#0" expanded="false" />
+                    <element signature="n#!!block;n#alertModal#0" expanded="false" />
+                    <element signature="n#!!block;n#setCategoryTree#0" expanded="false" />
+                    <element signature="e#19938#20172#0" expanded="false" />
+                    <element signature="n#!!block;n#catagoryAjax#0" expanded="false" />
+                    <element signature="n#!!block;n#buildTable#0" expanded="false" />
+                    <element signature="n#!!block;n#fillTableDataAjax#0" expanded="false" />
+                    <element signature="n#!!block;n#fileupload#0" expanded="false" />
+                    <element signature="n#!!block;n#makeURL#0" expanded="false" />
+                    <element signature="n#!!block;n#importResult#0" expanded="false" />
+                    <element signature="n#!!block;n#makeURL#1" expanded="false" />
+                    <element signature="e#28169#28241#0" expanded="false" />
+                    <element signature="n#!!block;n#deleteData#0" expanded="false" />
+                    <element signature="n#!!block;n#timeSearch#0" expanded="false" />
+                    <element signature="e#30647#31129#0" expanded="false" />
+                    <element signature="e#31201#31955#0" expanded="false" />
+                    <element signature="e#35810#35880#0" expanded="false" />
+                    <element signature="n#!!block;n#upFileFunc1#0" expanded="false" />
+                    <element signature="n#!!block;n#upFileFunc2#0" expanded="false" />
+                    <element signature="n#!!block;n#upFileFunc3#0" expanded="false" />
+                    <element signature="e#37859#38135#0" expanded="false" />
+                    <element signature="e#38193#38822#0" expanded="false" />
+                    <element signature="e#38923#40698#0" expanded="false" />
+                    <element signature="e#42498#43112#0" expanded="false" />
+                    <element signature="e#43178#43412#0" expanded="false" />
+                    <element signature="e#43469#43501#0" expanded="false" />
+                    <element signature="e#43543#43575#0" expanded="false" />
+                    <element signature="n#!!block;n#setCookie#0" expanded="false" />
+                    <element signature="n#!!block;n#getCookie#0" expanded="false" />
+                    <marker date="1555854327348" expanded="false" signature="3759:3921" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="25655:25886" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="25773:25801" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="25802:25863" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="33379:33391" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="33466:33480" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="33568:33582" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="33762:33774" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="33849:33861" ph="..." />
+                    <marker date="1555854327348" expanded="true" signature="34117:34131" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -183,12 +151,57 @@
           <file leaf-file-name="TablePageTemplate.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/html/admin/TablePageTemplate.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+                <state relative-caret-position="585">
+                  <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
                   <folding>
                     <element signature="e#1103#1110#1" expanded="true" />
                     <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ScienceProjectDetail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="DetailPageTemplate.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/admin/DetailPageTemplate.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#3;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#11283#11289#0" expanded="true" />
+                    <element signature="e#13027#13033#0" expanded="true" />
+                    <element signature="e#14752#14758#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ScienceProjectDetail.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/admin/ScienceProjectDetail.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="357">
+                  <caret line="48" column="15" lean-forward="true" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -208,43 +221,48 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new</find>
-      <find>columns</find>
-      <find>.inArr</find>
-      <find>fileupload</find>
-      <find>makeURL</find>
-      <find>console</find>
-      <find>科研</find>
-      <find>../../..</find>
-      <find>scien</find>
-      <find>模板</find>
-      <find>mainTable</find>
-      <find>science</find>
-      <find>catagoryAjax</find>
-      <find>btnChange</find>
-      <find>indexStart</find>
-      <find>importResult</find>
-      <find>fillTableDataAjax</find>
-      <find>Format</find>
-      <find>.Format</find>
-      <find>participantNames</find>
-      <find>.ori</find>
-      <find>.form-control</find>
-      <find>originInfo</find>
-      <find>scienceFillDetailAjax</find>
-      <find>form-control</find>
-      <find>setCategoryTree</find>
       <find>大数据</find>
       <find>searchTags</find>
       <find>--&gt;</find>
       <find>&lt;a</find>
+      <find>id='人员管理'</find>
+      <find>tagdocTable_setTableData</find>
+      <find>tagdoc_buildTable</find>
+      <find>buildtable</find>
+      <find>stacked</find>
+      <find>TagStore</find>
+      <find>tagdocBuildTable()</find>
+      <find>TeacherResearch</find>
+      <find>setCategoryTree</find>
+      <find>tagmanage</find>
+      <find>tagdocBuildTable</find>
+      <find>TeacherInfo</find>
+      <find>tagdocTableDataAjax</find>
+      <find>http://123.206.190.167:8080/dissertation/</find>
+      <find>&quot;http://123.206.190.167:8080/dissertation/</find>
+      <find>reloadCollectionAjax</find>
+      <find>catagoryAjax</find>
+      <find>alert(</find>
+      <find>新建</find>
+      <find>tag_buildTable</find>
+      <find>alert</find>
+      <find>completeRate</find>
+      <find>science</find>
+      <find>input-group</find>
+      <find>ajax</find>
+      <find>rate</find>
     </findStrings>
     <replaceStrings>
       <replace>fillTableDataAjax</replace>
       <replace>ScienceProject</replace>
       <replace>configMap</replace>
       <replace>importResult</replace>
+      <replace>prefixUrl + &quot;</replace>
+      <replace>tagdocBuildTable</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -275,16 +293,24 @@
       <list>
         <option value="$PROJECT_DIR$/datatables/media/js/jquery.dataTables.js" />
         <option value="$PROJECT_DIR$/css/global.css" />
-        <option value="$PROJECT_DIR$/html/admin/Collection/Collection.html" />
         <option value="$PROJECT_DIR$/html/admin/testTTT.html" />
-        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" />
         <option value="$PROJECT_DIR$/html/admin/TablePageTemplate.html" />
         <option value="$PROJECT_DIR$/js/admin/TablePageTemplete.js" />
-        <option value="$PROJECT_DIR$/js/admin/ScienceProjectDetail.js" />
-        <option value="$PROJECT_DIR$/js/index.js" />
-        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" />
         <option value="$PROJECT_DIR$/html/admin/TagManage/TagStore.html" />
         <option value="$PROJECT_DIR$/js/admin/TagStore.js" />
+        <option value="$PROJECT_DIR$/js/admin/TagDocument.js" />
+        <option value="$PROJECT_DIR$/html/admin/TagManage/TagDocument.html" />
+        <option value="$PROJECT_DIR$/html/admin/RecycleBin/RecycleBin.html" />
+        <option value="$PROJECT_DIR$/js/admin/RecycleBin.js" />
+        <option value="$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html" />
+        <option value="$PROJECT_DIR$/js/admin/adminHomePage.js" />
+        <option value="$PROJECT_DIR$/js/admin/Collection.js" />
+        <option value="$PROJECT_DIR$/html/admin/Collection/Collection.html" />
+        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" />
+        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" />
+        <option value="$PROJECT_DIR$/html/admin/DetailPageTemplate.html" />
+        <option value="$PROJECT_DIR$/js/admin/ScienceProjectDetail.js" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -364,8 +390,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,6 +430,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -420,7 +446,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="TagStor&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/tagStore.js&#10;Tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagStore.html&#10;Deta&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/AchievementAdoptionDetail.js&#10;scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/ScienceProjectDetail.js&#10;science&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;global&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;te&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TablePageTemplete.js" />
+    <property name="SearchEverywhereHistoryKey" value="De&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/DetailPageTemplate.html&#10;index&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;Detail&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;colle&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/Collection/Collection.html&#10;admin&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/HomePage/adminHomePage.html&#10;collec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/Collection.js&#10;Rec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/RecycleBin.js&#10;recy&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/RecycleBin/RecycleBin.html&#10;rec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/RecycleBin/RecycleBin.html&#10;Tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagDocument.html&#10;TagDocu&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TagDocument.js&#10;TagStor&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/tagStore.js&#10;Deta&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/AchievementAdoptionDetail.js&#10;scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/ScienceProjectDetail.js&#10;science&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;global&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;te&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TablePageTemplete.js" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RunDashboard">
@@ -526,32 +552,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555296154616</updated>
-      <workItem from="1555296155804" duration="43083000" />
+      <workItem from="1555296155804" duration="43191000" />
+      <workItem from="1555841929553" duration="11645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43083000" />
+    <option name="totallyTimeSpent" value="54836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15481833" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13604766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1509434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -561,17 +589,17 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13604766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15481833" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1509434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15481833" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,10 +609,169 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/index.js</url>
+          <line>1220</line>
+          <properties lambdaOrdinal="-1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/admin/Laboratory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1555847358156" expanded="true" signature="3018:3184" ph="..." />
+            <marker date="1555847358156" expanded="false" signature="3115:3139" ph="..." />
+            <marker date="1555847358156" expanded="true" signature="3140:3173" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/TablePageTemplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="1042" column="0" lean-forward="false" selection-start-line="1042" selection-start-column="0" selection-end-line="1042" selection-end-column="0" />
+          <folding>
+            <element signature="e#153#815#0" expanded="false" />
+            <element signature="n#!!block;n#header#0" expanded="false" />
+            <element signature="n#!!block;n#alertModal#0" expanded="false" />
+            <element signature="n#!!block;n#setCategoryTree#0" expanded="false" />
+            <element signature="e#19938#20172#0" expanded="false" />
+            <element signature="n#!!block;n#catagoryAjax#0" expanded="false" />
+            <element signature="n#!!block;n#buildTable#0" expanded="false" />
+            <element signature="n#!!block;n#fillTableDataAjax#0" expanded="false" />
+            <element signature="n#!!block;n#fileupload#0" expanded="false" />
+            <element signature="n#!!block;n#makeURL#0" expanded="false" />
+            <element signature="n#!!block;n#importResult#0" expanded="false" />
+            <element signature="n#!!block;n#makeURL#1" expanded="false" />
+            <element signature="e#28169#28241#0" expanded="false" />
+            <element signature="n#!!block;n#deleteData#0" expanded="false" />
+            <element signature="n#!!block;n#timeSearch#0" expanded="false" />
+            <element signature="e#30647#31129#0" expanded="false" />
+            <element signature="e#31201#31955#0" expanded="false" />
+            <element signature="e#35810#35880#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc1#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc2#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc3#0" expanded="false" />
+            <element signature="e#37859#38135#0" expanded="false" />
+            <element signature="e#38193#38822#0" expanded="false" />
+            <element signature="e#38923#40698#0" expanded="false" />
+            <element signature="e#42498#43112#0" expanded="false" />
+            <element signature="e#43178#43412#0" expanded="false" />
+            <element signature="e#43469#43501#0" expanded="false" />
+            <element signature="e#43543#43575#0" expanded="false" />
+            <element signature="n#!!block;n#setCookie#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0" expanded="false" />
+            <marker date="1555854327348" expanded="false" signature="3759:3921" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25655:25886" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25773:25801" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25802:25863" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33379:33391" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33466:33480" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33568:33582" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33762:33774" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33849:33861" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="34117:34131" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/ScienceProject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3435">
+          <caret line="234" column="17" lean-forward="false" selection-start-line="234" selection-start-column="17" selection-end-line="234" selection-end-column="17" />
+          <folding>
+            <marker date="1555847358230" expanded="true" signature="3276:3442" ph="..." />
+            <marker date="1555847358230" expanded="false" signature="3373:3397" ph="..." />
+            <marker date="1555847358230" expanded="true" signature="3398:3431" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="65" lean-forward="false" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TagManage/TagStore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="79" lean-forward="false" selection-start-line="60" selection-start-column="79" selection-end-line="60" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/TagStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TablePageTemplate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <element signature="e#1103#1110#1" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/ScienceProjectDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="117" column="18" lean-forward="false" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/Aimara.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -629,30 +816,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/testTTT.html">
+    <entry file="file://$PROJECT_DIR$/html/admin/testTTT.html" />
+    <entry file="file://$PROJECT_DIR$/css/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/TablePageTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <element signature="e#1103#1110#1" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="301">
+          <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -662,37 +830,11 @@
         <state relative-caret-position="220">
           <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1537430108000" expanded="true" signature="3076:3242" ph="..." />
-            <marker date="1537430108000" expanded="false" signature="3173:3197" ph="..." />
-            <marker date="1537430108000" expanded="true" signature="3198:3231" ph="..." />
+            <element signature="n#!!doc" expanded="false" />
+            <marker date="1555847358156" expanded="true" signature="3018:3184" ph="..." />
+            <marker date="1555847358156" expanded="false" signature="3115:3139" ph="..." />
+            <marker date="1555847358156" expanded="true" signature="3140:3173" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/Collection/Collection.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -701,69 +843,125 @@
         <state relative-caret-position="593">
           <caret line="234" column="17" lean-forward="false" selection-start-line="234" selection-start-column="17" selection-end-line="234" selection-end-column="17" />
           <folding>
-            <marker date="1537430108000" expanded="true" signature="3334:3500" ph="..." />
-            <marker date="1537430108000" expanded="false" signature="3431:3455" ph="..." />
-            <marker date="1537430108000" expanded="true" signature="3456:3489" ph="..." />
+            <marker date="1555847358230" expanded="true" signature="3276:3442" ph="..." />
+            <marker date="1555847358230" expanded="false" signature="3373:3397" ph="..." />
+            <marker date="1555847358230" expanded="true" signature="3398:3431" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/admin/TablePageTemplete.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
+    <entry file="file://$PROJECT_DIR$/js/admin/RecycleBin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="1042" column="0" lean-forward="false" selection-start-line="1042" selection-start-column="0" selection-end-line="1042" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#153#743#0" expanded="false" />
-            <element signature="e#779#2101#0" expanded="false" />
-            <element signature="n#!!block;n#header#0" expanded="false" />
-            <element signature="n#!!block;n#footer#0" expanded="false" />
-            <element signature="n#!!block;n#alertModal#0" expanded="false" />
-            <element signature="n#!!block;n#setCategoryTree#0" expanded="false" />
-            <element signature="e#18117#18382#0" expanded="false" />
-            <element signature="n#!!block;n#catagoryAjax#0" expanded="false" />
-            <element signature="n#!!block;n#buildTable#0" expanded="false" />
-            <element signature="n#!!block;n#fillTableDataAjax#0" expanded="false" />
-            <element signature="n#!!block;n#setTableData#0" expanded="false" />
-            <element signature="n#!!block;n#fileupload#0" expanded="false" />
-            <element signature="n#!!block;n#makeURL#0" expanded="false" />
-            <element signature="n#!!block;n#importResult#0" expanded="false" />
-            <element signature="n#!!block;n#makeURL#1" expanded="false" />
-            <element signature="e#26408#26480#0" expanded="false" />
-            <element signature="n#!!block;n#deleteData#0" expanded="false" />
-            <element signature="n#!!block;n#timeSearch#0" expanded="false" />
-            <element signature="e#28612#28991#0" expanded="false" />
-            <element signature="e#29063#29708#0" expanded="false" />
-            <element signature="n#!!block;n#fillDetailAjax#0" expanded="false" />
-            <element signature="n#!!block;n#fillDetail#0" expanded="false" />
-            <element signature="n#!!block;n#upFileFunc1#0" expanded="false" />
-            <element signature="n#!!block;n#upFileFunc2#0" expanded="false" />
-            <element signature="n#!!block;n#upFileFunc3#0" expanded="false" />
-            <element signature="e#35751#36027#0" expanded="false" />
-            <element signature="n#!!block;n#indexStart#0" expanded="false" />
-            <element signature="e#37828#38442#0" expanded="false" />
-            <element signature="e#38508#38721#0" expanded="false" />
-            <element signature="n#!!block;n#setCookie#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="n#!!block;n#delCookie#0" expanded="false" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/ScienceProjectDetail.js">
+    <entry file="file://$PROJECT_DIR$/html/admin/RecycleBin/RecycleBin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="117" column="18" lean-forward="false" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+        <state relative-caret-position="715">
+          <caret line="64" column="6" lean-forward="false" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TagManage/TagDocument.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TagManage/TagStore.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="62" column="81" lean-forward="false" selection-start-line="62" selection-start-column="81" selection-end-line="62" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/TagStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1369">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/TagDocument.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/Collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/Collection/Collection.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/adminHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <marker date="1555849509143" expanded="true" signature="4920:4940" ph="..." />
+            <marker date="1555849509143" expanded="true" signature="6387:6407" ph="..." />
+            <marker date="1555849509143" expanded="true" signature="7962:7982" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -772,26 +970,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="49" column="65" lean-forward="false" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/TagManage/TagStore.html">
+    <entry file="file://$PROJECT_DIR$/html/admin/DetailPageTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="60" column="79" lean-forward="false" selection-start-line="60" selection-start-column="79" selection-end-line="60" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#5;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#11283#11289#0" expanded="true" />
+            <element signature="e#13027#13033#0" expanded="true" />
+            <element signature="e#14752#14758#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/TagStore.js">
+    <entry file="file://$PROJECT_DIR$/html/admin/TablePageTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="69" column="57" lean-forward="false" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+        <state relative-caret-position="585">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#1103#1110#1" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin/ScienceProjectDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="48" column="15" lean-forward="true" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="849" column="58" lean-forward="false" selection-start-line="849" selection-start-column="58" selection-end-line="849" selection-end-column="58" />
+          <folding>
+            <element signature="e#153#815#0" expanded="false" />
+            <element signature="n#!!block;n#header#0" expanded="false" />
+            <element signature="n#!!block;n#alertModal#0" expanded="false" />
+            <element signature="n#!!block;n#setCategoryTree#0" expanded="false" />
+            <element signature="e#19938#20172#0" expanded="false" />
+            <element signature="n#!!block;n#catagoryAjax#0" expanded="false" />
+            <element signature="n#!!block;n#buildTable#0" expanded="false" />
+            <element signature="n#!!block;n#fillTableDataAjax#0" expanded="false" />
+            <element signature="n#!!block;n#fileupload#0" expanded="false" />
+            <element signature="n#!!block;n#makeURL#0" expanded="false" />
+            <element signature="n#!!block;n#importResult#0" expanded="false" />
+            <element signature="n#!!block;n#makeURL#1" expanded="false" />
+            <element signature="e#28169#28241#0" expanded="false" />
+            <element signature="n#!!block;n#deleteData#0" expanded="false" />
+            <element signature="n#!!block;n#timeSearch#0" expanded="false" />
+            <element signature="e#30647#31129#0" expanded="false" />
+            <element signature="e#31201#31955#0" expanded="false" />
+            <element signature="e#35810#35880#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc1#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc2#0" expanded="false" />
+            <element signature="n#!!block;n#upFileFunc3#0" expanded="false" />
+            <element signature="e#37859#38135#0" expanded="false" />
+            <element signature="e#38193#38822#0" expanded="false" />
+            <element signature="e#38923#40698#0" expanded="false" />
+            <element signature="e#42498#43112#0" expanded="false" />
+            <element signature="e#43178#43412#0" expanded="false" />
+            <element signature="e#43469#43501#0" expanded="false" />
+            <element signature="e#43543#43575#0" expanded="false" />
+            <element signature="n#!!block;n#setCookie#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0" expanded="false" />
+            <marker date="1555854327348" expanded="false" signature="3759:3921" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25655:25886" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25773:25801" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="25802:25863" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33379:33391" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33466:33480" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33568:33582" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33762:33774" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="33849:33861" ph="..." />
+            <marker date="1555854327348" expanded="true" signature="34117:34131" ph="..." />
           </folding>
         </state>
       </provider>

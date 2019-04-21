@@ -6,34 +6,34 @@
 */
 
 var map = {
-	"教师科研":"TeacherResearch",
-	"学生科研":"StudentResearch",
-	"教学平台":"TeachState",
+    "教师科研":"TeacherResearch",
+    "学生科研":"StudentResearch",
+    "教学平台":"TeachState",
 
-	"科研项目":"ScienceProject",
-	"专利":"Patent",
-	"学术论文":"AcademicPapers",
-	"成果采纳":"AchievementAdoption",
-	"著作":"Writting",
-	"获奖":"Reward",
+    "科研项目":"ScienceProject",
+    "专利":"Patent",
+    "学术论文":"AcademicPapers",
+    "成果采纳":"AchievementAdoption",
+    "著作":"Writting",
+    "获奖":"Reward",
 
-	"项目":"StudentProject",
-	"竞赛获奖":"CompetitionAward",
-	"学术论文":"AcademicPapers",
-	"专利":"Patent",
+    "项目":"StudentProject",
+    "竞赛获奖":"CompetitionAward",
+    "学术论文":"AcademicPapers",
+    "专利":"Patent",
 
-	"教学平台":"TeachState",
-	"教学平台":"TeachState",
-	"教学平台":"TeachState",
+    "教学平台":"TeachState",
+    "教学平台":"TeachState",
+    "教学平台":"TeachState",
 
-	"教改项目": "EducationaReform",
-	"教学论文": "EducationPaper",
-	"教材": "TeachingMaterial",
-	"教师培训": "TeacherTraining",
-	"教师获奖": "TeacherAward",
-	"竞赛指导": "CompetitionGuidance",
-	"实习基地": "PracticeBase",
-	"实验室": "Laboratory"
+    "教改项目": "EducationaReform",
+    "教学论文": "EducationPaper",
+    "教材": "TeachingMaterial",
+    "教师培训": "TeacherTraining",
+    "教师获奖": "TeacherAward",
+    "竞赛指导": "CompetitionGuidance",
+    "实习基地": "PracticeBase",
+    "实验室": "Laboratory"
 }
 
 var cmap = {
@@ -79,17 +79,19 @@ var cmap = {
             ],
             importColumns: [{"title": "科研项目名称"}, {"title": "科研项目类型"}, {"title": "第一责任人"}, {"title": "立项时间"}],
             orderable: [0, 2, 3, 4, 5, 7],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         }
     }
 };
 
+const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------构建导航栏--------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 
 function header(){
-	var header = '<div class="pull-left">\
+    var header = '<div class="pull-left">\
 	<img src="../../../img/logo.png" height="43">\
 	</div>\
 	<div class="pull-right">\
@@ -116,212 +118,212 @@ function header(){
 	</ul>\
 	</div>';
 
-	$(".topnav").html(header);
+    $(".topnav").html(header);
 }
 
 function footer() {
-	var footer ='<div class="center-block">\
+    var footer ='<div class="center-block">\
 	<!-- <img src="../../img/footerlogo.png" width="40"> -->\
 	<span>地址：浙江省杭州市下沙高教园区学正街18号</span><br><span id="copyright">Copyright © 浙江工商大学ITObase</span>\
 	</div>';
-	$(".footer").html(footer);
+    $(".footer").html(footer);
 }
 
 function alertModal() {
-	var alertModal =
-	'<!-- saveSuccess -->\
-	<div class="modal fade tips" id="saveSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;&nbsp;提交成功!</i>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- sureLeave -->\
-	<div class="modal fade question" id="sureLeave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;离开后将不会保存修改内容，是否仍要离开？</i>\
-	</div>\
-	<div class="modal-footer">\
-	<button type="button" class="btn btn-danger fa fa-check sureLeaveYes">是</button>\
-	<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">否</button>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- sureDelete -->\
-	<div class="modal fade question" id="sureDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;确认删除？</i>\
-	</div>\
-	<div class="modal-footer">\
-	<button type="button" class="btn btn-danger fa fa-check sureDeleteYes" >是</button>\
-	<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">否</button>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- Modal -->\
-	<div class="modal fade tips" id="saveFail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-triangle" aria-hidden="true">&nbsp;&nbsp;修改失败</i>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- InportModal -->\
-	<div class="modal fade upload" id="myModalInport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog" role="document">\
-	<div class="modal-content">\
-	<div class="modal-header">\
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
-	<span class="modal-title">上传文件</span>\
-	</div>\
-	<div class="modal-body">\
-	<form enctype="multipart/form-data" method="post" name="uploadForm">\
-	<input type="file" class="btn btn-default" name="file" id="fff" />\
-	<input type="button" class="btn btn-primary upLoadBtn" value="上传" onclick="fileupload()"  data-toggle="modal" data-target="#inportSuccess"  data-dismiss="modal"/>\
-	</form>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- collection-->\
-	<div class="modal fade tips" id="collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;&nbsp;已收藏</i>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- needpickdata-->\
-	<div class="modal fade tips" id="needpickdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;请选择数据</i>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- sureDelete_data-->\
-	<div class="modal fade question" id="sureDelete_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认删除选中数据？</i>\
-	</div>\
-	<div class="modal-footer">\
-	<button type="button" class="btn btn-danger fa fa-check sureDelete_dataYes">是</button>\
-	<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- sureRecover_data-->\
-	<div class="modal fade question" id="sureRecover_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认恢复选中数据？</i>\
-	</div>\
-	<div class="modal-footer">\
-	<button type="button" class="btn btn-danger fa fa-check sureRecover_dataYes">是</button>\
-	<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- sureMoveIn_data-->\
-	<div class="modal fade textInput" id="sureMoveIn_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-		<div class="modal-dialog modal-sm" role="document">\
-			<div class="modal-content">\
-				<div class="modal-body">\
-				<span>请输入已存在的收藏夹名称</span>\
-					<input type="text" id="collectName" name="collectName" />\
-				</div>\
-				<div class="modal-footer">\
-					<button type="button" class="btn btn-danger fa fa-check sureMoveIn_dataYes"  data-toggle="modal" data-target="#collection" >确认</button>\
-					<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">取消</button>\
-				</div>\
-			</div>\
-		</div>\
-	</div>\
-	<!-- sureMoveOut_data-->\
-	<div class="modal fade question" id="sureMoveOut_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content">\
-	<div class="modal-body">\
-	<i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认移出收藏夹？</i>\
-	</div>\
-	<div class="modal-footer">\
-	<button type="button" class="btn btn-danger fa fa-check sureMoveOut_dataYes">是</button>\
-	<button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	<!-- InportSuccess -->\
-	<div class="modal fade" id="inportSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-	<div class="modal-dialog modal-lg" role="document">\
-	<div class="modal-content">\
-	<div class="modal-header">\
-	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
-	<span class="modal-title">导入结果</span>\
-	</div>\
-	<div class="modal-body">\
-	<table  id="inportResult" class="globalTable table table-bordered">\
-	<tbody>\
-	<tr>\
-	<td>1</td>\
-	<td>1</td>\
-	<td>2</td>\
-	<td>8</td>\
-	</tr>\
-	<tr>\
-	<td>1</td>\
-	<td>1</td>\
-	<td>2</td>\
-	<td>8</td>\
-	</tr>\
-	<tr>\
-	<td>1</td>\
-	<td>1</td>\
-	<td>2</td>\
-	<td>8</td>\
-	</tr>\
-	<tr>\
-	<td>1</td>\
-	<td>1</td>\
-	<td>2</td>\
-	<td>8</td>\
-	</tr>\
-	<tr>\
-	<td>1</td>\
-	<td>1</td>\
-	<td>2</td>\
-	<td>8</td>\
-	</tr>\
-	</tbody>\
-	</table>\
-	<div class="inportInfo">\
-	本次成功导入<span>50</span>条信息，重复信息<span>5</span>条，错误信息<span>10</span>条\
-	</div>\
-	</div>\
-	</div>\
-	</div>\
-	</div>';
-	$('body').prepend(alertModal)
+    var alertModal =
+        '<!-- saveSuccess -->\
+        <div class="modal fade tips" id="saveSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;&nbsp;提交成功!</i>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- sureLeave -->\
+        <div class="modal fade question" id="sureLeave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;离开后将不会保存修改内容，是否仍要离开？</i>\
+        </div>\
+        <div class="modal-footer">\
+        <button type="button" class="btn btn-danger fa fa-check sureLeaveYes">是</button>\
+        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">否</button>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- sureDelete -->\
+        <div class="modal fade question" id="sureDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;确认删除？</i>\
+        </div>\
+        <div class="modal-footer">\
+        <button type="button" class="btn btn-danger fa fa-check sureDeleteYes" >是</button>\
+        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">否</button>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- Modal -->\
+        <div class="modal fade tips" id="saveFail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-triangle" aria-hidden="true">&nbsp;&nbsp;修改失败</i>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- InportModal -->\
+        <div class="modal fade upload" id="myModalInport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog" role="document">\
+        <div class="modal-content">\
+        <div class="modal-header">\
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
+        <span class="modal-title">上传文件</span>\
+        </div>\
+        <div class="modal-body">\
+        <form enctype="multipart/form-data" method="post" name="uploadForm">\
+        <input type="file" class="btn btn-default" name="file" id="fff" />\
+        <input type="button" class="btn btn-primary upLoadBtn" value="上传" onclick="fileupload()"  data-toggle="modal" data-target="#inportSuccess"  data-dismiss="modal"/>\
+        </form>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- collection-->\
+        <div class="modal fade tips" id="collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;&nbsp;已收藏</i>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- needpickdata-->\
+        <div class="modal fade tips" id="needpickdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;请选择数据</i>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- sureDelete_data-->\
+        <div class="modal fade question" id="sureDelete_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认删除选中数据？</i>\
+        </div>\
+        <div class="modal-footer">\
+        <button type="button" class="btn btn-danger fa fa-check sureDelete_dataYes">是</button>\
+        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- sureRecover_data-->\
+        <div class="modal fade question" id="sureRecover_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认恢复选中数据？</i>\
+        </div>\
+        <div class="modal-footer">\
+        <button type="button" class="btn btn-danger fa fa-check sureRecover_dataYes">是</button>\
+        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- sureMoveIn_data-->\
+        <div class="modal fade textInput" id="sureMoveIn_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+            <div class="modal-dialog modal-sm" role="document">\
+                <div class="modal-content">\
+                    <div class="modal-body">\
+                    <span>请输入已存在的收藏夹名称</span>\
+                        <input type="text" id="collectName" name="collectName" />\
+                    </div>\
+                    <div class="modal-footer">\
+                        <button type="button" class="btn btn-danger fa fa-check sureMoveIn_dataYes"  data-toggle="modal" data-target="#collection" >确认</button>\
+                        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal">取消</button>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+        <!-- sureMoveOut_data-->\
+        <div class="modal fade question" id="sureMoveOut_data" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+        <div class="modal-body">\
+        <i class="fa fa-exclamation-circle" aria-hidden="true">&nbsp;&nbsp;是否确认移出收藏夹？</i>\
+        </div>\
+        <div class="modal-footer">\
+        <button type="button" class="btn btn-danger fa fa-check sureMoveOut_dataYes">是</button>\
+        <button type="button" class="btn btn-primary fa fa-remove" data-dismiss="modal" data-dismiss="modal">否</button>\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        <!-- InportSuccess -->\
+        <div class="modal fade" id="inportSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+        <div class="modal-dialog modal-lg" role="document">\
+        <div class="modal-content">\
+        <div class="modal-header">\
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\
+        <span class="modal-title">导入结果</span>\
+        </div>\
+        <div class="modal-body">\
+        <table  id="inportResult" class="globalTable table table-bordered">\
+        <tbody>\
+        <tr>\
+        <td>1</td>\
+        <td>1</td>\
+        <td>2</td>\
+        <td>8</td>\
+        </tr>\
+        <tr>\
+        <td>1</td>\
+        <td>1</td>\
+        <td>2</td>\
+        <td>8</td>\
+        </tr>\
+        <tr>\
+        <td>1</td>\
+        <td>1</td>\
+        <td>2</td>\
+        <td>8</td>\
+        </tr>\
+        <tr>\
+        <td>1</td>\
+        <td>1</td>\
+        <td>2</td>\
+        <td>8</td>\
+        </tr>\
+        <tr>\
+        <td>1</td>\
+        <td>1</td>\
+        <td>2</td>\
+        <td>8</td>\
+        </tr>\
+        </tbody>\
+        </table>\
+        <div class="inportInfo">\
+        本次成功导入<span>50</span>条信息，重复信息<span>5</span>条，错误信息<span>10</span>条\
+        </div>\
+        </div>\
+        </div>\
+        </div>\
+        </div>';
+    $('body').prepend(alertModal)
 }
 
 function setCategoryTree(obj){
@@ -457,12 +459,14 @@ function setCategoryTree(obj){
                 break;
         }
     });
-    mainNav = mainNav+'<li id="人员管理">\
+
+    mainNav = mainNav+'<li id="StuffManage">\
 	<a href="../StuffManage/TeacherInfo.html"><span aria-hidden="true" class="fa fa-users"></span>人员管理</a>\
-	</li><li id="标签管理">\
+	</li><li id="TagManage">\
 	<a href="../TagManage/TagStore.html"><span aria-hidden="true" class="fa fa-tags"></span>标签管理</a>\
 	</li></ul></div>'
-    $("#sub-nav").append('<ul class="nav nav-pills nav-stacked 人员管理" style="display:none">\
+
+    $("#sub-nav").append('<ul class="nav nav-pills nav-stacked StuffManage" style="display: none">\
 	<li id="TeacherInfo" class="教师信息">\
 	<a href="TeacherInfo.html">教师信息</a>\
 	</li>\
@@ -475,11 +479,12 @@ function setCategoryTree(obj){
 	<li id="StudentAccount" class="学生账号">\
 	<a href="StudentAccount.html">学生账号</a>\
 	</li>\
-	</ul><ul class="nav nav-pills nav-stacked 标签管理" style="display:none">\
-	<li id="" class="语义标签库">\
+	</ul>\
+	<ul class="nav nav-pills nav-stacked TagManage" style="display:none">\
+	<li id="TagStore" class="TagStore">\
 	<a href="TagStore.html">语义标签库</a>\
 	</li>\
-	<li id="" class="语义标签文档">\
+	<li id="TagDocument" class="TagDocument">\
 	<a href="TagDocument.html">语义标签文档</a>\
 	</li>\
 	</ul>');
@@ -491,7 +496,6 @@ var mainNav = '<div class="nav-collapse"><ul class="nav"><li id="adminHomePage">
 
 $(document).on('click', '#main-nav li', function() {
     var subNavId = $(this).attr('id');
-    alert($(this).attr('id'));
     $("#sub-nav").children('.nav').css('display', 'none');
     $("."+subNavId).css('display', 'block');
     $('.current').removeClass('current')
@@ -669,7 +673,7 @@ function setTableData(mainDirectory, subDirectory, obj) {
 function fileupload() {
     var formdata = new FormData($("form[name='uploadForm']")[0])
     $.ajax({
-        url: "http://123.206.190.167:8080/dissertation/excel/assetsSelected",
+        url: prefixUrl + "excel/assetsSelected",
         type: "post",
         data: formdata,
         contentType: false,
@@ -745,7 +749,7 @@ function deleteData(subDirectory) {
     console.log(idd);
     $.ajax({
         type: "POST",
-        url: "http://123.206.190.167:8080/dissertation/assets/deleted",
+        url: prefixUrl + "assets/deleted",
         data: JSON.stringify({
             "ids": idd
         }),
@@ -767,120 +771,120 @@ function deleteData(subDirectory) {
 
 //时间搜索
 function timeSearch(LeafName) {
-	var startDate
-	var endDate
-	// var current = new Date();
-	var current = new Date().Format("yyyy-MM-dd");
-	if($(".dateInput2").val()) {
-		current =$(".dateInput2").val()
-		$.ajax({
-			type: "get",
-				url: "http://123.206.190.167:8080/dissertation/"+LeafName+"/date",
-				data: {
-				"current": current
-				},
-				async: true,
-				dataType: "json",
-				contentType: "application/json",
-				success: function(data) {
-					console.log(data)
-					setTableData(data)
-				},
-				Error: function() {
-					alert("服务器出错");
-				}
+    var startDate
+    var endDate
+    // var current = new Date();
+    var current = new Date().Format("yyyy-MM-dd");
+    if($(".dateInput2").val()) {
+        current =$(".dateInput2").val()
+        $.ajax({
+            type: "get",
+            url: prefixUrl + ""+LeafName+"/date",
+            data: {
+                "current": current
+            },
+            async: true,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                console.log(data)
+                setTableData(data)
+            },
+            Error: function() {
+                alert("服务器出错");
+            }
 
-			})
+        })
 
-	} else {
-		startDate = $("input[name='dtBegin']").val()//new Date($("input[name='dtBegin']").val())
-		endDate = $("input[name='dtEnd']").val()//new Date($("input[name='dtEnd']").val())
-		console.log(startDate)
-		console.log(endDate)
-		console.log(current)
-		$.ajax({
-			type: "get",
-			url: "http://123.206.190.167:8080/dissertation/"+LeafName+"/date",
-			data: {
-				"begin": startDate,
-				"end": endDate
-			},
-			async: true,
-			dataType: "json",
-			contentType: "application/json",
-			success: function(data) {
-				setTableData(data)
-			},
-			Error: function() {
-				alert("服务器出错");
-			}
-		})
+    } else {
+        startDate = $("input[name='dtBegin']").val()//new Date($("input[name='dtBegin']").val())
+        endDate = $("input[name='dtEnd']").val()//new Date($("input[name='dtEnd']").val())
+        console.log(startDate)
+        console.log(endDate)
+        console.log(current)
+        $.ajax({
+            type: "get",
+            url: prefixUrl + ""+LeafName+"/date",
+            data: {
+                "begin": startDate,
+                "end": endDate
+            },
+            async: true,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                setTableData(data)
+            },
+            Error: function() {
+                alert("服务器出错");
+            }
+        })
 
-	}
+    }
 
 }
 
 //显示收藏夹
 $(document).on('click', '.btn-collection', function(event) {
-	$.ajax({
-		type: "GET",
-		url: "http://123.206.190.167:8080/dissertation/collection/columns",
-		async: true,
-		dataType: "json",
-		contentType: "application/json",
-		success: function(obj) {
-			console.log(obj.data)
-			$('#collectName').AutoComplete({
-				'data':  obj.data,
-				'itemHeight': 20,
-				'width': 180
-			});
-		},
-		Error: function() {
-			alert("服务器出错");
-		}
-	})
+    $.ajax({
+        type: "GET",
+        url: prefixUrl + "collection/columns",
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function(obj) {
+            console.log(obj.data)
+            $('#collectName').AutoComplete({
+                'data':  obj.data,
+                'itemHeight': 20,
+                'width': 180
+            });
+        },
+        Error: function() {
+            alert("服务器出错");
+        }
+    })
 });
 
 // //批量收藏
 $(document).on('click', '.sureMoveIn_dataYes', function() {
-	var idd = new Array();
-	var collectionName = $('#collectName').val()
-	console.log(collectionName)
-	$("input[type='checkbox']:checked").each(function(i){
-		idd[i] = $(this).parents("tr").children('td:eq(2)').children('a').attr('id');
-		$('#sureMoveIn_data').modal('hide')
+    var idd = new Array();
+    var collectionName = $('#collectName').val()
+    console.log(collectionName)
+    $("input[type='checkbox']:checked").each(function(i){
+        idd[i] = $(this).parents("tr").children('td:eq(2)').children('a').attr('id');
+        $('#sureMoveIn_data').modal('hide')
 
-	});
-	console.log(idd);
-	$.ajax({
-		type: "POST",
-		url: "http://123.206.190.167:8080/dissertation/collection/addCollection",
-		data:JSON.stringify({
-			"column": collectionName,
-			"id": idd
-		}),
-		async: true,
-		dataType: "json",
-		contentType: "application/json",
-		success: function(obj) {
-			console.log(obj)
-		},
-		Error: function() {
-			alert("服务器出错");
-		}
-	})
+    });
+    console.log(idd);
+    $.ajax({
+        type: "POST",
+        url: prefixUrl + "collection/addCollection",
+        data:JSON.stringify({
+            "column": collectionName,
+            "id": idd
+        }),
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function(obj) {
+            console.log(obj)
+        },
+        Error: function() {
+            alert("服务器出错");
+        }
+    })
 });
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------DetailPageTemplate------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 
+// TODO change id
 function fillDetailAjax(dataResource, id) {
     $.ajax({
         type: "get",
-        url: "https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/ScientificProject/{id}",
-        // url: "http://123.206.190.167:8080/dissertation/Achievements/"+id+"",
+        url: prefixUrl + dataResource + '/{id}',
         data: {
         },
         async: true,
@@ -962,12 +966,12 @@ function fillDetail(obj) {
     $('.progress-bar').css('width', completeRate+'%');
     $('.progress-bar span').text(completeRate+'%');
 
-    // $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial1').html(filename)
-    // $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial2').html(filename)
-    // $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial3').html(filename)
+    $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    $('#proofMaterial1').html(filename)
+    $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    $('#proofMaterial2').html(filename)
+    $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    $('#proofMaterial3').html(filename)
 
 
 }
@@ -1050,6 +1054,80 @@ $('.PreviewFile').click(function(event) {
     window.open(afterRef)
 });
 
+$(document).on('click', '#btnChange', function(event) {
+    $('.form-control').css('display', 'inline');
+    $('.originInfo').css('display', 'none');
+    $(this).css('display', 'none');
+    $('#btnSave').css('display', 'inline');
+    $('.fa-plus-square').css('display', 'inline');
+    $('.glyphicon-remove').css('display', 'inline');
+    $('.filebtn_before').css('display', 'none');
+    $('.filebtn_after').css('display', 'inline');
+    $('.plus-tag-add').css('display', 'block');
+    $('.needExpend').animate({height:'315px'});
+    $('input[name="otherPartners"]').css('display', 'inline');
+    $('.glyphicon-remove').css('display', 'inline');
+    $('em').css('display', 'block');
+});
+
+// TODO modify / test if suit for every page
+$(document).on('click', '#btnSave', function(event) {
+    var tags = []
+    $('.plus-tag span').each(function(index, el) {
+        console.log($(el).text());
+        tags.push($(el).text())
+    });
+    var others = []
+    $('.addInput input[name="otherPartners"]').each(function(index, el) {
+        others.push($(el).val())
+    });
+    $.ajax({
+        type: "put",
+        url: prefixUrl + "ScientificProject",
+        data: {
+            "name": $("input[name='name']").val,
+            "type": $("input[name='type']").val,
+            "author": $("input[name='author']").val,
+            "date": $("input[name='date']").val,
+            "completeRate": 0.55,
+            "projectNumber": $("input[name='projectNumber']").val,
+            "source": $("input[name='source']").val,
+            "funds": $("input[name='funds']").val,
+            "knotForm": $("input[name='knotForm']").val,
+            "projectMaterial": $('.downfile_1').attr('href'),
+            "knotMaterial": $('.downfile_2').attr('href'),
+            "projectContract": $('.downfile_3').attr('href'),
+            "id": "54094",
+            "categoryLeafName": "ScienceProject",
+            "categoryTreeName": "TeacherResearch",
+            "uploader": "941112341",
+            "tag": tags,
+            "relative":others,
+            "participantIds": [
+                "qtgnHbbUEP",
+                "qCdzULKrY4",
+                "PAoasU6xQS"
+            ],
+            "otherTextInfo": {},
+            "otherFileInfo": {},
+        },
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function(obj) {
+            if (!obj.err) {
+                $('#saveSuccess').modal('show')
+            } else {
+
+            }
+        },
+        Error: function() {
+            alert("服务器出错");
+        }
+    })
+
+})
+
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------小功能-----------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
@@ -1120,19 +1198,19 @@ Date.prototype.Format = function (fmt) {
 
 //复选框选择
 $(document).on('click', 'tr td:not(:first)', function() {
-	if ($(this).siblings().first().children().is(':checked') == false) {
-		$(this).siblings().first().children().prop("checked", true);
-	} else {
-		$(this).siblings().first().children().prop("checked", false);
-	}
+    if ($(this).siblings().first().children().is(':checked') == false) {
+        $(this).siblings().first().children().prop("checked", true);
+    } else {
+        $(this).siblings().first().children().prop("checked", false);
+    }
 })
 
 // 保证只有一个选框有日期
 $(".dateInput1").click(function(event) {
-	$(".dateInput2").val("")
+    $(".dateInput2").val("")
 });
 $(".dateInput2").click(function(event) {
-	$(".dateInput1").val("")
+    $(".dateInput1").val("")
 });
 
 function setCookie ( name, value, expdays ){    var expdate = new Date();    //设置Cookie过期日期
@@ -1145,7 +1223,7 @@ function getCookie ( name ){    //获取name在Cookie中起止位置
     {
         start = start + name.length + 1 ;        //获取value的终止位置
         var end = document.cookie.indexOf(";", start) ;        if ( end == -1 )
-            end = document.cookie.length ;        //截获cookie的value值,并返回
+        end = document.cookie.length ;        //截获cookie的value值,并返回
         return unescape(document.cookie.substring(start,end)) ;
     }    return "" ;
 }

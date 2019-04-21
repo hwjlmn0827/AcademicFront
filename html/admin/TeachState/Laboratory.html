@@ -38,11 +38,11 @@
 							</button>
 							<ul class="dropdown-menu">
 								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownload()">
-									<a href="http://123.206.190.167:8080/dissertation/excel/assetsTemplate?categoryLeafName=实验室&uniqueName=教学平台&fileName=实验室.xlsx">导出模板</a>
+									<a href=prefixUrl + "excel/assetsTemplate?categoryLeafName=实验室&uniqueName=教学平台&fileName=实验室.xlsx">导出模板</a>
 								</li>
 								<li role="separator" class="divider"></li>
 								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownloadAll()">
-									<a href="http://123.206.190.167:8080/dissertation/excel/assetsAll?categoryLeafName=实验室&uniqueName=教学平台&fileName=实验室.xlsx">导出全部数据</a>
+									<a href=prefixUrl + "excel/assetsAll?categoryLeafName=实验室&uniqueName=教学平台&fileName=实验室.xlsx">导出全部数据</a>
 								</li>
 								<li role="separator" class="divider"></li>
 								<li data-toggle="modal"  data-target="#myModalExport"><a id="import_selected" href="#">导出选中数据</a>
