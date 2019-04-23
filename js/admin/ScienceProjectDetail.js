@@ -12,7 +12,7 @@ $(function(){
     id = C1.split("=")[1];
     $('.form-control').css('display', 'none');
 
-    fillDetailAjax('ScientificProject', id)
+    fillDetailAjax("TeacherResearch", "ScienceProject", 'ScientificProject', id)
 
     $('#planTime').fdatepicker();//时间选择
     var participant = []

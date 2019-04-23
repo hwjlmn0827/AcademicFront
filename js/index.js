@@ -880,8 +880,32 @@ $(document).on('click', '.sureMoveIn_dataYes', function() {
 /*-----------------------------------------DetailPageTemplate------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 
+// TODO useless???
+function buildDetailInfoBlock(mainDirectory, subDirectory, infoData) {
+    var field = cmap[mainDirectory][subDirectory]['detailField'];
+    var basicInfo = field.basicInfo
+    var detailInfo = field['detailInfo']
+    console.log('basicInfo',basicInfo)
+    var basicInfoHtml = ''
+    var detailInfoHtml = ''
+    $.each(basicInfo, function (index, val) {
+        if (val in infoData) {
+            switch (val)
+            {
+                case 'name':
+                    basicInfoHtml += '<div class="form-group col-md-6 formBlock wordBreak">\
+                            <label class="formItem">*项目名称：</label>\
+                            <input type="text" class="form-control" name="name" value="">\
+                            <span class="originInfo name"></span>\
+                        </div>'
+            }
+        }
+    })
+
+}
+
 // TODO change id
-function fillDetailAjax(dataResource, id) {
+function fillDetailAjax(mainDirectory, subDirectory, dataResource, id) {
     $.ajax({
         type: "get",
         url: prefixUrl + dataResource + '/{id}',
@@ -891,7 +915,7 @@ function fillDetailAjax(dataResource, id) {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            console.log(obj)
+            console.log(obj, mainDirectory, subDirectory)
             fillDetail(obj)
         },
         Error: function() {
@@ -966,14 +990,12 @@ function fillDetail(obj) {
     $('.progress-bar').css('width', completeRate+'%');
     $('.progress-bar span').text(completeRate+'%');
 
-    $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    $('#proofMaterial1').html(filename)
-    $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    $('#proofMaterial2').html(filename)
-    $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    $('#proofMaterial3').html(filename)
-
-
+    // $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    // $('#proofMaterial1').html(filename)
+    // $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    // $('#proofMaterial2').html(filename)
+    // $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+    // $('#proofMaterial3').html(filename)
 }
 
 //下载附件
@@ -1156,7 +1178,6 @@ function indexStart() {
         }
     });
 
-
     $('#saveSuccess').on('show.bs.modal', function () {
         setTimeout(function(){$("#saveSuccess").modal("hide")},1200);
     })
@@ -1231,3 +1252,21 @@ function getCookie ( name ){    //获取name在Cookie中起止位置
 function delCookie ( name ){
     setCookie ( name, "", -1 ) ;
 }
+
+/*----------------------------------------------------------------------------------------*/
+/*-----------------------------------------页面调用----------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+function templateIndex() {
+    indexStart()
+    importResult("TeacherResearch", "ScienceProject")
+    catagoryAjax("TeacherResearch", "ScienceProject")
+    buildTable("TeacherResearch", "ScienceProject")
+    fillTableDataAjax('TeacherResearch', 'ScienceProject', 'ScientificProject')
+
+    $(".datepicker").datepicker({endDate: new Date()});
+    $('.dateSearch').click(function (event) {
+        timeSearch('ScientificProject')
+    });
+}
+

@@ -712,6 +712,8 @@ div.dataTables_filter label {
 */
 .formBlock {
     height: 77px;
+    display: flex!important;
+    align-items: center;
 }
 
 .contentTitle {
@@ -758,7 +760,7 @@ div.dataTables_filter label {
 }
 
 .panel-info {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     border-color: white;
 }
 
