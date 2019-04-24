@@ -127,8 +127,6 @@ function setTableData(obj) {
 	});
 }
 
-
-
 // 上传组件
 function fileupload() {
 	var formdata = new FormData($("form[name='uploadForm']")[0])
@@ -145,7 +143,6 @@ function fileupload() {
 	})
 }
 
-
 // 选中序号构造下载url
 function makeURL () {
 	var url = 'http://123.206.190.167:8080/dissertation/excel/assetsSelected?categoryLeafName=教师获奖' +
@@ -160,7 +157,6 @@ function makeURL () {
 	}
 	console.log(ids)
 	$("#import_selected").attr("href", url + ids)
-
 }
 
 function inportResult() {

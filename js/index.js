@@ -6,34 +6,30 @@
 */
 
 var map = {
-    "教师科研":"TeacherResearch",
-    "学生科研":"StudentResearch",
-    "教学平台":"TeachState",
+    TeacherResearch: "教师科研",
+    StudentResearch: "学生科研",
+    TeachState: "教学平台",
 
-    "科研项目":"ScienceProject",
-    "专利":"Patent",
-    "学术论文":"AcademicPapers",
-    "成果采纳":"AchievementAdoption",
-    "著作":"Writting",
-    "获奖":"Reward",
+    ScienceProject: "科研项目",
+    Patent: "专利",
+    AcademicPapers: "学术论文",
+    AchievementAdoption: "成果采纳",
+    Writting: "著作",
+    Reward: "获奖",
 
-    "项目":"StudentProject",
-    "竞赛获奖":"CompetitionAward",
-    "学术论文":"AcademicPapers",
-    "专利":"Patent",
+    StudentProject: "项目",
+    CompetitionAward: "竞赛获奖",
+    // AcademicPapers:"学术论文",
+    // Patent: "专利",
 
-    "教学平台":"TeachState",
-    "教学平台":"TeachState",
-    "教学平台":"TeachState",
-
-    "教改项目": "EducationaReform",
-    "教学论文": "EducationPaper",
-    "教材": "TeachingMaterial",
-    "教师培训": "TeacherTraining",
-    "教师获奖": "TeacherAward",
-    "竞赛指导": "CompetitionGuidance",
-    "实习基地": "PracticeBase",
-    "实验室": "Laboratory"
+    EducationaReform: "教改项目",
+    EducationPaper: "教学论文",
+    TeachingMaterial: "教材",
+    TeacherTraining: "教师培训",
+    TeacherAward: "教师获奖",
+    CompetitionGuidance: "竞赛指导",
+    PracticeBase: "实习基地",
+    Laboratory: "实验室"
 }
 
 var cmap = {
@@ -80,7 +76,657 @@ var cmap = {
             importColumns: [{"title": "科研项目名称"}, {"title": "科研项目类型"}, {"title": "第一责任人"}, {"title": "立项时间"}],
             orderable: [0, 2, 3, 4, 5, 7],
             detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        AcademicPapers: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '学术论文名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一作者',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '刊物级别',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '发表时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        AchievementAdoption: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '采纳成果名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一完成人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '采纳单位',
+                    name: 'department',
+                    flatten: false
+                }, {
+                    id: 5,
+                    title: '采纳时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"科研项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        Patent: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '授权专利名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一发明人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '专利种类',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '授权时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"专利名称"},{"title":"专利类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        Reward: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '获奖科研成果名称（种类）',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一责任人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '获奖等级',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '获奖时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        Writting: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '著作题目',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一作者',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '职称',
+                    name: 'jobName',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '出版时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         }
+    },
+    StudentResearch: {
+        AcademicPapers: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '学术论文名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一作者',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '刊物级别',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '发表时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        CompetitionAward: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一责任人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '获奖等级',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '获奖时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"竞赛获奖名称"},{"title":"竞赛获奖类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        StudentProject: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一责任人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '项目级别',
+                    name: 'lavel',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '立项时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        Patent: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '授权专利名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一发明人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '专利种类',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '授权时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"专利名称"},{"title":"专利类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+    },
+    TeachState: {
+        EducationaReform: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '教改项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一责任人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '项目级别',
+                    name: 'level',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '立项时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"教改项目名称"},{"title":"教改项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        EducationPaper: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '科研项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一作者',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '刊物级别',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '发表时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"教学论文名称"},{"title":"教学论文类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        TeachingMaterial: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '著作题目',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一作者',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '职称',
+                    name: 'jobName',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '出版时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"教材名称"},{"title":"教材类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        TeacherTraining: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '培训名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '参加人',
+                    name: 'participantNames',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '职称',
+                    name: 'jobName',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '培训时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"教材名称"},{"title":"教材类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        TeacherAward: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '项目名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '第一责任人',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '获奖等级',
+                    name: 'awardLevel',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '获奖时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"教师获奖名称"},{"title":"教师获奖类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        CompetitionGuidance: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '竞赛名称',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '指导老师',
+                    name: 'guideTeacher',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '竞赛级别',
+                    name: 'raceLevel',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '竞赛时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        Laboratory: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '实验室',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '指导老师',
+                    name: 'guideTeacher',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '实验室地址',
+                    name: 'address',
+                    flatten: false
+                }, {
+                    id: 5,
+                    title: '创立时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"实验室名称"},{"title":"实验室类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
+        PracticeBase: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '实习基地',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '对接老师',
+                    name: 'guideTeacher',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '实习地点',
+                    name: 'address',
+                    flatten: false
+                }, {
+                    id: 5,
+                    title: '对接时间',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '信息完整度',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [{"title":"实习基地名称"},{"title":"实习基地类型"},{"title":"第一责任人"},{"title":"立项时间"}],
+            orderable: [0, 2, 3, 4, 6],
+            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+        },
     }
 };
 
@@ -335,38 +981,8 @@ function setCategoryTree(obj){
 			</li>';
                 var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
                 $.each(val.categoryLeaves, function(index, item) {
-                    switch (item.categoryLeafName){
-                        case "ScienceProject":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'">\
-					<a href="ScienceProject.html">科研项目</a>\
-					</li>'
-                            break;
-                        case "AcademicPapers":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="AcademicPapers.html">学术论文</a>\
-					</li>'
-                            break;
-                        case "AchievementAdoption":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="AchievementAdoption.html">成果采纳</a>\
-					</li>'
-                            break;
-                        case "Patent":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="Patent.html">专利</a>\
-					</li>'
-                            break;
-                        case "Reward":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="Reward.html">获奖</a>\
-					</li>'
-                            break;
-                        case "Writting":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="Writting.html">著作</a>\
-					</li>'
-                            break;
-                    }
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'">\
+                    <a href="'+ item.categoryLeafName + '.html">' + map[item.categoryLeafName] +'</a>'
                 });
                 subNav=subNav+'</ul>';
                 $("#sub-nav").append(subNav);
@@ -376,83 +992,23 @@ function setCategoryTree(obj){
                 mainNav = mainNav+'<li id="'+val.uniqueName+'">\
 			<a href="../StudentResearch/StudentProject.html"><span aria-hidden="true" class="fa fa-file-text"></span>学生科研</a>\
 			</li>';
-                var subNav = '<ul class="nav nav-pills nav-stacked TeacherResearch '+val.uniqueName+'" style="display:none">';
+                var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
                 $.each(val.categoryLeaves, function(index, item) {
-                    switch (item.categoryLeafName){
-                        case "学术论文":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="AcademicPapers.html">学术论文</a>\
-					</li>'
-                            break;
-                        case "竞赛获奖":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="CompetitionAward.html">竞赛获奖</a>\
-					</li>'
-                            break;
-                        case "项目":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="StudentProject.html">项目</a>\
-					</li>'
-                            break;
-                        case "专利":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="Patent.html">专利</a>\
-					</li>'
-                            break;
-                    }
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'">\
+                    <a href="'+ item.categoryLeafName + '.html">' + map[item.categoryLeafName] +'</a>'
                 });
                 subNav=subNav+'</ul>';
                 $("#sub-nav").append(subNav);
                 break;
 
-            case "教学平台":
+            case "TeachState":
                 mainNav = mainNav+'<li id="'+val.uniqueName+'">\
 			<a href="../TeachState/EducationaReform.html"><span aria-hidden="true" class="fa fa-book"></span>教学平台</a>\
 			</li>'
                 var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
                 $.each(val.categoryLeaves, function(index, item) {
-                    switch (item.categoryLeafName){
-                        case "教改项目":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="EducationaReform.html">教改项目</a>\
-					</li>'
-                            break;
-                        case "教学论文":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="EducationPaper.html">教学论文</a>\
-					</li>'
-                            break;
-                        case "教材":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href=TeachingMaterial.html">教材</a>\
-					</li>'
-                            break;
-                        case "教师培训":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-		 			<a href="TeacherTraining.html">教师培训</a>\
-					</li>'
-                            break;
-                        case "教师获奖":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="TeacherAward.html">教师获奖</a>\
-					</li>'
-                            break;
-                        case "竞赛指导":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="CompetitionGuidance.html">竞赛指导</a>\
-					</li>'
-                            break;
-                        case "实习基地":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="PracticeBase.html">实习基地</a>\
-					</li>'
-                            break;
-                        case "实验室":
-                            subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'" >\
-					<a href="Laboratory.html">实验室</a>\
-					</li>'
-                            break;
-                    }
+                    subNav = subNav + '<li id="'+item.formId+'" class="'+item.categoryLeafName+'">\
+                    <a href="'+ item.categoryLeafName + '.html">' + map[item.categoryLeafName] +'</a>'
                 });
                 subNav=subNav+'</ul>';
                 $("#sub-nav").append(subNav);
@@ -594,7 +1150,7 @@ function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
     console.log('fillTableDataAjax')
     $.ajax({
         type: "get",
-        url:"https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/ScientificProject",
+        url:prefixUrl + requestDataSource,
         data: {},
         async: true,
         dataType: "json",
@@ -645,11 +1201,21 @@ function setTableData(mainDirectory, subDirectory, obj) {
         $.each(mapColums, function (idx, para) {
             switch(para.name) {
                 case 'name':
-                    columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
+                    columnContent.push('<a href="' + subDirectory + 'Detail.html" id="' + item.id + '">' + item.name + '</a>')
+                    // columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
                     break;
                 case 'type':
                 case 'author':
                 case 'lavel':
+                case 'level':
+                case 'jobName':
+                case 'arrangement':
+                case 'department':
+                case 'guideTeacher':
+                case 'raceLevel':
+                case 'awardLevel':
+                case 'participantNames':
+                case 'address':
                 case 'date':
                     columnContent.push('<span>' + item[para.name] + '</span>')
                     break;
@@ -1257,12 +1823,12 @@ function delCookie ( name ){
 /*-----------------------------------------页面调用----------------------------------------*/
 /*----------------------------------------------------------------------------------------*/
 
-function templateIndex() {
+function templateIndex(mainDirectory, subDirectory, requestDataSource) {
     indexStart()
-    importResult("TeacherResearch", "ScienceProject")
-    catagoryAjax("TeacherResearch", "ScienceProject")
-    buildTable("TeacherResearch", "ScienceProject")
-    fillTableDataAjax('TeacherResearch', 'ScienceProject', 'ScientificProject')
+    importResult(mainDirectory, subDirectory)
+    catagoryAjax(mainDirectory, subDirectory)
+    buildTable(mainDirectory, subDirectory)
+    fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
 
     $(".datepicker").datepicker({endDate: new Date()});
     $('.dateSearch').click(function (event) {

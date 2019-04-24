@@ -75,7 +75,6 @@ function buildTable(categoryLeafName) {
 		},
 	});
 	// $('tr').children("th:first").removeClass('sorting');
-
 }
 
 
