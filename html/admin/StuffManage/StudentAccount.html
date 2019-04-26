@@ -12,45 +12,57 @@
 	</style>
 </head>
 <body>
-	<!-- 导航栏 -->
-	<div class="navbar navbar-fixed-top scroll-hide">
-		<!-- 顶上导航栏 -->
-		<div class="container-fluid top-bar topnav"></div>
-		<!-- 横向导航栏 -->
-		<div id="main-nav" class="container-fluid main-nav"></div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div id="sub-nav" class="col-md-2 subnav"></div>
-			<div class="col-md-offset-2 mainContent" >
-				<div class="columnSearch dataTables_filter">
-					<label>按名字搜索:<input type="search" class="" placeholder="" >
-						<button class="btn btn-primary darkbule">搜索</button></label>
-					</div>
-					<table class="mainTable table table-bordered" >
-						<tbody>
-							<tr>
-								<td><span><input type="checkbox"></span></td>
-								<td><span>1</span></td>
-								<td><span>皮刚</span></td>
-								<td><span>1548765412</span></td>
-							</tr>
-							<tr>
-								<td><span><input type="checkbox"></span></td>
-								<td><span>1</span></td>
-								<td><span>vava</span></td>
-								<td><span>1548765412</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+<!-- 导航栏 -->
+<div class="navbar navbar-fixed-top scroll-hide">
+	<!-- 顶上导航栏 -->
+	<div class="container-fluid top-bar topnav"></div>
+	<!-- 横向导航栏 -->
+	<div id="main-nav" class="container-fluid main-nav"></div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div id="sub-nav" class="col-md-2 subnav"></div>
+		<div class="col-md-offset-2 mainContent" >
+			<div class="columnSearch dataTables_filter">
+				<label>按名字搜索:<input type="search" class="" placeholder="" >
+					<button class="btn btn-primary darkbule">搜索</button></label>
 			</div>
+			<table class="mainTable table table-bordered" >
+				<tbody>
+				<tr>
+					<td><span><input type="checkbox"></span></td>
+					<td><span>1</span></td>
+					<td><span>皮刚</span></td>
+					<td><span>1548765412</span></td>
+				</tr>
+				<tr>
+					<td><span><input type="checkbox"></span></td>
+					<td><span>1</span></td>
+					<td><span>vava</span></td>
+					<td><span>1548765412</span></td>
+				</tr>
+				</tbody>
+			</table>
 		</div>
-		<footer class="footer navbar-fixed-bottom"></footer>
-		<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
-		<script type="text/javascript" src="../../../js/bootstrap.js"></script>
-		<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="../../../js/index.js"></script>
-		<script type="text/javascript" src="../../../js/admin/StudentAccount.js"></script>
+	</div>
+</div>
+<footer class="footer navbar-fixed-bottom"></footer>
 </body>
 </html>
+
+<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../js/index.js"></script>
+<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+<script>
+    $(function() {
+        var mainDirectory = 'StuffManage'
+        var subDirectory = 'StudentAccount'
+        var requestDataSource = 'StudentAccount'
+        indexStart()
+        catagoryAjax(mainDirectory, subDirectory)
+        buildTable(mainDirectory, subDirectory)
+        fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
+        $('#StudentAccount_filter').addClass('hiddenFilter')
+    })
+</script>

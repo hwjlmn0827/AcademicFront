@@ -4,11 +4,11 @@
 * @Last Modified by:   Administrator
 * @Last Modified time: 2018-07-04 15:50:24
 */
-
 var map = {
     TeacherResearch: "教师科研",
     StudentResearch: "学生科研",
     TeachState: "教学平台",
+    StuffManage: "人员管理",
 
     ScienceProject: "科研项目",
     Patent: "专利",
@@ -22,14 +22,19 @@ var map = {
     // AcademicPapers:"学术论文",
     // Patent: "专利",
 
-    EducationaReform: "教改项目",
+    EducationReform: "教改项目",
     EducationPaper: "教学论文",
     TeachingMaterial: "教材",
     TeacherTraining: "教师培训",
     TeacherAward: "教师获奖",
     CompetitionGuidance: "竞赛指导",
     PracticeBase: "实习基地",
-    Laboratory: "实验室"
+    Laboratory: "实验室",
+
+    TeacherInfo: "教师信息",
+    OtherTeacherInfo: "其他教师信息",
+    StudentInfo: "学生信息",
+    StudentAccount: "学生账号",
 }
 
 var cmap = {
@@ -75,7 +80,7 @@ var cmap = {
             ],
             importColumns: [{"title": "科研项目名称"}, {"title": "科研项目类型"}, {"title": "第一责任人"}, {"title": "立项时间"}],
             orderable: [0, 2, 3, 4, 5, 7],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         },
         AcademicPapers: {
             columns: [
@@ -113,7 +118,7 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         },
         AchievementAdoption: {
             columns: [
@@ -151,7 +156,7 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"科研项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         },
         Patent: {
             columns: [
@@ -189,7 +194,7 @@ var cmap = {
             ],
             importColumns: [{"title":"专利名称"},{"title":"专利类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         },
         Reward: {
             columns: [
@@ -227,7 +232,7 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         },
         Writting: {
             columns: [
@@ -265,7 +270,7 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
         }
     },
     StudentResearch: {
@@ -305,7 +310,6 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         CompetitionAward: {
             columns: [
@@ -343,7 +347,6 @@ var cmap = {
             ],
             importColumns: [{"title":"竞赛获奖名称"},{"title":"竞赛获奖类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         StudentProject: {
             columns: [
@@ -381,7 +384,6 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         Patent: {
             columns: [
@@ -419,11 +421,10 @@ var cmap = {
             ],
             importColumns: [{"title":"专利名称"},{"title":"专利类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
     },
     TeachState: {
-        EducationaReform: {
+        EducationReform: {
             columns: [
                 {
                     id: 1,
@@ -459,7 +460,6 @@ var cmap = {
             ],
             importColumns: [{"title":"教改项目名称"},{"title":"教改项目类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         EducationPaper: {
             columns: [
@@ -497,7 +497,6 @@ var cmap = {
             ],
             importColumns: [{"title":"教学论文名称"},{"title":"教学论文类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         TeachingMaterial: {
             columns: [
@@ -535,7 +534,6 @@ var cmap = {
             ],
             importColumns: [{"title":"教材名称"},{"title":"教材类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         TeacherTraining: {
             columns: [
@@ -573,7 +571,6 @@ var cmap = {
             ],
             importColumns: [{"title":"教材名称"},{"title":"教材类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         TeacherAward: {
             columns: [
@@ -611,7 +608,6 @@ var cmap = {
             ],
             importColumns: [{"title":"教师获奖名称"},{"title":"教师获奖类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         CompetitionGuidance: {
             columns: [
@@ -649,7 +645,6 @@ var cmap = {
             ],
             importColumns: [{"title":"项目名称"},{"title":"第一责任人"},{"title":"立项时间"},{"title":"其他"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         Laboratory: {
             columns: [
@@ -687,7 +682,6 @@ var cmap = {
             ],
             importColumns: [{"title":"实验室名称"},{"title":"实验室类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
         },
         PracticeBase: {
             columns: [
@@ -725,12 +719,188 @@ var cmap = {
             ],
             importColumns: [{"title":"实习基地名称"},{"title":"实习基地类型"},{"title":"第一责任人"},{"title":"立项时间"}],
             orderable: [0, 2, 3, 4, 6],
-            detailField: {basicInfo:['name', 'author', 'type', 'date'], detailInfo:['source', 'projectNumber', 'approvalFunds', 'knotForm']}
+
+        },
+    },
+    StuffManage: {
+        TeacherInfo: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '姓名',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '工号',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '职称',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '职务',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '专业',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 7,
+                    title: '财务账号',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 8,
+                    title: '联系方式',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 9,
+                    title: '邮箱',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [],
+            orderable: [0, 2, 3, 4, 6],
+        },
+        OtherTeacherInfo: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '姓名',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '单位',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '工号',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '职称',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '职务',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 7,
+                    title: '专业',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 8,
+                    title: '财务账号',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 9,
+                    title: '联系方式',
+                    name: 'completeRate',
+                    flatten: false
+                }, {
+                    id: 10,
+                    title: '邮箱',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [],
+            orderable: [0, 2, 3, 4, 6],
+        },
+        StudentInfo: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '姓名',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '学号',
+                    name: 'author',
+                    flatten: true
+                }, {
+                    id: 4,
+                    title: '专业',
+                    name: 'arrangement',
+                    flatten: true
+                }, {
+                    id: 5,
+                    title: '年级',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 5,
+                    title: '联系方式',
+                    name: 'date',
+                    flatten: false
+                }, {
+                    id: 6,
+                    title: '邮箱',
+                    name: 'completeRate',
+                    flatten: false
+                }
+            ],
+            importColumns: [],
+            orderable: [0, 2, 3, 4, 6],
+        },
+        StudentAccount: {
+            columns: [
+                {
+                    id: 1,
+                    title: '序号',
+                    name: 'order',
+                    flatten: false
+                }, {
+                    id: 2,
+                    title: '学生姓名',
+                    name: 'name',
+                    flatten: false
+                }, {
+                    id: 3,
+                    title: '学生账号',
+                    name: 'author',
+                    flatten: true
+                }
+            ],
+            importColumns: [],
+            orderable: [],
         },
     }
 };
 
 const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
+// const prefixUrl = 'http://192.168.1.140:8080/'
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------构建导航栏--------------------------------------*/
@@ -1003,7 +1173,7 @@ function setCategoryTree(obj){
 
             case "TeachState":
                 mainNav = mainNav+'<li id="'+val.uniqueName+'">\
-			<a href="../TeachState/EducationaReform.html"><span aria-hidden="true" class="fa fa-book"></span>教学平台</a>\
+			<a href="../TeachState/EducationReform.html"><span aria-hidden="true" class="fa fa-book"></span>教学平台</a>\
 			</li>'
                 var subNav = '<ul class="nav nav-pills nav-stacked '+val.uniqueName+'" style="display:none">';
                 $.each(val.categoryLeaves, function(index, item) {
@@ -1023,16 +1193,16 @@ function setCategoryTree(obj){
 	</li></ul></div>'
 
     $("#sub-nav").append('<ul class="nav nav-pills nav-stacked StuffManage" style="display: none">\
-	<li id="TeacherInfo" class="教师信息">\
+	<li id="TeacherInfo" class="TeacherInfo">\
 	<a href="TeacherInfo.html">教师信息</a>\
 	</li>\
-	<li id="OtherTeacherInfo" class="其他教师信息">\
+	<li id="OtherTeacherInfo" class="OtherTeacherInfo">\
 	<a href="OtherTeacherInfo.html">其他教师信息</a>\
 	</li>\
-	<li id="StudentInfo" class="学生信息">\
+	<li id="StudentInfo" class="StudentInfo">\
 	<a href="StudentInfo.html">学生信息</a>\
 	</li>\
-	<li id="StudentAccount" class="学生账号">\
+	<li id="StudentAccount" class="StudentAccount">\
 	<a href="StudentAccount.html">学生账号</a>\
 	</li>\
 	</ul>\
@@ -1149,7 +1319,7 @@ function buildTable(mainDirectory, subDirectory) {
 function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
     console.log('fillTableDataAjax')
     $.ajax({
-        type: "get",
+        type: "GET",
         url:prefixUrl + requestDataSource,
         data: {},
         async: true,
@@ -1201,8 +1371,8 @@ function setTableData(mainDirectory, subDirectory, obj) {
         $.each(mapColums, function (idx, para) {
             switch(para.name) {
                 case 'name':
-                    columnContent.push('<a href="' + subDirectory + 'Detail.html" id="' + item.id + '">' + item.name + '</a>')
-                    // columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
+                    // columnContent.push('<a href="' + subDirectory + 'Detail.html" id="' + item.id + '">' + item.name + '</a>')
+                    columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
                     break;
                 case 'type':
                 case 'author':
@@ -1490,6 +1660,75 @@ function fillDetailAjax(mainDirectory, subDirectory, dataResource, id) {
     })
 }
 
+function AutoDatafill() {
+    var participant = []
+    $.ajax({
+        type: "get",
+        url: prefixUrl + "participant",
+        data: {
+        },
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function(obj) {
+            console.log("参与人名单")
+            console.log(obj)
+            $.each(obj.data, function(index, val) {
+                participant.push(val.name)
+            });
+            console.log(participant)
+        },
+        Error: function() {
+            alert("服务器出错");
+        }
+    })
+
+    $('input[name="otherPartners"]').AutoComplete({
+        'data': participant,
+        'itemHeight': 20,
+        'width': 180
+    });
+    $(document).on('click', '#addOne', function(event) {
+        if($('.addInput input:text').length<5) {
+            $('.addInput').append('<input type="text" class="form-control" name="otherPartners" placeholder="请填写其他参与人"><span class="glyphicon glyphicon-remove remove2" aria-hidden="true"></span>')
+            $('.needExpend').animate({height:'+=30px'});
+            $('input[name="otherPartners"]').AutoComplete({
+                'data': participant,
+                'itemHeight': 20,
+                'width': 180
+            });//.AutoComplete('show')
+        }
+    });
+    //自动补全标签
+    var tags = []
+    $.ajax({
+        type: "get",
+        url: prefixUrl + "tag",
+        data: {
+        },
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function(obj) {
+            console.log("标签自动补全")
+            console.log(obj)
+            $.each(obj.data, function(index, val) {
+                tags.push(val.uniqueName)
+            });
+            console.log(tags)
+        },
+        Error: function() {
+            alert("服务器出错");
+        }
+    })
+
+    $('.stext').AutoComplete({
+        'data': tags,
+        'itemHeight': 20,
+        'width': 120
+    });
+}
+
 function fillDetail(obj) {
     $.each(obj.data, function(key, val) {
         if (!val) {
@@ -1547,8 +1786,113 @@ function fillDetail(obj) {
     $(".funds").html(obj.data.funds)
     $("input[name='funds']").val(obj.data.funds)
 
-    $(".knotForm").html(obj.data.knotForm)
-    $("input[name='knotForm']").val(obj.data.knotForm)
+    $(".fund").html(obj.data.fund)
+    $("input[name='fund']").val(obj.data.fund)
+
+    $(".lavel").html(obj.data.lavel)
+    $("input[name='lavel']").val(obj.data.lavel)
+
+    $(".level").html(obj.data.level)
+    $("input[name='level']").val(obj.data.level)
+
+    $(".publicationName").html(obj.data.publicationName)
+    $("input[name='publicationName']").val(obj.data.publicationName)
+
+    $(".volume").html(obj.data.volume)
+    $("input[name='volume']").val(obj.data.volume)
+
+    $(".stage").html(obj.data.stage)
+    $("input[name='stage']").val(obj.data.stage)
+
+    $(".arrangement").html(obj.data.arrangement)
+    $("input[name='arrangement']").val(obj.data.arrangement)
+
+    $(".signatureType").html(obj.data.signatureType)
+    $("input[name='signatureType']").val(obj.data.signatureType)
+
+    $(".graduate").html(obj.data.graduate)
+    $("input[name='graduate']").val(obj.data.graduate)
+
+    $(".category").html(obj.data.category)
+    $("input[name='category']").val(obj.data.category)
+
+    $(".applyDate").html(obj.data.applyDate)
+    $("input[name='applyDate']").val(obj.data.applyDate)
+
+    $(".number").html(obj.data.number)
+    $("input[name='number']").val(obj.data.number)
+
+    $(".company").html(obj.data.company)
+    $("input[name='company']").val(obj.data.company)
+
+    $(".netNumber").html(obj.data.netNumber)
+    $("input[name='netNumber']").val(obj.data.netNumber)
+
+    $(".alisName").html(obj.data.alisName)
+    $("input[name='alisName']").val(obj.data.alisName)
+
+    $(".publish").html(obj.data.publish)
+    $("input[name='publish']").val(obj.data.publish)
+
+    $(".bookName").html(obj.data.bookName)
+    $("input[name='bookName']").val(obj.data.bookName)
+
+    $(".wordNumber").html(obj.data.wordNumber)
+    $("input[name='wordNumber']").val(obj.data.wordNumber)
+
+    $(".grade").html(obj.data.grade)
+    $("input[name='grade']").val(obj.data.grade)
+
+    $(".found").html(obj.data.found)
+    $("input[name='found']").val(obj.data.found)
+
+    $(".plannedTime").html(obj.data.plannedTime)
+    $("input[name='plannedTime']").val(obj.data.plannedTime)
+
+    $(".concludingForm").html(obj.data.concludingForm)
+    $("input[name='concludingForm']").val(obj.data.concludingForm)
+
+    $(".contractNum").html(obj.data.contractNum)
+    $("input[name='contractNum']").val(obj.data.contractNum)
+
+    $(".projectSource").html(obj.data.projectSource)
+    $("input[name='projectSource']").val(obj.data.projectSource)
+
+    $(".applyDate").html(obj.data.applyDate)
+    $("input[name='applyDate']").val(obj.data.applyDate)
+
+    $(".periodical").html(obj.data.periodical)
+    $("input[name='periodical']").val(obj.data.periodical)
+
+    $(".totalFee").html(obj.data.totalFee)
+    $("input[name='totalFee']").val(obj.data.totalFee)
+
+    $(".press").html(obj.data.press)
+    $("input[name='press']").val(obj.data.press)
+
+    $(".address").html(obj.data.address)
+    $("input[name='address']").val(obj.data.address)
+
+    $(".awardLevel").html(obj.data.awardLevel)
+    $("input[name='awardLevel']").val(obj.data.awardLevel)
+
+    $(".awardDepartment").html(obj.data.awardDepartment)
+    $("input[name='awardDepartment']").val(obj.data.awardDepartment)
+
+    $(".awardName").html(obj.data.awardName)
+    $("input[name='awardName']").val(obj.data.awardName)
+
+    $(".raceLevel").html(obj.data.raceLevel)
+    $("input[name='raceLevel']").val(obj.data.raceLevel)
+
+    $(".contactTeacher").html(obj.data.contactTeacher)
+    $("input[name='contactTeacher']").val(obj.data.contactTeacher)
+
+    $(".stuNumber").html(obj.data.stuNumber)
+    $("input[name='stuNumber']").val(obj.data.stuNumber)
+
+    $(".guideTeacher").html(obj.data.guideTeacher)
+    $("input[name='guideTeacher']").val(obj.data.guideTeacher)
 
     $(".otherPartners").html(participantNames)
     var completeRate=Math.round(obj.data.completeRate*100)
@@ -1681,10 +2025,53 @@ $(document).on('click', '#btnSave', function(event) {
             "projectNumber": $("input[name='projectNumber']").val,
             "source": $("input[name='source']").val,
             "funds": $("input[name='funds']").val,
+            "fund": $("input[name='fund']").val,
+            "found": $("input[name='found']").val,
             "knotForm": $("input[name='knotForm']").val,
             "projectMaterial": $('.downfile_1').attr('href'),
             "knotMaterial": $('.downfile_2').attr('href'),
             "projectContract": $('.downfile_3').attr('href'),
+            "lavel": $("input[name='lavel']").val,
+            "level": $("input[name='level']").val,
+            "publicationName": $("input[name='publicationName']").val,
+            "volume": $("input[name='volume']").val,
+            "stage": $("input[name='stage']").val,
+            "arrangement": $("input[name='arrangement']").val,
+            "signatureType": $("input[name='signatureType']").val,
+            "graduate": $("input[name='graduate']").val,
+            "paper": $('.downfile_1').attr('href'),
+            "certificate": $('.downfile_2').attr('href'),
+            "department": $("input[name='department']").val,
+            "category": $("input[name='category']").val,
+            "applyDate": $("input[name='applyDate']").val,
+            "number": $("input[name='number']").val,
+            "company": $("input[name='company']").val,
+            "netNumber": $("input[name='netNumber']").val,
+            "prove": $('.downfile_1').attr('href'),
+            "prove2": $('.downfile_2').attr('href'),
+            "alisName": $("input[name='alisName']").val,
+            "achievementsName": $("input[name='achievementsName']").val,
+            "publish": $("input[name='publish']").val,
+            "bookName": $("input[name='bookName']").val,
+            "wordNumber": $("input[name='wordNumber']").val,
+            "book": $('.downfile_1').attr('href'),
+            "grade": $("input[name='grade']").val,
+            "plannedTime": $("input[name='plannedTime']").val,
+            "concludingForm": $("input[name='concludingForm']").val,
+            "contractNum": $("input[name='contractNum']").val,
+            "projectSource": $("input[name='projectSource']").val,
+            "periodical": $("input[name='periodical']").val,
+            "press": $("input[name='press']").val,
+            "totalFee": $("input[name='totalFee']").val,
+            "address": $("input[name='address']").val,
+            "awardLevel": $("input[name='awardLevel']").val,
+            "awardDepartment": $("input[name='awardDepartment']").val,
+            "awardName": $("input[name='awardName']").val,
+            "raceLevel": $("input[name='raceLevel']").val,
+            "contactTeacher": $("input[name='contactTeacher']").val,
+            "stuNumber": $("input[name='stuNumber']").val,
+            "guideTeacher": $("input[name='guideTeacher']").val,
+
             "id": "54094",
             "categoryLeafName": "ScienceProject",
             "categoryTreeName": "TeacherResearch",

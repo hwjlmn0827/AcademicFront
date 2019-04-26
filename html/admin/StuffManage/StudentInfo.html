@@ -108,6 +108,7 @@
 					<table class="mainTable table table-bordered uncheckedbox" >
 						<tbody>
 							<tr>
+								<td><span></span></td>
 								<td><span>1</span></td>
 								<td><span>zylin</span></td>
 								<td><span>12345</span></td>
@@ -117,6 +118,7 @@
 								<td><span>345244324@163.com</span></td>
 							</tr>
 							<tr>
+								<td><span></span></td>
 								<td><span>2</span></td>
 								<td><span>dst</span></td>
 								<td><span>12345</span></td>
@@ -131,29 +133,22 @@
 			</div>
 		</div>
 		<footer class="footer navbar-fixed-bottom"></footer>
-		<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
-		<script type="text/javascript" src="../../../js/bootstrap.js"></script>
-		<script type="text/javascript" src="../../../js/index.js"></script>
-		<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="../../../js/admin/StudentInfo.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				admainNav()
-			$(".StuffManage").css('display', 'block');
-			$('#StuffManage a').addClass('current')
-			$('#StudentInfo').addClass('active');
-			$('#StudentInfoTable').DataTable({
-				responsive: true,
-				ordering: false,
-				searching: true,
-				"bLengthChange": false,
-				"bAutoWidth":true,
-				"bRetrieve": true,
-				"bFilter": true, //过滤功能
-				"aLengthMenu":[15],
-});
-
-})
-</script>
 </body>
 </html>
+
+<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../js/index.js"></script>
+<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var mainDirectory = 'StuffManage'
+        var subDirectory = 'StudentInfo'
+        var requestDataSource = 'StudentInfo'
+        indexStart()
+        catagoryAjax(mainDirectory, subDirectory)
+        buildTable(mainDirectory, subDirectory)
+        fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
+        $('#StudentInfo_filter').addClass('hiddenFilter')
+    })
+</script>

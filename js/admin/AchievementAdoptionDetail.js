@@ -5,29 +5,6 @@
 * @Last Modified time: 2018-01-09 20:51:12
 */
 $(function(){
-	function catagoryAjax() {
-		$.ajax({
-			type: "get",
-			url: prefixUrl + "categoryTree",
-			data: {
-			},
-			async: true,
-			dataType: "json",
-			contentType: "application/json",
-			success: function(data) {
-				setCategoryTree(data)
-				$('.active').removeClass('active');
-				alert(1)
-				$('.成果采纳').addClass('active');
-				$('.教师科研').css('display', 'block');
-				$('#教师科研 a').addClass('current');
-			},
-			Error: function() {
-				alert("服务器出错");
-			}
-		})
-	}
-	catagoryAjax() 
 
 	C1 = window.location.href.split("?")[1];
 	id = C1.split("=")[1];
@@ -157,9 +134,6 @@ $(function(){
 	$('.Uploadfile').click(function(event) {
 		
 	});
-
-
-
 })
 
 

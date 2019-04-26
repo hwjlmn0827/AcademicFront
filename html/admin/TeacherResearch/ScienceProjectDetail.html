@@ -1,12 +1,236 @@
-<!DOCTYPE html>
-<html lang="en">
-<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>学术资源管理平台</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../../../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/foundation-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/tab.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/jquery.autocomplete.css">
+</head>
 <body>
-<div id="detailPage"></div>
+<div>
+    <!-- 导航栏 -->
+    <div class="navbar navbar-fixed-top scroll-hide">
+        <!-- 顶上导航栏 -->
+        <div class="container-fluid top-bar topnav"></div>
+        <!-- 横向导航栏 -->
+        <div id="main-nav" class="container-fluid main-nav"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 侧边导航栏 -->
+            <div id="sub-nav" class="col-md-2 subnav"></div>
+            <!-- 表格内容 -->
+            <div class="col-md-10 col-md-offset-2 mainContent">
+                <div class="ScienceProject-forms ">
+                    <div class="contentTitle">
+                        <p class="col-md-3 pull-left"></p>
+                        <div class="progress pull-right detailProgress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                信息完整度：<span>60%</span>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs infoType" role="tablist">
+                            <li role="presentation" class="infobtn active"><a href="#mainInfo" aria-controls="home" role="tab" data-toggle="tab">主体信息</a></li>
+                            <li role="presentation" class="infobtn"><a href="#otherInfo" aria-controls="profile" role="tab" data-toggle="tab">其他信息</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="tab-content">
+                        <div id="otherInfo" class="row contentForm tab-pane fade" role="tabpanel"></div>
+                        <div id="mainInfo" class="row contentForm tab-pane fade in active" role="tabpanel">
+                            <form class="detailForm form-inline">
+
+                                <div id="basic-info" class="panel panel-info">
+                                    <div class="panel-heading">基本信息</div>
+                                    <div class="panel-body">
+
+                                        <div class="form-group col-md-6 formBlock wordBreak">
+                                            <label class="formItem">*项目名称：</label>
+                                            <input type="text" class="form-control" name="name" value="">
+                                            <span class="originInfo name"></span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">*主持人：</label>
+                                            <input type="text" class="form-control" name="author" value="">
+                                            <span class="originInfo author"></span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">*科研类型：</label>
+                                            <select  class="form-control"  name="type" placeholder="请选择科研类型" >
+                                                <option value="横向项目">横向项目</option>
+                                                <option value="纵向项目">纵向项目</option>
+                                            </select>
+                                            <span class="originInfo type"></span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">*立项时间：</label>
+                                            <input type="text" class="form-control" id="planTime" name="date" placeholder="请选择时间"><!-- <span class="input-group-addon"><i class="fa fa-calendar"></i></span> -->
+                                            <span class="originInfo planTime"></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="detail-info" class="panel panel-info">
+                                    <div class="panel-heading">详细信息</div>
+                                    <div class="panel-body needExpend">
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">项目来源：</label>
+                                            <input type="text" class="form-control" name="source" placeholder="">
+                                            <span class="originInfo source"></span>
+                                        </div>
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">项目（合同）编号：</label>
+                                            <input type="text" class="form-control" name="projectNumber" placeholder="16121906">
+                                            <span class="originInfo projectNumber"></span>
+                                        </div>
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">批准经费（万）：</label>
+                                            <input type="text" class="form-control" name="funds" placeholder="请填写数字">
+                                            <span class="originInfo funds" ></span>
+                                        </div>
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">结题形式：</label>
+                                            <select  class="form-control"  name="knotForm" placeholder="请选择结题形式" >
+                                                <option value="结题报告">结题报告</option>
+                                                <option value="论文">论文</option>
+                                            </select>
+                                            <span class="originInfo knotForm"></span>
+                                        </div>
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem">其他参与人：<br>(≤5人)</label>
+                                            <span class="originInfo otherPartners" ></span>
+                                            <div class="addInput">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 formBlock">
+                                            <label class="formItem tablabel">标签</label>
+                                            <div class="tablabelInput">
+                                                <div class="plus-tag-add" style="">
+                                                    <form id="" action="" class="login">
+                                                        <ul class="Form FancyForm" style="margin-top: 10px;">
+                                                            <li>
+                                                                <input id="" name="tag" type="text" class="stext" maxlength="20" placeholder="请输入标签"/>
+                                                                <button type="button" class="Button RedButton Button18" style="font-size:14px;">添加</button>
+                                                            </li>
+                                                            <!-- <li>
+                                                                <a href="javascript:void(0);">展开推荐标签</a>
+                                                            </li> -->
+                                                        </ul>
+                                                    </form>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="plus-tag tagbtn clearfix" id="myTags"></div>
+                                                <div id="mycard-plus" style="display:none;margin-top: -25px;">
+                                                    <div class="default-tag tagbtn">
+                                                        <div class="clear"></div>
+                                                        <div class="clearfix">
+                                                            <a value="-1" title="互联网" href="javascript:void(0);"><span>互联网</span><em></em></a>
+                                                            <a value="-1" title="移动互联网" href="javascript:void(0);"><span>移动互联网</span><em></em></a>
+                                                            <a value="-1" title="it" href="javascript:void(0);"><span>it</span><em></em></a>
+                                                            <a value="-1" title="电子商务" href="javascript:void(0);"><span>电子商务</span><em></em></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="files-info" class="panel panel-info">
+                                    <div class="panel-heading">支持材料</div>
+                                    <div class="panel-body">
+                                        <div class="form-group col-md-12 formBlock">
+                                            <label class="formItem">立项材料：</label>
+                                            <i id="proofMaterial1" class="fa fa-file-pdf-o fileNanme">&nbsp;zylinjksjafefddsf的师范.pdf</i>
+                                            <div class="filebtn filebtn_before" role="group" aria-label="...">
+                                                <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                            </div>
+                                            <div class="filebtn filebtn_after" role="group" aria-label="...">
+                                                <button type="button" class="btn btn-info fa fa-upload Uploadfile">
+                                                    <a class="input-file">上传<input type="file" id="lixiang" onchange="upFileFunc1()" /></a>
+                                                </button>
+                                                <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 formBlock">
+                                            <label class="formItem">结题材料：</label>
+                                            <i id="proofMaterial2" class="fa fa-file-pdf-o fileNanme">&nbsp;zylin.pdf</i>
+                                            <div class="filebtn filebtn_before" role="group" aria-label="...">
+                                                <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                            </div>
+                                            <div class="filebtn filebtn_after" role="group" aria-label="...">
+                                                <button type="button" class="btn btn-info fa fa-upload Uploadfile">
+                                                    <a class="input-file">上传<input type="file" id="jieti" onchange="upFileFunc2()"></a>
+                                                </button>
+                                                <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12 formBlock">
+                                            <label class="formItem">项目合同：</label>
+                                            <i id="proofMaterial3" class="fa fa-file-pdf-o fileNanme">&nbsp;zylin.pdf</i>
+                                            <div class="filebtn filebtn_before" role="group" aria-label="...">
+                                                <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                            </div>
+                                            <div class="filebtn filebtn_after" role="group" aria-label="...">
+                                                <button type="button" class="btn btn-info fa fa-upload Uploadfile">
+                                                    <a class="input-file">上传<input type="file" id="hetong" onchange="upFileFunc3()"></a>
+                                                </button>
+                                                <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button id="btnChange" class="btn btn-primary col-md-1 col-md-offset-4 btnOption ">修改</button><!--  data-target="#saveSuccess" -->
+                            <button id="btnSave" class="btn btn-primary col-md-1 col-md-offset-4 btnOption"  data-toggle="modal">提交</button>
+                            <button id="btnBack" class="btn btn-default col-md-1 col-md-offset-1 btnOption" data-toggle="modal" >返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer class="footer navbar-fixed-bottom"></footer>
+</body>
+<script type="text/javascript" src="../../../js/jquery-1.12.3.min.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="../../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../../datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../../js/index.js"></script>
+<script type="text/javascript" src="../../../js/label.js"></script>
+<script type="text/javascript" src="../../../js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="../../../js/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../js/jquery.autocomplete.js"></script>
 
 <script>
-    $("#detailPage").load("../DetailPageTemplate.html");
-</script>
+    $(function(){
+        indexStart()
+        catagoryAjax("TeacherResearch", "ScienceProject")
+        $('.contentTitle p').html(map.ScienceProject + '详情')
 
-</body>
-</html>
+        id = window.location.href.split("?")[1].split("=")[1];
+        $('.form-control').css('display', 'none');
+        fillDetailAjax("TeacherResearch", "ScienceProject", 'ScientificProject', id)
+        $('#planTime').fdatepicker();//时间选择
+    });
+</script>

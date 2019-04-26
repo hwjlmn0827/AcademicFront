@@ -454,7 +454,6 @@ body {
 }
 
 .mainContent {
-    height: 100%;
     background-color: rgba(255, 255, 255, 0.9);
     position: relative;
     padding: 20px;
@@ -796,13 +795,16 @@ div.dataTables_filter label {
 
 .otherPartners {
     position: relative;
-    top: -25px;
 }
 
 .addInput {
-    position: relative;
-    top: -96px;
-    left: 183px;
+    position: absolute;
+    top: 20px;
+    left: 195px;
+}
+.addInput input {
+    width: 70%!important;
+    margin-bottom: 1px;
 }
 
 .remove1 {
