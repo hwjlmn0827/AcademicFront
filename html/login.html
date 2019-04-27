@@ -43,11 +43,10 @@
 <script type="text/javascript">
   $(function() {
     $('.signInBtn').click(function(event) {
-    var usn = $("#inputUserName").value
+    var usn = $("#inputUserName").val()
     var psw = $("#inputPassword").val()
     console.log(usn)
     console.log(psw)
-        alert(prefixUrl + 'login')
     $.ajax({
       type: "POST",
       url: prefixUrl + "login",
@@ -59,8 +58,10 @@
       async: true,
       dataType: "json",
       success: function(obj) {
-        console.log(obj)
-        window.location.href="admin/HomePage/adminHomePage.html";
+          alert(obj.err)
+          if (obj.err) {
+              window.location.href="admin/HomePage/adminHomePage.html";
+          }
       },
       Error: function() {
         alert("服务器出错");

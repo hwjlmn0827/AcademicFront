@@ -899,8 +899,8 @@ var cmap = {
     }
 };
 
-const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
-// const prefixUrl = 'http://192.168.1.140:8080/'
+// const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
+const prefixUrl = 'http://192.168.1.140:8080/'
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------构建导航栏--------------------------------------*/
@@ -1320,7 +1320,7 @@ function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
     console.log('fillTableDataAjax')
     $.ajax({
         type: "GET",
-        url:prefixUrl + requestDataSource,
+        url:prefixUrl + 'asset/'  + requestDataSource,
         data: {},
         async: true,
         dataType: "json",
@@ -1405,11 +1405,39 @@ function setTableData(mainDirectory, subDirectory, obj) {
     });
 }
 
+// 导出模版
+function doDownloadTemplate(mainDirectory, subDirectory, requestDataSource) {
+    var url = prefixUrl + 'excel/template/' + requestDataSource + '?fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '模板'
+    window.open(url)
+}
+
+function doDownloadAll(mainDirectory, subDirectory, requestDataSource) {
+    var url = prefixUrl + 'excel/all/' + requestDataSource + '?fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '全部'
+    window.open(url)
+}
+
+// 选中序号构造下载url TODO
+function doDownloadSelected(mainDirectory, subDirectory, requestDataSource) {
+    var url = prefixUrl + 'excel/'+ requestDataSource +'&fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '部分&ids='
+    var ids = ""
+    $("input:checked").each(function () {
+        var id = $(this).parent().next().next().find("a").attr("id")
+        ids = ids + id + ","
+    })
+    if (ids.length > 0) {
+        ids = ids.substring(0, ids.length - 1)
+    }
+    alert(ids)
+    // window.open(url + ids)
+}
+
 // 上传组件 TODO para? @ziyi
 function fileupload() {
     var formdata = new FormData($("form[name='uploadForm']")[0])
     $.ajax({
-        url: prefixUrl + "excel/assetsSelected",
+        // url: prefixUrl + "excel/assetsSelected",
+        // url: "excel/" + requestDataSource,
+        url: prefixUrl + "excel/ScientificProject",
         type: "post",
         data: formdata,
         contentType: false,
@@ -1421,24 +1449,10 @@ function fileupload() {
     })
 }
 
-// 选中序号构造下载url TODO @ziyi
-function makeURL(mainDirectory, subDirectory, fileName) {
-    var url = 'http://123.206.190.167:8080/dissertation/excel/assetsSelected?categoryLeafName=' + mainDirectory +
-        '&uniqueName=' + subDirectory + '&fileName=' + fileName + '.xlsx&ids='
-    var ids = ""
-    $("input:checked").each(function () {
-        var id = $(this).parent().next().next().find("a").attr("id")
-        ids = ids + id + ","
-    })
-    if (ids.length > 0) {
-        ids = ids.substring(0, ids.length - 1)
-    }
-    $("#import_selected").attr("href", url + ids)
 
-}
 
 // TODO OK without TEST @ziyi
-function importResult(mainDirectory, subDirectory) {
+function importResult(mainDirectory, subDirectory, requestDataSource) {
     var importColumns = cmap[mainDirectory][subDirectory]['importColumns'];
     // var importLen = importColumns.length
     $('#importResult').DataTable({
@@ -1455,26 +1469,12 @@ function importResult(mainDirectory, subDirectory) {
     });
 }
 
-// 选中序号构造url TODO caturl @ziyi
-function makeURL(mainDirectory, subDirectory, fileName) {
-    var url = 'http://123.206.190.167:8080/dissertation/excel/scientificProjectSelected?categoryLeafName=科研项目' +
-        '&uniqueName=教师科研&fileName=教师信息.xlsx&ids='
-    var ids = ""
-    $("input:checked").each(function () {
-        var id = $(this).parent().next().next().find("a").attr("id")
-        ids = ids + id + ","
-    })
-    if (ids.length > 0) {
-        ids = ids.substring(0, ids.length - 1)
-    }
-    $("#import_selected").attr("href", url + ids)
-}
-
 //批量删除
 $(document).on('click', '.sureDelete_dataYes', function () {
     var subDirectory = 'ScienceProject'
     deleteData(subDirectory)
 });
+
 function deleteData(subDirectory) {
     var idd = [];
     $("input[type='checkbox']:checked").each(function (i) {
@@ -1505,7 +1505,7 @@ function deleteData(subDirectory) {
     })
 }
 
-//时间搜索
+//时间搜索 TODO add
 function timeSearch(LeafName) {
     var startDate
     var endDate
@@ -1515,7 +1515,7 @@ function timeSearch(LeafName) {
         current =$(".dateInput2").val()
         $.ajax({
             type: "get",
-            url: prefixUrl + ""+LeafName+"/date",
+            url: prefixUrl + "asset/" + LeafName+"/date",
             data: {
                 "current": current
             },
@@ -1540,7 +1540,7 @@ function timeSearch(LeafName) {
         console.log(current)
         $.ajax({
             type: "get",
-            url: prefixUrl + ""+LeafName+"/date",
+            url: prefixUrl + "asset/" + LeafName +"/date",
             data: {
                 "begin": startDate,
                 "end": endDate
@@ -1590,7 +1590,6 @@ $(document).on('click', '.sureMoveIn_dataYes', function() {
     $("input[type='checkbox']:checked").each(function(i){
         idd[i] = $(this).parents("tr").children('td:eq(2)').children('a').attr('id');
         $('#sureMoveIn_data').modal('hide')
-
     });
     console.log(idd);
     $.ajax({
@@ -1644,7 +1643,8 @@ function buildDetailInfoBlock(mainDirectory, subDirectory, infoData) {
 function fillDetailAjax(mainDirectory, subDirectory, dataResource, id) {
     $.ajax({
         type: "get",
-        url: prefixUrl + dataResource + '/{id}',
+        // url: prefixUrl + 'asset/' +  dataResource + '/{id}',
+        url: prefixUrl + 'asset/' +  dataResource + '/' + id,
         data: {
         },
         async: true,
@@ -1910,26 +1910,30 @@ function fillDetail(obj) {
 
 //下载附件
 $('.Uploadfile').click(function(event) {
-    var url = 'http://123.206.190.167:8080/dissertation/file/'+id;
+    var url = prefixUrl + '/file/' + id;
 });
 
 //上传附件
 function upFileFunc1() {
     var files = $('#lixiang').prop('files');
     var data = new FormData();
+
+    alert(files[0].name)
     var filename = files[0].name
     data.append('files', files[0]);
     $.ajax({
-        url: 'http://123.206.190.167:8080/dissertation/files',
+        url: prefixUrl + 'files',
         type: 'POST',
         data: data,
         dataType: 'JSON',
         cache: false,
         processData: false,
         contentType: false,
-        success: function(obj) {
+        success: function (obj) {
             console.log(obj)
-            $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
+            var url = prefixUrl + obj.data[0].split("/")[3] + '/' + obj.data[0].split("/")[4];
+            alert(url)
+            $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", url);
             $('#proofMaterial1').html(filename)
         },
     });
@@ -1941,7 +1945,7 @@ function upFileFunc2() {
     var filename = files[0].name
     data.append('jieti', files[0]);
     $.ajax({
-        url: 'http://123.206.190.167:8080/dissertation/files',
+        url: prefixUrl + '/files',
         type: 'POST',
         data: data,
         dataType: 'JSON',
@@ -1962,7 +1966,7 @@ function upFileFunc3() {
     var filename = files[0].name
     data.append('hetong', files[0]);
     $.ajax({
-        url: 'http://123.206.190.167:8080/dissertation/files',
+        url: prefixUrl + '/files',
         type: 'POST',
         data: data,
         dataType: 'JSON',
@@ -2002,7 +2006,6 @@ $(document).on('click', '#btnChange', function(event) {
     $('em').css('display', 'block');
 });
 
-// TODO modify / test if suit for every page
 $(document).on('click', '#btnSave', function(event) {
     var tags = []
     $('.plus-tag span').each(function(index, el) {
@@ -2013,79 +2016,83 @@ $(document).on('click', '#btnSave', function(event) {
     $('.addInput input[name="otherPartners"]').each(function(index, el) {
         others.push($(el).val())
     });
+
+    var id = window.location.href.split("?")[1].split("=")[1];
+    alert(id)
+    var data = {
+        "id": id,
+        "name": $("input[name='name']").val(),
+        "type": $("input[name='type']").val(),
+        "author": $("input[name='author']").val(),
+        "date": $("input[name='date']").val(),
+        "completeRate": 0.55,
+        "projectNumber": $("input[name='projectNumber']").val(),
+        "source": $("input[name='source']").val(),
+        "funds": $("input[name='funds']").val(),
+        "fund": $("input[name='fund']").val(),
+        "found": $("input[name='found']").val(),
+        "knotForm": $("input[name='knotForm']").val(),
+        "projectMaterial": $('.downfile_1').attr('href'),
+        "knotMaterial": $('.downfile_2').attr('href'),
+        "projectContract": $('.downfile_3').attr('href'),
+        "lavel": $("input[name='lavel']").val(),
+        "level": $("input[name='level']").val(),
+        "publicationName": $("input[name='publicationName']").val(),
+        "volume": $("input[name='volume']").val(),
+        "stage": $("input[name='stage']").val(),
+        "arrangement": $("input[name='arrangement']").val(),
+        "signatureType": $("input[name='signatureType']").val(),
+        "graduate": $("input[name='graduate']").val(),
+        "paper": $('.downfile_1').attr('href'),
+        "certificate": $('.downfile_2').attr('href'),
+        "department": $("input[name='department']").val(),
+        "category": $("input[name='category']").val(),
+        "applyDate": $("input[name='applyDate']").val(),
+        "number": $("input[name='number']").val(),
+        "company": $("input[name='company']").val(),
+        "netNumber": $("input[name='netNumber']").val(),
+        "prove": $('.downfile_1').attr('href'),
+        "prove2": $('.downfile_2').attr('href'),
+        "alisName": $("input[name='alisName']").val(),
+        "achievementsName": $("input[name='achievementsName']").val(),
+        "publish": $("input[name='publish']").val(),
+        "bookName": $("input[name='bookName']").val(),
+        "wordNumber": $("input[name='wordNumber']").val(),
+        "book": $('.downfile_1').attr('href'),
+        "grade": $("input[name='grade']").val(),
+        "plannedTime": $("input[name='plannedTime']").val(),
+        "concludingForm": $("input[name='concludingForm']").val(),
+        "contractNum": $("input[name='contractNum']").val(),
+        "projectSource": $("input[name='projectSource']").val(),
+        "periodical": $("input[name='periodical']").val(),
+        "press": $("input[name='press']").val(),
+        "totalFee": $("input[name='totalFee']").val(),
+        "address": $("input[name='address']").val(),
+        "awardLevel": $("input[name='awardLevel']").val(),
+        "awardDepartment": $("input[name='awardDepartment']").val(),
+        "awardName": $("input[name='awardName']").val(),
+        "raceLevel": $("input[name='raceLevel']").val(),
+        "contactTeacher": $("input[name='contactTeacher']").val(),
+        "stuNumber": $("input[name='stuNumber']").val(),
+        "guideTeacher": $("input[name='guideTeacher']").val(),
+        "categoryLeafName": "ScienceProject",
+        "categoryTreeName": "TeacherResearch",
+        "uploader": "941112341",
+        "tag": tags,
+        "relative":others,
+        "participantIds": [
+            "qtgnHbbUEP",
+            "qCdzULKrY4",
+            "PAoasU6xQS"
+        ],
+        "otherTextInfo": {},
+        "otherFileInfo": {},
+    }
+
     $.ajax({
         type: "put",
-        url: prefixUrl + "ScientificProject",
-        data: {
-            "name": $("input[name='name']").val,
-            "type": $("input[name='type']").val,
-            "author": $("input[name='author']").val,
-            "date": $("input[name='date']").val,
-            "completeRate": 0.55,
-            "projectNumber": $("input[name='projectNumber']").val,
-            "source": $("input[name='source']").val,
-            "funds": $("input[name='funds']").val,
-            "fund": $("input[name='fund']").val,
-            "found": $("input[name='found']").val,
-            "knotForm": $("input[name='knotForm']").val,
-            "projectMaterial": $('.downfile_1').attr('href'),
-            "knotMaterial": $('.downfile_2').attr('href'),
-            "projectContract": $('.downfile_3').attr('href'),
-            "lavel": $("input[name='lavel']").val,
-            "level": $("input[name='level']").val,
-            "publicationName": $("input[name='publicationName']").val,
-            "volume": $("input[name='volume']").val,
-            "stage": $("input[name='stage']").val,
-            "arrangement": $("input[name='arrangement']").val,
-            "signatureType": $("input[name='signatureType']").val,
-            "graduate": $("input[name='graduate']").val,
-            "paper": $('.downfile_1').attr('href'),
-            "certificate": $('.downfile_2').attr('href'),
-            "department": $("input[name='department']").val,
-            "category": $("input[name='category']").val,
-            "applyDate": $("input[name='applyDate']").val,
-            "number": $("input[name='number']").val,
-            "company": $("input[name='company']").val,
-            "netNumber": $("input[name='netNumber']").val,
-            "prove": $('.downfile_1').attr('href'),
-            "prove2": $('.downfile_2').attr('href'),
-            "alisName": $("input[name='alisName']").val,
-            "achievementsName": $("input[name='achievementsName']").val,
-            "publish": $("input[name='publish']").val,
-            "bookName": $("input[name='bookName']").val,
-            "wordNumber": $("input[name='wordNumber']").val,
-            "book": $('.downfile_1').attr('href'),
-            "grade": $("input[name='grade']").val,
-            "plannedTime": $("input[name='plannedTime']").val,
-            "concludingForm": $("input[name='concludingForm']").val,
-            "contractNum": $("input[name='contractNum']").val,
-            "projectSource": $("input[name='projectSource']").val,
-            "periodical": $("input[name='periodical']").val,
-            "press": $("input[name='press']").val,
-            "totalFee": $("input[name='totalFee']").val,
-            "address": $("input[name='address']").val,
-            "awardLevel": $("input[name='awardLevel']").val,
-            "awardDepartment": $("input[name='awardDepartment']").val,
-            "awardName": $("input[name='awardName']").val,
-            "raceLevel": $("input[name='raceLevel']").val,
-            "contactTeacher": $("input[name='contactTeacher']").val,
-            "stuNumber": $("input[name='stuNumber']").val,
-            "guideTeacher": $("input[name='guideTeacher']").val,
-
-            "id": "54094",
-            "categoryLeafName": "ScienceProject",
-            "categoryTreeName": "TeacherResearch",
-            "uploader": "941112341",
-            "tag": tags,
-            "relative":others,
-            "participantIds": [
-                "qtgnHbbUEP",
-                "qCdzULKrY4",
-                "PAoasU6xQS"
-            ],
-            "otherTextInfo": {},
-            "otherFileInfo": {},
-        },
+        url: prefixUrl + 'asset/' + "ScientificProject",
+        data: JSON.stringify(data),
         async: true,
         dataType: "json",
         contentType: "application/json",
@@ -2093,7 +2100,6 @@ $(document).on('click', '#btnSave', function(event) {
             if (!obj.err) {
                 $('#saveSuccess').modal('show')
             } else {
-
             }
         },
         Error: function() {
@@ -2140,6 +2146,7 @@ function indexStart() {
     $('.sureLeaveYes').click(function(event) {
         window.location.href="ScienceProject.html";
     });
+    //ok
     $('.fileRemove').click(function(event) {
         var x = $(this)
         $('.sureDeleteYes').click(function(event) {
@@ -2172,8 +2179,9 @@ Date.prototype.Format = function (fmt) {
 
 //复选框选择
 $(document).on('click', 'tr td:not(:first)', function() {
+    console.log($(this).siblings().first().children()[0])
     if ($(this).siblings().first().children().is(':checked') == false) {
-        $(this).siblings().first().children().prop("checked", true);
+        $(this).siblings().first().children().attr("checked", true);
     } else {
         $(this).siblings().first().children().prop("checked", false);
     }
@@ -2212,7 +2220,7 @@ function delCookie ( name ){
 
 function templateIndex(mainDirectory, subDirectory, requestDataSource) {
     indexStart()
-    importResult(mainDirectory, subDirectory)
+    importResult(mainDirectory, subDirectory,requestDataSource)
     catagoryAjax(mainDirectory, subDirectory)
     buildTable(mainDirectory, subDirectory)
     fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
@@ -2221,5 +2229,14 @@ function templateIndex(mainDirectory, subDirectory, requestDataSource) {
     $('.dateSearch').click(function (event) {
         timeSearch('ScientificProject')
     });
-}
 
+    $(document).on('click', '#doDownloadTemplate', function () {
+        doDownloadTemplate(mainDirectory, subDirectory, requestDataSource)
+    })
+    $(document).on('click', '#doDownloadAll', function () {
+        doDownloadAll(mainDirectory, subDirectory, requestDataSource)
+    })
+    $(document).on('click', '#doDownloadSelected', function () {
+        doDownloadSelected(mainDirectory, subDirectory, requestDataSource)
+    })
+}

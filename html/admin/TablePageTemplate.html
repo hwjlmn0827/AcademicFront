@@ -46,16 +46,17 @@
             <div class="col-md-offset-2 mainContent" >
                 <div class="InportExport">
                     <button type="button" class="btn btn-primary btn_inport" data-toggle="modal" data-target="#myModalInport">导入</button>
+
                     <div class="btn-group">
-                        <button type="button"  onclick="makeURL()" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             导出<span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li data-toggle="modal" data-target="#myModalExport" onclick="doDownload()">
-                                <a href= "excel/scientificProjectTemplate?categoryLeafName=科研项目&uniqueName=教师科研&fileName=教师信息.xlsx">导出模板</a></li><li role="separator" class="divider"></li>
-                            <li data-toggle="modal" data-target="#myModalExport" onclick="doDownloadAll()">
-                                <a href= "excel/scientificProjectAll?categoryLeafName=科研项目&uniqueName=教师科研&fileName=教师信息.xlsx">导出全部数据</a></li><li role="separator" class="divider"></li>
-                            <li data-toggle="modal" data-target="#myModalExport"><a id="import_selected" href="#">导出选中数据</a></li>
+                        <ul class="dropdown-menu export-list">
+                            <li data-toggle="modal" data-target="#myModalExport"><a id="doDownloadTemplate">导出模板</a>
+                            </li><li role="separator" class="divider"></li>
+                            <li data-toggle="modal" data-target="#myModalExport"><a id="doDownloadAll">导出全部数据</a>
+                            </li><li role="separator" class="divider"></li>
+                            <li data-toggle="modal" data-target="#myModalExport"><a id="doDownloadSelected">导出选中数据</a></li>
                         </ul>
                     </div>
 

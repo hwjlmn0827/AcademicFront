@@ -8,7 +8,7 @@
 function catagoryAjax() {
     $.ajax({
         type: "get",
-        url: "https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/categoryTree",
+        url: prefixUrl + "categoryTree",
         data: {
         },
         async: true,
@@ -45,7 +45,7 @@ function tag_buildTable() {
 function searchTags(){
     $.ajax({
         type: 'get',
-        url: 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/tag',
+        url: prefixUrl + 'tag',
         data: {
         },
         async: true,
@@ -91,7 +91,7 @@ $(document).on('click','.sureTagYes',function(){
     console.log("现行数"+dataRows)
     $.ajax({
         type: 'POST',
-        url: 'http://123.206.190.167:8080/dissertation/tag',
+        url: prefixUrl + 'tag',
         data: JSON.stringify({
             "uniqueName": tagName,
         }),
@@ -137,7 +137,7 @@ $(document).on('click','.sureTagYes2',function(){
     console.log(name+" "+id+" "+status)
     $.ajax({
         type: 'post',
-        url: 'http://123.206.190.167:8080/dissertation/tag',
+        url: prefixUrl + 'tag',
         data: JSON.stringify({
             "uniqueName": tagName,
             "status":status,

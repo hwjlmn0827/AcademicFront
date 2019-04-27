@@ -9,8 +9,7 @@
 $(function() {
     indexStart()
     catagoryAjax()
-//锚点
-    var navLabel = new Array('教师科研', "学生科研", '教学平台');
+    var navLabel = new Array('教师科研', '学生科研', '教学平台');
     $('#main').pageScroller({ navigation: navLabel });
     //弹框表格
     var columns_1 =[{"title":"姓名"},{"title":"科研项目"},{"title":"学术论文"},{"title":"成果采纳"},{"title":"专利"},{"title":"获奖"},{"title":"著作"}];
@@ -44,7 +43,6 @@ $(function() {
         ],
     });
 
-
     var columns_3 =[{"title":"姓名"},{"title":"教改项目"},{"title":"教学论文"},{"title":"教材"},{"title":"教师培训"},{"title":"教室获奖"},{"title":"竞赛指导"},{"title":"实习基地"},{"title":"实验室"}];
     $('#homepageTeachState').DataTable({
         "responsive": true,
@@ -60,27 +58,21 @@ $(function() {
         ],
     });
 
+    totalNumStatisticAjax("TeacherResearch")
+    totalNumStatisticAjax("StudentResearch")
+    totalNumStatisticAjax("TeachState")
 
-    totalNumStatisticAjax("教师科研")
-    totalNumStatisticAjax("学生科研")
-    totalNumStatisticAjax("教学平台")
-    teacherChart()
-    studentChart()
-    teachStateChart()
-    totalChartAjax('教师科研')
-    totalModalAjax('教师科研')
-    $('#教师科研').children().eq(0).addClass('stuffType_selected')
-    totalModalAjax('学生科研')
-    $('#学生科研').children().eq(0).addClass('stuffType_selected')
-    totalModalAjax('教学平台')
-    $('#教学平台').children().eq(0).addClass('stuffType_selected')
+    totalChartAjax('TeacherResearch')
+    totalChartAjax('StudentResearch')
+    totalChartAjax('TeachState')
 
-
+    totalModalAjax('TeacherResearch')
+    $('#TeacherResearch').children().eq(0).addClass('stuffType_selected')
+    totalModalAjax('StudentResearch')
+    $('#StudentResearch').children().eq(0).addClass('stuffType_selected')
+    totalModalAjax('TeachState')
+    $('#TeachState').children().eq(0).addClass('stuffType_selected')
 })
-
-
-
-
 
 function catagoryAjax() {
     $.ajax({
@@ -101,9 +93,6 @@ function catagoryAjax() {
     })
 }
 
-
-
-
 function totalNumStatisticAjax(categoryTreeName) {
     $.ajax({
         type: "get",
@@ -116,10 +105,10 @@ function totalNumStatisticAjax(categoryTreeName) {
         success: function(obj) {
             console.log(obj)
             switch(categoryTreeName) {
-                case("教师科研"):
+                case("TeacherResearch"):
                     totalNumStatistic_1(obj);
                     break;
-                case("学生科研"):
+                case("StudentResearch"):
                     totalNumStatistic_2(obj);
                     break;
                 case("教学平台"):
@@ -344,10 +333,6 @@ function totalNumStatistic_3(obj) {
 ////////////////////////////////近三年数据//////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
 function totalChartAjax(categoryTreeName) {
     $.ajax({
         type: "get",
@@ -361,13 +346,13 @@ function totalChartAjax(categoryTreeName) {
             console.log('近三年数据')
             console.log(obj)
             switch(categoryTreeName) {
-                case("教师科研"):
+                case("TeacherResearch"):
                     teacherChart(obj.data);
                     break;
-                case("学生科研"):
+                case("StudentResearch"):
                     studentChart(obj.data);
                     break;
-                case("教学平台"):
+                case("TeachState"):
                     teachStateChart(obj.data);
                     break;
             }
@@ -400,7 +385,7 @@ function teacherChart(obj) {
             type: 'line',
         },
         title: {
-            text: '教师科研'
+            text: '学生科研'
         },
         credits: { enabled: false},
         xAxis: {
@@ -432,9 +417,6 @@ function teacherChart(obj) {
     };
     var chart = Highcharts.chart('container-1', options1);
 }
-
-
-
 
 function studentChart(obj) {
     var years = []
@@ -480,7 +462,6 @@ function studentChart(obj) {
 
 
 }
-
 
 function teachStateChart(obj) {
     ['教改项目','教学论文','教材','教师培训','教师获奖','竞赛指导','实习基地','实验室']
@@ -542,12 +523,9 @@ function teachStateChart(obj) {
 
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////标题头表格//////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-
 
 function totalModalAjax(categoryTreeName) {
     $.ajax({
@@ -562,13 +540,13 @@ function totalModalAjax(categoryTreeName) {
         contentType: "application/json",
         success: function(obj) {
             switch(categoryTreeName) {
-                case("教师科研"):
+                case("TeacherResearch"):
                     setTableData1(obj.data);
                     break;
-                case("学生科研"):
+                case("StudentResearch"):
                     setTableData2(obj.data);
                     break;
-                case("教学平台"):
+                case("TeachState"):
                     setTableData3(obj.data);
                     break;
             }
@@ -661,10 +639,10 @@ $(document).on('click','.btn_stuffType .btn-primary',function() {
             console.log('点击后的数据')
             console.log(obj)
             switch(categoryTreeName) {
-                case("教师科研"):
+                case("TeacherResearch"):
                     setTableData1(obj.data);
                     break;
-                case("学生科研"):
+                case("StudentResearch"):
                     setTableData2(obj.data);
                     break;
                 case("教学平台"):

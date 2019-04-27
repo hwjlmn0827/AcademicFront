@@ -68,7 +68,7 @@ function recycle_buildTable() {
 function recycleTableDataAjax() {
 	$.ajax({
 		type: "get",
-		url: prefixUrl + "assets/deleted",
+		url: prefixUrl + "assets/trash",
 		data: {
 		},
 		async: true,
