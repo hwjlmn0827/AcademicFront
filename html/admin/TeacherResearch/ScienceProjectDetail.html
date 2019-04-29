@@ -105,6 +105,11 @@
                                             </select>
                                             <span class="originInfo knotForm"></span>
                                         </div>
+                                        <!-- <div class="form-group has-error has-feedback">
+                                            <label class="control-label" for="inputError2">Input with error</label>
+                                            <input type="text" class="form-control" id="inputError2" aria-describedby="inputError2Status">
+                                            <span id="inputError2Status" class="sr-only">(error)</span>
+                                        </div> -->
                                         <div class="form-group col-md-6 formBlock">
                                             <label class="formItem">其他参与人：<br>(≤5人)</label>
                                             <span class="originInfo otherPartners" ></span>
@@ -150,49 +155,49 @@
                                     <div class="panel-body">
                                         <div class="form-group col-md-12 formBlock">
                                             <label class="formItem">立项材料：</label>
-                                            <i id="proofMaterial1" class="fa fa-file-pdf-o fileNanme">&nbsp;zylinjksjafefddsf的师范.pdf</i>
+                                            <i id="proofMaterial1" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
                                                     <a class="input-file">上传<input type="file" id="lixiang" onchange="upFileFunc1()" /></a>
                                                 </button>
                                                 <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-12 formBlock">
                                             <label class="formItem">结题材料：</label>
-                                            <i id="proofMaterial2" class="fa fa-file-pdf-o fileNanme">&nbsp;zylin.pdf</i>
+                                            <i id="proofMaterial2" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
                                                     <a class="input-file">上传<input type="file" id="jieti" onchange="upFileFunc2()"></a>
                                                 </button>
                                                 <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-12 formBlock">
                                             <label class="formItem">项目合同：</label>
-                                            <i id="proofMaterial3" class="fa fa-file-pdf-o fileNanme">&nbsp;zylin.pdf</i>
+                                            <i id="proofMaterial3" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
                                                     <a class="input-file">上传<input type="file" id="hetong" onchange="upFileFunc3()"></a>
                                                 </button>
                                                 <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
+                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>
@@ -231,6 +236,6 @@
         id = window.location.href.split("?")[1].split("=")[1];
         $('.form-control').css('display', 'none');
         fillDetailAjax("TeacherResearch", "ScienceProject", 'ScientificProject', id)
-        $('#planTime').fdatepicker();//时间选择
+        $('#planTime').fdatepicker({format: 'yyyy-dd-mm'});//时间选择
     });
 </script>

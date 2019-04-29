@@ -252,6 +252,6 @@
         id = window.location.href.split("?")[1].split("=")[1];
         $('.form-control').css('display', 'none');
         fillDetailAjax("TeacherResearch", "Patent", 'Patent', id)
-        $('#planTime').fdatepicker();//时间选择
+        $('#planTime').fdatepicker({format: 'yyyy-dd-mm'});//时间选择
     });
 </script>

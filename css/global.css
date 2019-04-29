@@ -874,7 +874,9 @@ div.dataTables_filter label {
 }
 
 .plus-tag-add {
-    display: none
+    display: none;
+    position: absolute;
+    top: 10px;
 }
 
 .plus-tag-add li input {
@@ -888,6 +890,8 @@ div.dataTables_filter label {
 
 .tagbtn {
     font-size: 13px;
+    position: relative;
+    top: 5px;
 }
 
 .mycard-plus {
@@ -914,7 +918,7 @@ div.dataTables_filter label {
 
 .input-file input[type="file"] {
     position: absolute;
-    top: 0px;
+    top: 23px;
     opacity: 0;
     border: 1px solid yellow;
     background-color: yellow;

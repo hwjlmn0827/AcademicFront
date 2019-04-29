@@ -97,18 +97,18 @@ function recycleTable_setTableData(obj) {
 		};
 		if ($.inArray(item.categoryLeafName+item.categoryTreeName, option_array2)<0) {
 			option_array2.push(item.categoryLeafName+item.categoryTreeName)
-			$("#th4").append("<option value='"+item.categoryLeafName+'-'+item.categoryTreeName+"'>"+item.categoryLeafName+'-'+item.categoryTreeName+"</option>"); 
+			$("#th4").append("<option value='"+map[item.categoryLeafName]+'-'+map[item.categoryTreeName]+"'>"+map[item.categoryLeafName]+'-'+map[item.categoryTreeName]+"</option>");
 		};
 		order = index + 1;
 		var completeRate=Math.round(item.completeRate*100)
 		$('#recycleTable').dataTable().fnAddData([
 			'<input type="checkbox">',
 			'<span>'+order+'</span>',
-			'<a href="../'+map[item.categoryTreeName]+'/'+map[item.categoryLeafName]+'Detail.html?id="'+item.id+ 'id="'+item.id+'">'+item.name+'</a>',
+			'<a href="../'+item.categoryTreeName+'/'+item.categoryLeafName+'Detail.html?id="'+item.id+ 'id="'+item.id+'">'+item.name+'</a>',
 			'<span>'+item.author+'</span>',
-			'<span>'+item.categoryLeafName+'-'+item.categoryTreeName+'</span>',
+			'<span>'+map[item.categoryLeafName]+'-'+map[item.categoryTreeName]+'</span>',
 			'<span>'+item.date+'</span>',
-			'<span>'+item.tag+'</span>\
+			'<span>'+item.tags+'</span>\
 			</div>',
 			])
 	});

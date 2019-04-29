@@ -899,8 +899,9 @@ var cmap = {
     }
 };
 
-// const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
-const prefixUrl = 'http://192.168.1.140:8080/'
+const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
+// const prefixUrl = 'http://192.168.1.140:8080/'
+// const prefixUrl = 'http://192.168.1.106:8080/'
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------构建导航栏--------------------------------------*/
@@ -1239,7 +1240,7 @@ function catagoryAjax(mainDirectory, subDirectory) {
     var subClass = '.' + subDirectory
     $.ajax({
         type: "get",
-        url: "https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/categoryTree",
+        url: prefixUrl + "categoryTree",
         data: {},
         async: true,
         dataType: "json",
@@ -1505,17 +1506,15 @@ function deleteData(subDirectory) {
     })
 }
 
-//时间搜索 TODO add
-function timeSearch(LeafName) {
+function timeSearch(mainDirectory, subDirectory, requestDataSource) {
     var startDate
     var endDate
-    // var current = new Date();
     var current = new Date().Format("yyyy-MM-dd");
     if($(".dateInput2").val()) {
         current =$(".dateInput2").val()
         $.ajax({
             type: "get",
-            url: prefixUrl + "asset/" + LeafName+"/date",
+            url: prefixUrl + "asset/" + requestDataSource+"/date",
             data: {
                 "current": current
             },
@@ -1524,7 +1523,7 @@ function timeSearch(LeafName) {
             contentType: "application/json",
             success: function(data) {
                 console.log(data)
-                setTableData(data)
+                setTableData(mainDirectory, subDirectory, data)
             },
             Error: function() {
                 alert("服务器出错");
@@ -1540,7 +1539,7 @@ function timeSearch(LeafName) {
         console.log(current)
         $.ajax({
             type: "get",
-            url: prefixUrl + "asset/" + LeafName +"/date",
+            url: prefixUrl + "asset/" + requestDataSource +"/date",
             data: {
                 "begin": startDate,
                 "end": endDate
@@ -1549,7 +1548,7 @@ function timeSearch(LeafName) {
             dataType: "json",
             contentType: "application/json",
             success: function(data) {
-                setTableData(data)
+                setTableData(mainDirectory, subDirectory, data)
             },
             Error: function() {
                 alert("服务器出错");
@@ -1569,9 +1568,8 @@ $(document).on('click', '.btn-collection', function(event) {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            console.log(obj.data)
             $('#collectName').AutoComplete({
-                'data':  obj.data,
+                'data':  obj.columnList,
                 'itemHeight': 20,
                 'width': 180
             });
@@ -1591,7 +1589,6 @@ $(document).on('click', '.sureMoveIn_dataYes', function() {
         idd[i] = $(this).parents("tr").children('td:eq(2)').children('a').attr('id');
         $('#sureMoveIn_data').modal('hide')
     });
-    console.log(idd);
     $.ajax({
         type: "POST",
         url: prefixUrl + "collection/addCollection",
@@ -1643,8 +1640,8 @@ function buildDetailInfoBlock(mainDirectory, subDirectory, infoData) {
 function fillDetailAjax(mainDirectory, subDirectory, dataResource, id) {
     $.ajax({
         type: "get",
-        // url: prefixUrl + 'asset/' +  dataResource + '/{id}',
-        url: prefixUrl + 'asset/' +  dataResource + '/' + id,
+        url: prefixUrl + 'asset/' +  dataResource + '/{id}',
+        // url: prefixUrl + 'asset/' +  dataResource + '/' + id,
         data: {
         },
         async: true,
@@ -1671,10 +1668,8 @@ function AutoDatafill() {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            console.log("参与人名单")
-            console.log(obj)
             $.each(obj.data, function(index, val) {
-                participant.push(val.name)
+                participant.push(val.uniqueName)
             });
             console.log(participant)
         },
@@ -1682,7 +1677,6 @@ function AutoDatafill() {
             alert("服务器出错");
         }
     })
-
     $('input[name="otherPartners"]').AutoComplete({
         'data': participant,
         'itemHeight': 20,
@@ -1730,6 +1724,7 @@ function AutoDatafill() {
 }
 
 function fillDetail(obj) {
+    AutoDatafill()
     $.each(obj.data, function(key, val) {
         if (!val) {
             $("input[name='"+key+"']").parents(".formBlock").addClass('unfilled')
@@ -1754,8 +1749,8 @@ function fillDetail(obj) {
             }
         });
     }
-
-    $.each(obj.data.tag, function(index, val) {
+    $.each(obj.data.tags, function(index, val) {
+        console.log(val)
         $('.plus-tag').css('display', 'block');
         $('.plus-tag').append('<a value="-1" title="one" href="javascript:void(0);"><span>'+val+'</span><em style="display: none;" ></em></a>')
     });
@@ -1858,9 +1853,6 @@ function fillDetail(obj) {
     $(".projectSource").html(obj.data.projectSource)
     $("input[name='projectSource']").val(obj.data.projectSource)
 
-    $(".applyDate").html(obj.data.applyDate)
-    $("input[name='applyDate']").val(obj.data.applyDate)
-
     $(".periodical").html(obj.data.periodical)
     $("input[name='periodical']").val(obj.data.periodical)
 
@@ -1900,12 +1892,12 @@ function fillDetail(obj) {
     $('.progress-bar').css('width', completeRate+'%');
     $('.progress-bar span').text(completeRate+'%');
 
-    // $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial1').html(filename)
-    // $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial2').html(filename)
-    // $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-    // $('#proofMaterial3').html(filename)
+    $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[0]);
+    $('#proofMaterial1').html(obj.data.otherTextInfo[0])
+    $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[1]);
+    $('#proofMaterial2').html(obj.data.otherTextInfo[1])
+    $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherTextInfo[2]);
+    $('#proofMaterial3').html(obj.data.otherTextInfo[2])
 }
 
 //下载附件
@@ -2000,6 +1992,7 @@ $(document).on('click', '#btnChange', function(event) {
     $('.filebtn_before').css('display', 'none');
     $('.filebtn_after').css('display', 'inline');
     $('.plus-tag-add').css('display', 'block');
+    $('.tagbtn').css('top', '65px');
     $('.needExpend').animate({height:'315px'});
     $('input[name="otherPartners"]').css('display', 'inline');
     $('.glyphicon-remove').css('display', 'inline');
@@ -2227,7 +2220,7 @@ function templateIndex(mainDirectory, subDirectory, requestDataSource) {
 
     $(".datepicker").datepicker({endDate: new Date()});
     $('.dateSearch').click(function (event) {
-        timeSearch('ScientificProject')
+        timeSearch(mainDirectory, subDirectory, requestDataSource)
     });
 
     $(document).on('click', '#doDownloadTemplate', function () {
