@@ -85,7 +85,6 @@ function recycleTableDataAjax() {
 }
 
 
-
 function recycleTable_setTableData(obj) {
 	// $('#recycleTable').dataTable().fnClearTable();
 	var option_array = [];
@@ -123,7 +122,7 @@ $(document).on('click','.sureRecover_dataYes',function(){
 	console.log(ids);
 	$.ajax({
 		type: "post",
-		url: prefixUrl + "assets/recover",
+		url: prefixUrl + "assets/trash/recover",
 		data: JSON.stringify({
 			"ids":ids
 		}),
@@ -305,7 +304,60 @@ $('.search_inresult').click(function(event) {
 	dddata.baseParams.push(arr)
 	console.log(dddata)
 	multipleTableDataAjax_search_inresult(dddata)
+});
 
+function timeSearch(requestDataSource) {
+    var startDate
+    var endDate
+    var current = new Date().Format("yyyy-MM-dd");
+    if($(".dateInput2").val()) {
+        current =$(".dateInput2").val()
+        $.ajax({
+            type: "get",
+            url: prefixUrl + "asset/trash/date",
+            data: {
+                "current": current
+            },
+            async: true,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                console.log(data)
+                recycleTable_setTableData(data)
+            },
+            Error: function() {
+                alert("服务器出错");
+            }
+        })
+    } else {
+        startDate = $("input[name='dtBegin']").val()
+        endDate = $("input[name='dtEnd']").val()
+        console.log(startDate)
+        console.log(endDate)
+        console.log(current)
+        $.ajax({
+            type: "get",
+            url: prefixUrl + "asset/trash/date",
+            data: {
+                "begin": startDate,
+                "end": endDate
+            },
+            async: true,
+            dataType: "json",
+            contentType: "application/json",
+            success: function(data) {
+                recycleTable_setTableData(data)
+            },
+            Error: function() {
+                alert("服务器出错");
+            }
+        })
+    }
+}
+
+$(".datepicker").datepicker({endDate: new Date()});
+$('.dateSearch').click(function (event) {
+    timeSearch()
 });
 
 $(function() {

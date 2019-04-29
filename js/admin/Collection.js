@@ -63,7 +63,7 @@ function collection_buildTable() {
 function collectionTableDataAjax() {
     $.ajax({
         type: "get",
-        url: prefixUrl + "ScientificProject",
+        url: prefixUrl + "/collection/columns",
         data: {
         },
         async: true,
@@ -115,7 +115,6 @@ function collectionTable_setTableData(obj) {
 }
 
 window.onload = function() {
-
     var contex_menu = {
         'context1' : {
             elements : [

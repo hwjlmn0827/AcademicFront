@@ -1007,7 +1007,7 @@ function alertModal() {
         <div class="modal-body">\
         <form enctype="multipart/form-data" method="post" name="uploadForm">\
         <input type="file" class="btn btn-default" name="file" id="fff" />\
-        <input type="button" class="btn btn-primary upLoadBtn" value="上传" onclick="fileupload()"  data-toggle="modal" data-target="#inportSuccess"  data-dismiss="modal"/>\
+        <input type="button" id="fileupload" class="btn btn-primary upLoadBtn" value="上传"/>\
         </form>\
         </div>\
         </div>\
@@ -1428,31 +1428,24 @@ function doDownloadSelected(mainDirectory, subDirectory, requestDataSource) {
     if (ids.length > 0) {
         ids = ids.substring(0, ids.length - 1)
     }
-    alert(ids)
-    // window.open(url + ids)
+    window.open(url + ids)
 }
 
-// 上传组件 TODO para? @ziyi
-function fileupload() {
+function fileupload(requestDataSource) {
+    alert(prefixUrl + "excel/" + requestDataSource)
     var formdata = new FormData($("form[name='uploadForm']")[0])
     $.ajax({
-        // url: prefixUrl + "excel/assetsSelected",
-        // url: "excel/" + requestDataSource,
-        url: prefixUrl + "excel/ScientificProject",
+        url: prefixUrl + "excel/" + requestDataSource,
         type: "post",
         data: formdata,
         contentType: false,
         processData: false,
         cache: false,
         success: function (data) {
-            console.log(data)
         }
     })
 }
 
-
-
-// TODO OK without TEST @ziyi
 function importResult(mainDirectory, subDirectory, requestDataSource) {
     var importColumns = cmap[mainDirectory][subDirectory]['importColumns'];
     // var importLen = importColumns.length
@@ -1469,12 +1462,6 @@ function importResult(mainDirectory, subDirectory, requestDataSource) {
         "bFilter": false, //过滤功能
     });
 }
-
-//批量删除
-$(document).on('click', '.sureDelete_dataYes', function () {
-    var subDirectory = 'ScienceProject'
-    deleteData(subDirectory)
-});
 
 function deleteData(subDirectory) {
     var idd = [];
@@ -1640,8 +1627,8 @@ function buildDetailInfoBlock(mainDirectory, subDirectory, infoData) {
 function fillDetailAjax(mainDirectory, subDirectory, dataResource, id) {
     $.ajax({
         type: "get",
-        url: prefixUrl + 'asset/' +  dataResource + '/{id}',
-        // url: prefixUrl + 'asset/' +  dataResource + '/' + id,
+        // url: prefixUrl + 'asset/' +  dataResource + '/{id}',
+        url: prefixUrl + 'asset/' +  dataResource + '/' + id,
         data: {
         },
         async: true,
@@ -2232,4 +2219,10 @@ function templateIndex(mainDirectory, subDirectory, requestDataSource) {
     $(document).on('click', '#doDownloadSelected', function () {
         doDownloadSelected(mainDirectory, subDirectory, requestDataSource)
     })
+    $(document).on('click', '#fileupload', function () {
+        fileupload(requestDataSource)
+    })
+    $(document).on('click', '.sureDelete_dataYes', function () {
+        deleteData(subDirectory)
+    });
 }

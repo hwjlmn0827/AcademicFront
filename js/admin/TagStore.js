@@ -159,9 +159,42 @@ $(document).on('click','.sureTagYes2',function(){
     })
 })
 
+function deleteData() {
+    var idd = [];
+    $("input[type='checkbox']:checked").each(function (i) {
+        idd.push($(this).parents("tr").children('td:eq(2)').children('a').attr('id'));
+        $(this).parents("tr").addClass('tr_selected')
+    });
+    $('#sureDelete_data').modal('hide')
+    console.log(idd);
+    $.ajax({
+        type: "POST",
+        url: prefixUrl + "tag/deleted",
+        data: JSON.stringify({
+            "ids": idd
+        }),
+        async: true,
+        dataType: "json",
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data)
+            if (data.err) {
+                $('#tagStoreTable').DataTable().rows('.tr_selected').remove().draw(false);
+            }
+            ;
+        },
+        Error: function () {
+            alert("服务器出错");
+        }
+    })
+}
+
 $(function() {
     indexStart()
     catagoryAjax()
     tag_buildTable()
     searchTags()
+    $(document).on('click', '.sureDelete_dataYes', function () {
+        deleteData()
+    });
 })
