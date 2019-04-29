@@ -899,9 +899,10 @@ var cmap = {
     }
 };
 
-const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
+// const prefixUrl = 'https://nei.netease.com/api/apimock/65f140b55e2da50e553e4a5a8be4f9ba/'
 // const prefixUrl = 'http://192.168.1.140:8080/'
 // const prefixUrl = 'http://192.168.1.106:8080/'
+const prefixUrl = 'http://localhost:8080/'
 
 /*----------------------------------------------------------------------------------------*/
 /*-----------------------------------------构建导航栏--------------------------------------*/

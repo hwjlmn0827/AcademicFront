@@ -28,7 +28,6 @@ $(function() {
     });
 
     var columns_2 =[{"title":"姓名"},{"title":"学术论文"},{"title":"竞赛获奖"},{"title":"项目"},{"title":"专利"}];
-
     $('#homepageStudentResearch').DataTable({
         "responsive": true,
         "searching": true,
@@ -103,7 +102,6 @@ function totalNumStatisticAjax(categoryTreeName) {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            console.log(obj)
             switch(categoryTreeName) {
                 case("TeacherResearch"):
                     totalNumStatistic_1(obj);
@@ -111,7 +109,7 @@ function totalNumStatisticAjax(categoryTreeName) {
                 case("StudentResearch"):
                     totalNumStatistic_2(obj);
                     break;
-                case("教学平台"):
+                case("TeachState"):
                     totalNumStatistic_3(obj);
                     break;
 
@@ -139,8 +137,8 @@ function totalNumStatistic_1(obj) {
     var forcount = 0
     $.each(obj.data[0].statisticBeans, function(index, val) {
         var order = index+1
-        itemObj[val.categoryLeafName][0] = val.completeRate
-        itemObj[val.categoryLeafName][1] = 1-val.completeRate
+        itemObj[map[val.categoryLeafName]][0] = val.completeRate
+        itemObj[map[val.categoryLeafName]][1] = 1-val.completeRate
         $(".teacherList tr:nth-child("+order+") td:nth-child(3)").html(val.count);
     })
     for(var i in itemObj)
@@ -195,8 +193,8 @@ function totalNumStatistic_2(obj) {
     var forcount = 0
     $.each(obj.data[0].statisticBeans, function(index, val) {
         var order = index+1
-        itemObj[val.categoryLeafName][0] = val.completeRate
-        itemObj[val.categoryLeafName][1] = 1-val.completeRate
+        itemObj[map[val.categoryLeafName]][0] = val.completeRate
+        itemObj[map[val.categoryLeafName]][1] = 1-val.completeRate
         $('.studentData .item:nth-child('+order+') h1' ).html(val.count)
 
     })
@@ -250,9 +248,9 @@ function totalNumStatistic_3(obj) {
     var itemObj={'教改项目':[0,1,0],'教学论文':[0,1,0],'教材':[0,1,0],'教师培训':[0,1,0],'教师获奖':[0,1,0],'竞赛指导':[0,1,0],'实习基地':[0,1,0],'实验室':[0,1,0]}
     var forcount = 0
     $.each(obj.data[0].statisticBeans, function(index, val) {
-        itemObj[val.categoryLeafName][0] = val.completeRate
-        itemObj[val.categoryLeafName][1] = 1-val.completeRate
-        itemObj[val.categoryLeafName][2] = val.count
+        itemObj[map[val.categoryLeafName]][0] = val.completeRate
+        itemObj[map[val.categoryLeafName]][1] = 1-val.completeRate
+        itemObj[map[val.categoryLeafName]][2] = val.count
     })
     for(var i in itemObj)
     {
@@ -324,7 +322,6 @@ function totalNumStatistic_3(obj) {
             data: crNum  }]
 
     };
-
     var chart = Highcharts.chart('container-31', options31);
 }
 
@@ -343,8 +340,6 @@ function totalChartAjax(categoryTreeName) {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            console.log('近三年数据')
-            console.log(obj)
             switch(categoryTreeName) {
                 case("TeacherResearch"):
                     teacherChart(obj.data);
@@ -373,7 +368,7 @@ function teacherChart(obj) {
     $.each(obj, function(index_0, val_0) {
         years.push(val_0.year)
         $.each(val_0.yearStatisticWrapBeans, function(index, val) {
-            itemObj[val.categoryLeafName][index_0] = val.count
+            itemObj[map[val.categoryLeafName]][index_0] = val.count
         })
     });
     for( var key in itemObj) {
@@ -426,7 +421,7 @@ function studentChart(obj) {
     $.each(obj, function(index_0, val_0) {
         years.push(val_0.year)
         $.each(val_0.yearStatisticWrapBeans, function(index, val) {
-            itemObj[val.categoryLeafName][index_0] = val.count
+            itemObj[map[val.categoryLeafName]][index_0] = val.count
         })
     });
     for( var key in itemObj) {
@@ -459,12 +454,10 @@ function studentChart(obj) {
             data: subJ_array[3]  }]
     };
     var chart = Highcharts.chart('container-2', options2);
-
-
 }
 
 function teachStateChart(obj) {
-    ['教改项目','教学论文','教材','教师培训','教师获奖','竞赛指导','实习基地','实验室']
+    // ['教改项目','教学论文','教材','教师培训','教师获奖','竞赛指导','实习基地','实验室']
     var years = []
     var itemObj={'教改项目':[0,0,0],'教学论文':[0,0,0],'教材':[0,0,0],'教师培训':[0,0,0],'教师获奖':[0,0,0],'竞赛指导':[0,0,0],'实习基地':[0,0,0],'实验室':[0,0,0]}
     var subJ = []
@@ -472,7 +465,7 @@ function teachStateChart(obj) {
     $.each(obj, function(index_0, val_0) {
         years.push(val_0.year)
         $.each(val_0.yearStatisticWrapBeans, function(index, val) {
-            itemObj[val.categoryLeafName][index_0] = val.count
+            itemObj[map[val.categoryLeafName]][index_0] = val.count
         })
     });
     for( var key in itemObj) {
@@ -519,8 +512,8 @@ function teachStateChart(obj) {
             name: subJ[7],
             data: subJ_array[7] } ]
     };
+    console.log(options32)
     var chart = Highcharts.chart('container-32', options32);
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -559,12 +552,11 @@ function totalModalAjax(categoryTreeName) {
 //填充数据具体操作
 function setTableData1(data) {
     $('#homepageTeacherResearch').dataTable().fnClearTable();
-    var option_array = [];
     $.each(data, function(index, item) {
         order = index + 1;
         var itemObj={'科研项目':0,'学术论文':0,'专利':0,'获奖':0,'著作':0,'成果采纳':0}
         $.each(item.userStatisticsBeans, function(idx, val) {
-            itemObj[val.categoryLeafName] = val.count
+            itemObj[map[val.categoryLeafName]] = val.count
         });
         $('#homepageTeacherResearch').dataTable().fnAddData([
             '<a href="teacherTable.html?id='+item.userName+'" id="'+item.userName+'">'+item.userName+'</a>',
@@ -584,7 +576,7 @@ function setTableData2(data) {
         order = index + 1;
         var itemObj={'学术论文':0,'竞赛获奖':0,'项目':0,'专利':0}
         $.each(item.userStatisticsBeans, function(idx, val) {
-            itemObj[val.categoryLeafName] = val.count
+            itemObj[map[val.categoryLeafName]] = val.count
         });
         $('#homepageStudentResearch').dataTable().fnAddData([
             '<a href="studentTable.html?id='+item.userName+'" id="'+item.userName+'">'+item.userName+'</a>',
@@ -602,7 +594,7 @@ function setTableData3(data) {
         order = index + 1;
         var itemObj={'教改项目':0,'教学论文':0,'教材':0,'教师培训':0,'教师获奖':0,'竞赛指导':0,'实习基地':0,'实验室':0}
         $.each(item.userStatisticsBeans, function(idx, val) {
-            itemObj[val.categoryLeafName] = val.count
+            itemObj[map[val.categoryLeafName]] = val.count
         });
         $('#homepageTeachState').dataTable().fnAddData([
             '<a href="teacherStateTable.html?id='+item.userName+'" id="'+item.userName+'">'+item.userName+'</a>',
