@@ -54,7 +54,7 @@ function collection_buildTable() {
                 column.data().unique().sort().each( function ( d, j ) {
                     select.append( '<option value="'+d+'">'+d+'</option>' )
                 } );
-            } );
+            });
         },
     });
 }
@@ -63,7 +63,7 @@ function collection_buildTable() {
 function collectionTableDataAjax() {
     $.ajax({
         type: "get",
-        url: prefixUrl + "/collection/columns",
+        url: prefixUrl + "/collection/favorites?colunm=" + colunms,
         data: {
         },
         async: true,
@@ -87,7 +87,7 @@ function collectionTable_setTableData(obj) {
     var option_array2 = [];
     var option_array3 = [];
     var order = 0;
-    $.each(obj.data, function(index, item) {
+    $.each(obj.data.data, function(index, item) {
         if ($.inArray(item.author, option_array)<0) {
             option_array.push(item.author)
             $("#th3").append("<option value='"+item.author+"'>"+item.author+"</option>");
@@ -147,9 +147,8 @@ window.onload = function() {
                     icon: '../../../css/images/delete.png',
                     action : function(node) {
                         console.log(node.text)
-                        //删除该收藏夹
                         $.ajax({
-                            type: "DELETE",
+                            type: "GET",
                             url: prefixUrl + "collection/column?column="+node.text,
                             data:{
                             },
@@ -171,8 +170,8 @@ window.onload = function() {
             ]
         }
     };
-
-
+    console.log('contex_menu')
+    console.log(contex_menu)
     tree = createTree('div_tree','white',contex_menu);
     tree.drawTree();
     tree.createNode('新建文件夹',false,'../../../css/images/leaf.png',null,null,null);
@@ -186,9 +185,10 @@ window.onload = function() {
             dataType: "json",
             contentType: "application/json",
             success: function(obj) {
-                for (var i=0; i<obj.length; i++) {
-                    node1 = tree.createNode(obj.data[i],false,'../../../css/images/star.png',null,null,'context1');
+                for (var i=0; i<obj.data.length; i++) {
+                    tree.createNode(obj.data[i],false,'../../../css/images/star.png',null,null,'context1');
                 }
+                tree.drawTree();
             },
             Error: function() {
                 alert("服务器出错");
@@ -197,9 +197,8 @@ window.onload = function() {
     }
     reloadCollectionAjax()
 
-//显示收藏夹内容
+//显示收藏夹表格内容
     $(document).on('click','#tree li:not(":first")',function(){
-
         var liName =$(this).children('span').children('a').text()
         console.log(liName)
         $.ajax({
@@ -212,7 +211,6 @@ window.onload = function() {
             dataType: "json",
             contentType: "application/json",
             success: function(obj) {
-                console.log(obj)
                 collectionTable_setTableData(obj)
             },
             Error: function() {
@@ -229,17 +227,15 @@ window.onload = function() {
     })
 //弹框收藏夹
     $(document).on('click','#tree li:nth-child(1) ',function(){
-
         var liName =$(this).children('span').children('a').text()
         console.log(liName)
         $('#newCollection').modal('show')
     })
-//添加收藏夹
+//确认添加收藏夹
     $(document).on('click','.sureCollectionYes',function(){
         console.log($('#collectName').val())
-        if ($('#collectName').val()) {
+        if ($("input[name='collectName']").val()) {
             var collectName = $('#collectName').val()
-            // 新增收藏夹？？？有问题
             $.ajax({
                 type: "POST",
                 url: prefixUrl + "collection/addColumn?column="+collectName,
@@ -300,5 +296,30 @@ $(function() {
     catagoryAjax()
     collection_buildTable()
     collectionTableDataAjax()
+    $(document).on('click','.sureCollectionYes',function(){
+        console.log($('#collectName').val())
+        if ($("input[name='collectName']").val()) {
+            var collectName = $('#collectName').val()
+            $.ajax({
+                type: "POST",
+                url: prefixUrl + "collection/addColumn?column="+collectName,
+                data:{
+                },
+                async: true,
+                dataType: "json",
+                contentType: "application/json",
+                success: function(obj) {
+                    console.log(obj)
+                    if (obj.data =='创建成功') {
+                        node1 = tree.createNode($('#collectName').val(), false,'../../../css/images/star.png',null,null,'context1');
+                        $('#newCollection').modal('hide')
+                    };
+                },
+                Error: function() {
+                    alert("服务器出错");
+                }
+            })
+        };
+    })
 })
 

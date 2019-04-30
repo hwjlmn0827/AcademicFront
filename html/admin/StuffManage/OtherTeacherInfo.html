@@ -27,36 +27,7 @@
 				<label>按名字搜索:<input type="search" class="" placeholder="" >
 					<button class="btn btn-primary darkbule">搜索</button></label>
 			</div>
-			<table class="mainTable table table-bordered uncheckedbox" >
-				<tbody>
-				<tr>
-					<td><span></span></td>
-					<td><span>1</span></td>
-					<td><span>chunhua</span></td>
-					<td><span>东语学院</span></td>
-					<td><span>12345</span></td>
-					<td><span>教授</span></td>
-					<td><span>副院长</span></td>
-					<td><span>电子商务</span></td>
-					<td><span>151219</span></td>
-					<td><span>15967179876</span></td>
-					<td><span>345244324@163.com</span></td>
-				</tr>
-				<tr>
-					<td><span></span></td>
-					<td><span>1</span></td>
-					<td><span>王勋</span></td>
-					<td><span>东语学院</span></td>
-					<td><span>12345</span></td>
-					<td><span>教授</span></td>
-					<td><span>院长</span></td>
-					<td><span>电子商务</span></td>
-					<td><span>151219</span></td>
-					<td><span>15967179876</span></td>
-					<td><span>345244324@163.com</span></td>
-				</tr>
-				</tbody>
-			</table>
+			<table class="mainTable table table-bordered uncheckedbox" ></table>
 		</div>
 	</div>
 </div>
@@ -73,7 +44,7 @@
     $(function() {
         var mainDirectory = 'StuffManage'
         var subDirectory = 'OtherTeacherInfo'
-        var requestDataSource = 'OtherTeacherInfo'
+        var requestDataSource = 'OtherTeacherInformation'
         indexStart()
         catagoryAjax(mainDirectory, subDirectory)
         buildTable(mainDirectory, subDirectory)

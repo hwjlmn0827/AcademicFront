@@ -34,9 +34,9 @@
 				<div class="modal-body">
 					<form id= "uploadForm" class="uploadForm">  
 						<input type="file" class="btn btn-default" name="file"/>  
-						<input type="button" class="btn btn-primary upLoadBtn" value="上传" onclick="doUpload()"  data-toggle="modal" data-target="#InputSuccess"  data-dismiss="modal"/>
+						<input type="button" class="btn btn-primary upLoadBtn" value="上传" id="fileupload" data-toggle="modal" data-target="#InputSuccess"  data-dismiss="modal"/>
 					</form> 
-					<a class="downloadTemplet" href="#">点此下载模板</a>
+					<a class="downloadTemplate" href="#">点此下载模板</a>
 				</div>
 			</div>
 		</div>
@@ -53,35 +53,35 @@
 					<div class="row">
 						<form  class="addForm form-inline">
 							<div class="form-group col-md-6">
-								<label for="studentName " class="formItem">姓名：</label>
-								<input type="text" class="form-control" id="" value="">
+								<label for="name" class="formItem">姓名：</label>
+								<input type="text" class="form-control" id="name">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="studentId" class="formItem">学号：</label>
-								<input type="text" class="form-control" id="" >
+								<label for="stuNumber" class="formItem">学号：</label>
+								<input type="text" class="form-control" id="stuNumber">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="major" class="formItem">专业：</label>
-								<input type="text" class="form-control" id="" >
+								<input type="text" class="form-control" id="major">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="grade" class="formItem">年级：</label>
-								<input type="text" class="form-control" id="" >
+								<input type="text" class="form-control" id="grade">
 							</div>
 							<div class="form-group col-md-6">
-								<label for="phoneNum" class="formItem">联系方式：</label>
-								<input type="text" class="form-control" id="" >
+								<label for="phone" class="formItem">联系方式：</label>
+								<input type="text" class="form-control" id="phone">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="email" class="formItem">邮箱：</label>
-								<input type="text" class="form-control" id="" >
+								<input type="text" class="form-control" id="email">
 							</div>
 						</form>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary">添加</button>
+					<button type="button" class="btn btn-primary" id="newInfo">添加</button>
 				</div>
 			</div>
 		</div>
@@ -105,30 +105,7 @@
 					<label>按名字搜索:<input type="search" class="" placeholder="" >
 						<button class="btn btn-primary darkbule">搜索</button></label>
 					</div>
-					<table class="mainTable table table-bordered uncheckedbox" >
-						<tbody>
-							<tr>
-								<td><span></span></td>
-								<td><span>1</span></td>
-								<td><span>zylin</span></td>
-								<td><span>12345</span></td>
-								<td><span>软件工程</span></td>
-								<td><span>15</span></td>
-								<td><span>15967179876</span></td>
-								<td><span>345244324@163.com</span></td>
-							</tr>
-							<tr>
-								<td><span></span></td>
-								<td><span>2</span></td>
-								<td><span>dst</span></td>
-								<td><span>12345</span></td>
-								<td><span>软件工程</span></td>
-								<td><span>15</span></td>
-								<td><span>15967179876</span></td>
-								<td><span>345244324@163.com</span></td>
-							</tr>
-						</tbody>
-					</table>
+					<table class="mainTable table table-bordered uncheckedbox" ></table>
 				</div>
 			</div>
 		</div>
@@ -144,11 +121,45 @@
     $(function() {
         var mainDirectory = 'StuffManage'
         var subDirectory = 'StudentInfo'
-        var requestDataSource = 'StudentInfo'
+        var requestDataSource = 'StudentInformation'
         indexStart()
         catagoryAjax(mainDirectory, subDirectory)
         buildTable(mainDirectory, subDirectory)
         fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
         $('#StudentInfo_filter').addClass('hiddenFilter')
-    })
+        var url = prefixUrl + 'excel/template/' + requestDataSource + '?fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '模板'
+        $('.downloadTemplate').attr('href', url)
+        $(document).on('click', '#fileupload', function () {
+            fileupload(requestDataSource)
+        })
+        $(document).on('click', '#newInfo', function () {
+            var data = {
+                "name": $('#name').val(),
+                "stuNumber": $('#stuNumber').val(),
+                "major": $('#major').val(),
+                "grade": $('#grade').val(),
+                "contact": $('#contact').val(),
+                "email": $('#email').val(),
+                "uploader": 'admin123456',
+                "categoryTreeName": mainDirectory,
+                "categoryLeafName": subDirectory
+            }
+            $.ajax({
+                type: "POST",
+                url: prefixUrl + 'asset/' + requestDataSource,
+                data: JSON.stringify(data),
+                async: true,
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    if (data.err) {
+                        location.reload();
+					}
+                },
+                Error: function () {
+                    alert("服务器出错");
+                }
+            })
+        })
+	})
 </script>

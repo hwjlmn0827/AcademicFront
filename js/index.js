@@ -738,37 +738,37 @@ var cmap = {
                 }, {
                     id: 3,
                     title: '工号',
-                    name: 'author',
+                    name: 'jobNumber',
                     flatten: true
                 }, {
                     id: 4,
                     title: '职称',
-                    name: 'arrangement',
-                    flatten: true
+                    name: 'jobName',
+                    flatten: false
                 }, {
                     id: 5,
                     title: '职务',
-                    name: 'date',
+                    name: 'job',
                     flatten: false
                 }, {
                     id: 6,
                     title: '专业',
-                    name: 'completeRate',
-                    flatten: false
+                    name: 'major',
+                    flatten: true
                 }, {
                     id: 7,
                     title: '财务账号',
-                    name: 'completeRate',
+                    name: 'account',
                     flatten: false
                 }, {
                     id: 8,
                     title: '联系方式',
-                    name: 'completeRate',
+                    name: 'phone',
                     flatten: false
                 }, {
                     id: 9,
                     title: '邮箱',
-                    name: 'completeRate',
+                    name: 'email',
                     flatten: false
                 }
             ],
@@ -820,12 +820,12 @@ var cmap = {
                 }, {
                     id: 9,
                     title: '联系方式',
-                    name: 'completeRate',
+                    name: 'contact',
                     flatten: false
                 }, {
                     id: 10,
                     title: '邮箱',
-                    name: 'completeRate',
+                    name: 'email',
                     flatten: false
                 }
             ],
@@ -847,27 +847,27 @@ var cmap = {
                 }, {
                     id: 3,
                     title: '学号',
-                    name: 'author',
-                    flatten: true
+                    name: 'stuNumber',
+                    flatten: false
                 }, {
                     id: 4,
                     title: '专业',
-                    name: 'arrangement',
+                    name: 'major',
                     flatten: true
                 }, {
                     id: 5,
                     title: '年级',
-                    name: 'date',
-                    flatten: false
+                    name: 'grade',
+                    flatten: true
                 }, {
                     id: 5,
                     title: '联系方式',
-                    name: 'date',
+                    name: 'contact',
                     flatten: false
                 }, {
                     id: 6,
                     title: '邮箱',
-                    name: 'completeRate',
+                    name: 'email',
                     flatten: false
                 }
             ],
@@ -889,8 +889,8 @@ var cmap = {
                 }, {
                     id: 3,
                     title: '学生账号',
-                    name: 'author',
-                    flatten: true
+                    name: 'stuNumber',
+                    flatten: false
                 }
             ],
             importColumns: [],
@@ -923,7 +923,7 @@ function header(){
 	</a>\
 	</li>\
 	<li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">\
-	<img width="34" height="34" src="../../../img/head1.jpeg" />zylin<b class="caret"></b></a>\
+	<img width="34" height="34" src="../../../img/head1.jpeg" />admin<b class="caret"></b></a>\
 	<ul class="dropdown-menu">\
 	<li><a href="../../reset.html">\
 	<i class="icon-gear"></i>修改密码</a>\
@@ -1068,7 +1068,7 @@ function alertModal() {
                 <div class="modal-content">\
                     <div class="modal-body">\
                     <span>请输入已存在的收藏夹名称</span>\
-                        <input type="text" id="collectName" name="collectName" />\
+                        <input type="text" id="collectName" name="collectName"/>\
                     </div>\
                     <div class="modal-footer">\
                         <button type="button" class="btn btn-danger fa fa-check sureMoveIn_dataYes"  data-toggle="modal" data-target="#collection" >确认</button>\
@@ -1340,7 +1340,7 @@ function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
 //填充数据具体操作 OK
 function setTableData(mainDirectory, subDirectory, obj) {
     console.log('setTableData')
-    $('#' + subDirectory).dataTable().fnClearTable();
+    // $('#' + subDirectory).dataTable().fnClearTable();
     var mapColums = cmap[mainDirectory][subDirectory]['columns'];
 
 
@@ -1389,6 +1389,15 @@ function setTableData(mainDirectory, subDirectory, obj) {
                 case 'participantNames':
                 case 'address':
                 case 'date':
+                case 'stuNumber':
+                case 'jobNumber':
+                case 'grade':
+                case 'major':
+                case 'email':
+                case 'contact':
+                case 'phone':
+                case 'job':
+                case 'account':
                     columnContent.push('<span>' + item[para.name] + '</span>')
                     break;
                 case 'completeRate':
@@ -1420,7 +1429,7 @@ function doDownloadAll(mainDirectory, subDirectory, requestDataSource) {
 
 // 选中序号构造下载url TODO
 function doDownloadSelected(mainDirectory, subDirectory, requestDataSource) {
-    var url = prefixUrl + 'excel/'+ requestDataSource +'&fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '部分&ids='
+    var url = prefixUrl + 'excel/'+ requestDataSource +'?fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '部分&ids='
     var ids = ""
     $("input:checked").each(function () {
         var id = $(this).parent().next().next().find("a").attr("id")
@@ -1443,6 +1452,7 @@ function fileupload(requestDataSource) {
         processData: false,
         cache: false,
         success: function (data) {
+            location.reload();
         }
     })
 }

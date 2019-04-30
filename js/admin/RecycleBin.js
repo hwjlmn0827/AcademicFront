@@ -262,7 +262,7 @@ function multipleTable_setTableData(obj) {
 		$('#multipleTable').dataTable().fnAddData([
 			'<input type="checkbox">',
 			'<span>'+order+'</span>',
-			'<a href="../'+map[item.categoryTreeName]+'/'+map[item.categoryLeafName]+'Detail.html?id="'+item.id+'"  id="'+item.id+'">'+item.name+'</a>',
+			'<a href="../'+map[item.categoryTreeName]+'/'+map[item.categoryLeafName]+'Detail.html?id=' + item.id +'" id="'+item.id+'">'+item.name+'</a>',
 			'<span>'+item.author+'</span>',
 			'<span>'+item.categoryLeafName+'-'+item.categoryTreeName+'</span>',
 			'<span>'+item.date+'</span>',

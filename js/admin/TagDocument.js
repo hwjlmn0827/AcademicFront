@@ -46,7 +46,7 @@ function tagdocBuildTable() {
 		],
 		initComplete: function () {
 			var api = this.api();
-			api.columns([3,4,5,6]).indexes().flatten().each( function ( i ) {
+			api.columns([3,4,6]).indexes().flatten().each( function ( i ) {
 				var column = api.column( i );
 				var select = $('<select id="th'+i+'"><option value="">'+columns[i].title+'</option></select>')
 				.appendTo( $(column.header()).empty() )
@@ -90,15 +90,17 @@ function tagdocTableDataAjax() {
 
 
 function tagdocTable_setTableData(obj) {
-	$("#th3").append("<option value='横向科研'>横向科研</option>");
-	$("#th3").append("<option value='纵向科研'>纵向科研</option>");
-	// $('#科研项目').dataTable().fnClearTable();
 	var option_array = [];
+    var option_array1 = [];
 	$.each(obj.data, function(index, item) {
 		if ($.inArray(item.author, option_array)<0) {
 			option_array.push(item.author)
-			$("#th4").append("<option value='"+item.author+"'>"+item.author+"</option>"); 
+			$("#th3").append("<option value='"+item.author+"'>"+item.author+"</option>");
 		};
+        if ($.inArray(item.categoryLeafName, option_array1)<0) {
+            option_array1.push(item.categoryLeafName)
+            $("#th4").append("<option value='"+map[item.categoryLeafName]+"'>"+map[item.categoryLeafName]+"</option>");
+        };
 		order = index + 1;
 		var completeRate=Math.round(item.completeRate*100)
 		$('#tagdocTable').dataTable().fnAddData([
@@ -106,9 +108,9 @@ function tagdocTable_setTableData(obj) {
 			'<span>'+order+'</span>',
 			'<a href="#" id="'+item.id+'">'+item.name+'</a>',
 			'<span>'+item.author+'</span>',
-			'<span>'+item.categoryLeafName+'</span>',
+			'<span>'+map[item.categoryLeafName]+'</span>',
 			'<span>'+item.date+'</span>',
-			'<span>'+item.tag+'</span>\
+			'<span>'+item.tags+'</span>\
 			</div>',
 			])
 	});

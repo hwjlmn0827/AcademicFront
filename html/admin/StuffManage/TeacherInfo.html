@@ -21,9 +21,9 @@
 			<div class="modal-body">
 				<form id= "uploadForm" class="uploadForm">
 					<input type="file" class="btn btn-default" name="file"/>
-					<input type="button" class="btn btn-primary upLoadBtn" value="上传" onclick="doUpload()"  data-toggle="modal" data-target="#InputSuccess"  data-dismiss="modal"/>
+					<input type="button" class="btn btn-primary upLoadBtn" value="上传" id="fileupload" data-toggle="modal" data-target="#InputSuccess"  data-dismiss="modal"/>
 				</form>
-				<a class="downloadTemplet" href="#">点此下载模板</a>
+				<a class="downloadTemplate" href="#">点此下载模板</a>
 			</div>
 		</div>
 	</div>
@@ -40,43 +40,43 @@
 				<div class="row">
 					<form  class="addForm form-inline">
 						<div class="form-group col-md-6">
-							<label for="teacherName " class="formItem">姓名：</label>
-							<input type="text" class="form-control" id="" value="">
+							<label for="name" class="formItem">姓名：</label>
+							<input type="text" class="form-control" id="name" value="">
 						</div>
 						<div class="form-group col-md-6">
-							<label for="workId" class="formItem">工号：</label>
-							<input type="text" class="form-control" id="" >
+							<label for="jobNumber" class="formItem">工号：</label>
+							<input type="text" class="form-control" id="jobNumber" >
 						</div>
 						<div class="form-group col-md-6">
-							<label for="title" class="formItem">职称：</label>
-							<input type="text" class="form-control" id="" >
+							<label for="jobName" class="formItem">职称：</label>
+							<input type="text" class="form-control" id="jobName" >
 						</div>
 						<div class="form-group col-md-6">
-							<label for="position" class="formItem">职务：</label>
-							<input type="text" class="form-control" id="" >
+							<label for="job" class="formItem">职务：</label>
+							<input type="text" class="form-control" id="job" >
 						</div>
 						<div class="form-group col-md-6">
 							<label for="major" class="formItem">专业：</label>
-							<input type="text" class="form-control" id="" >
+							<input type="text" class="form-control" id="major" >
 						</div>
 						<div class="form-group col-md-6">
-							<label for="financialAccount" class="formItem">财务账号：</label>
-							<input type="text" class="form-control" id="" >
+							<label for="account" class="formItem">财务账号：</label>
+							<input type="text" class="form-control" id="account" >
 						</div>
 						<div class="form-group col-md-6">
-							<label for="phoneNum" class="formItem">联系方式：</label>
-							<input type="text" class="form-control" id="" >
+							<label for="phone" class="formItem">联系方式：</label>
+							<input type="text" class="form-control" id="phone">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="email" class="formItem">邮箱：</label>
-							<input type="text" class="form-control" id="" >
+							<input type="text" class="form-control" id="email">
 						</div>
 					</form>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-				<button type="button" class="btn btn-primary">添加</button>
+				<button type="button" class="btn btn-primary" id="newInfo">添加</button>
 			</div>
 		</div>
 	</div>
@@ -100,34 +100,7 @@
 				<label>按名字搜索:<input type="search" class="" placeholder="" >
 					<button class="btn btn-primary darkbule">搜索</button></label>
 			</div>
-			<table class="mainTable table table-bordered uncheckedbox" >
-				<tbody>
-				<tr>
-					<td><span></span></td>
-					<td><span>1</span></td>
-					<td><span>王勋</span></td>
-					<td><span>12345</span></td>
-					<td><span>教授</span></td>
-					<td><span>院长</span></td>
-					<td><span>电子商务</span></td>
-					<td><span>151219</span></td>
-					<td><span>15967179876</span></td>
-					<td><span>345244324@163.com</span></td>
-				</tr>
-				<tr>
-					<td><span></span></td>
-					<td><span>1</span></td>
-					<td><span>chunhua</span></td>
-					<td><span>12345</span></td>
-					<td><span>教授</span></td>
-					<td><span>副院长</span></td>
-					<td><span>电子商务</span></td>
-					<td><span>151219</span></td>
-					<td><span>15967179876</span></td>
-					<td><span>345244324@163.com</span></td>
-				</tr>
-				</tbody>
-			</table>
+			<table class="mainTable table table-bordered uncheckedbox"></table>
 		</div>
 	</div>
 </div>
@@ -143,12 +116,49 @@
     $(function() {
         var mainDirectory = 'StuffManage'
         var subDirectory = 'TeacherInfo'
-        var requestDataSource = 'TeacherInfo'
+        var requestDataSource = 'TeacherInformation'
         indexStart()
         importResult(mainDirectory, subDirectory)
         catagoryAjax(mainDirectory, subDirectory)
         buildTable(mainDirectory, subDirectory)
         fillTableDataAjax(mainDirectory, subDirectory, requestDataSource)
         $('#TeacherInfo_filter').addClass('hiddenFilter')
+        var url = prefixUrl + 'excel/template/' + requestDataSource + '?fileName=' + map[mainDirectory] + '-' + map[subDirectory] + '模板'
+        $('.downloadTemplate').attr('href', url)
+        $(document).on('click', '#fileupload', function () {
+            fileupload(requestDataSource)
+        })
+        $(document).on('click', '#newInfo', function () {
+            var data = {
+                "name": $('#name').val(),
+                "jobNumber": $('#jobNumber').val(),
+                "jobName": $('#jobName').val(),
+                "job": $('#job').val(),
+                "major": $('#major').val(),
+                "account": $('#account').val(),
+                "phone": $('#phone').val(),
+                "email": $('#email').val(),
+                "uploader": 'admin123456',
+                "categoryTreeName": mainDirectory,
+                "categoryLeafName": subDirectory
+            }
+            console.log(JSON.stringify(data))
+            $.ajax({
+                type: "POST",
+                url: prefixUrl + 'asset/' + requestDataSource,
+                data: JSON.stringify(data),
+                async: true,
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    if (data.err) {
+                        location.reload()
+					}
+                },
+                Error: function () {
+                    alert("服务器出错");
+                }
+            })
+        })
     })
 </script>
