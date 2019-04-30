@@ -50,10 +50,6 @@
 								导出 <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownload()">
-									<a href= prefixUrl + "excel/assetsTemplate?categoryLeafName=科研项目&uniqueName=教师科研&fileName=教师信息.xlsx">导出模板</a>
-								</li>
-								<li role="separator" class="divider"></li>
 								<li data-toggle="modal" data-target="#myModalExport" onclick="doDownloadAll()">
 									<a href= prefixUrl + "excel/assetsAll?categoryLeafName=科研项目&uniqueName=教师科研&fileName=教师信息.xlsx">导出全部数据</a>
 								</li>
@@ -63,24 +59,6 @@
 							</ul>
 						</div>
 						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sureMoveOut_data">移出收藏夹</button>
-					</div>
-					<div class="accurateSelect col-md-5 ">
-						<div class="form-group">
-							<div class="col-md-6">
-								<div class="input-group input-medium datepicker input-daterange doubleTime " data-date-format="yyyy-mm-dd">
-									<input name="dtBegin" class="form-control dateInput1" style="font-size: 13px;" type="text" value="" placeholder="开始日期">
-									<span class="input-group-addon">至</span>
-									<input name="dtEnd" class="form-control dateInput1" style="font-size: 13px;" type="text" value="" placeholder="结束日期">
-								</div>
-							</div>
-							<label class="control-label col-md-1 dateLable">/</label>
-							<div class="col-md-4 singleTime">
-								<div class="input-group date datepicker" data-date-autoclose="true" data-date-format="yyyy-mm-dd">
-									<input class="form-control dateInput2" type="text" placeholder="请选择日期" ><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-								</div>
-							</div>
-							<div class="col-md-1"><button class="btn btn-primary dateSearch">日期搜索</button></div>
-						</div>
 					</div>
 					<table id="collectionTable" class="globalTable table table-bordered"></table>
 				</div>

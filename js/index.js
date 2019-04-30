@@ -1442,7 +1442,6 @@ function doDownloadSelected(mainDirectory, subDirectory, requestDataSource) {
 }
 
 function fileupload(requestDataSource) {
-    alert(prefixUrl + "excel/" + requestDataSource)
     var formdata = new FormData($("form[name='uploadForm']")[0])
     $.ajax({
         url: prefixUrl + "excel/" + requestDataSource,
@@ -1908,7 +1907,6 @@ function upFileFunc1() {
     var files = $('#lixiang').prop('files');
     var data = new FormData();
 
-    alert(files[0].name)
     var filename = files[0].name
     data.append('files', files[0]);
     $.ajax({
@@ -1922,7 +1920,6 @@ function upFileFunc1() {
         success: function (obj) {
             console.log(obj)
             var url = prefixUrl + obj.data[0].split("/")[3] + '/' + obj.data[0].split("/")[4];
-            alert(url)
             $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", url);
             $('#proofMaterial1').html(filename)
         },
@@ -2009,7 +2006,6 @@ $(document).on('click', '#btnSave', function(event) {
     });
 
     var id = window.location.href.split("?")[1].split("=")[1];
-    alert(id)
     var data = {
         "id": id,
         "name": $("input[name='name']").val(),

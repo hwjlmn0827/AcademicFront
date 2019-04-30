@@ -104,7 +104,7 @@ function collectionTable_setTableData(obj) {
         $('#collectionTable').dataTable().fnAddData([
             '<input type="checkbox">',
             '<span>'+order+'</span>',
-            '<a href="#" id="'+item.assetsID+'">'+item.projectName+'</a>',
+            '<span id="'+item.assetsID+'">'+item.projectName+'</span>',
             '<span>'+item.author+'</span>',
             '<span>'+item.projectType+'</span>',
             '<span>'+item.time+'</span>',
@@ -261,7 +261,7 @@ window.onload = function() {
     $(document).on('click', '.sureMoveOut_dataYes', function() {
         var idd = new Array();
         $("input[type='checkbox']:checked").each(function(i){
-            idd[i] = $(this).parents("tr").children('td:eq(2)').children('a').attr('id');
+            idd[i] = $(this).parents("tr").children('td:eq(2)').children('span').attr('id');
             $(this).parents("tr").addClass('tr_selected')
 
         });
@@ -269,7 +269,7 @@ window.onload = function() {
         console.log("此时收藏夹标签为："+$('.node_selected a').html())
         console.log(idd);
         $.ajax({
-            type: "DELETE",
+            type: "post",
             url: prefixUrl + "collection/removeCollection",
             data: JSON.stringify({
                 "column": $('.node_selected a').html(),

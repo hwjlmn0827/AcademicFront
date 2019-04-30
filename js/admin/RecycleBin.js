@@ -86,7 +86,7 @@ function recycleTableDataAjax() {
 
 
 function recycleTable_setTableData(obj) {
-	// $('#recycleTable').dataTable().fnClearTable();
+	$('#recycleTable').dataTable().fnClearTable();
 	var option_array = [];
 	var option_array2 = [];
 	$.each(obj.data, function(index, item) {
@@ -103,7 +103,7 @@ function recycleTable_setTableData(obj) {
 		$('#recycleTable').dataTable().fnAddData([
 			'<input type="checkbox">',
 			'<span>'+order+'</span>',
-			'<a href="../'+item.categoryTreeName+'/'+item.categoryLeafName+'Detail.html?id="'+item.id+ 'id="'+item.id+'">'+item.name+'</a>',
+			'<a href="../'+item.categoryTreeName+'/'+item.categoryLeafName+'Detail.html?id='+item.id+ '" id="'+item.id+'">'+item.name+'</a>',
 			'<span>'+item.author+'</span>',
 			'<span>'+map[item.categoryLeafName]+'-'+map[item.categoryTreeName]+'</span>',
 			'<span>'+item.date+'</span>',
@@ -262,7 +262,7 @@ function multipleTable_setTableData(obj) {
 		$('#multipleTable').dataTable().fnAddData([
 			'<input type="checkbox">',
 			'<span>'+order+'</span>',
-			'<a href="../'+map[item.categoryTreeName]+'/'+map[item.categoryLeafName]+'Detail.html?id=' + item.id +'" id="'+item.id+'">'+item.name+'</a>',
+			'<a href="../'+map[item.categoryTreeName]+'/'+map[item.categoryLeafName]+'Detail.html?id='+item.id+'"  id="'+item.id+'">'+item.name+'</a>',
 			'<span>'+item.author+'</span>',
 			'<span>'+item.categoryLeafName+'-'+item.categoryTreeName+'</span>',
 			'<span>'+item.date+'</span>',
@@ -306,7 +306,7 @@ $('.search_inresult').click(function(event) {
 	multipleTableDataAjax_search_inresult(dddata)
 });
 
-function timeSearch(requestDataSource) {
+function timeSearch() {
     var startDate
     var endDate
     var current = new Date().Format("yyyy-MM-dd");
@@ -314,7 +314,7 @@ function timeSearch(requestDataSource) {
         current =$(".dateInput2").val()
         $.ajax({
             type: "get",
-            url: prefixUrl + "asset/trash/date",
+            url: prefixUrl + "assets/trash/date",
             data: {
                 "current": current
             },
@@ -337,7 +337,7 @@ function timeSearch(requestDataSource) {
         console.log(current)
         $.ajax({
             type: "get",
-            url: prefixUrl + "asset/trash/date",
+            url: prefixUrl + "assets/trash/date",
             data: {
                 "begin": startDate,
                 "end": endDate
