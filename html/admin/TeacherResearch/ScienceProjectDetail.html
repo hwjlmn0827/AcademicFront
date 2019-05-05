@@ -51,19 +51,19 @@
 
                                         <div class="form-group col-md-6 formBlock wordBreak">
                                             <label class="formItem">*项目名称：</label>
-                                            <input type="text" class="form-control" name="name" value="">
+                                            <input type="text" class="form-control" name="name" value="请填写项目名称">
                                             <span class="originInfo name"></span>
                                         </div>
 
                                         <div class="form-group col-md-6 formBlock">
                                             <label class="formItem">*主持人：</label>
-                                            <input type="text" class="form-control" name="author" value="">
+                                            <input type="text" class="form-control" name="author" value="请填写主持人">
                                             <span class="originInfo author"></span>
                                         </div>
 
                                         <div class="form-group col-md-6 formBlock">
                                             <label class="formItem">*科研类型：</label>
-                                            <select  class="form-control"  name="type" placeholder="请选择科研类型" >
+                                            <select  class="form-control"  id="type" placeholder="请选择科研类型" >
                                                 <option value="横向项目">横向项目</option>
                                                 <option value="纵向项目">纵向项目</option>
                                             </select>
@@ -94,12 +94,12 @@
                                         </div>
                                         <div class="form-group col-md-6 formBlock">
                                             <label class="formItem">批准经费（万）：</label>
-                                            <input type="text" class="form-control" name="funds" placeholder="请填写数字">
+                                            <input type="text" class="form-control" name="approvalFunds" placeholder="请填写数字">
                                             <span class="originInfo approvalFunds" ></span>
                                         </div>
                                         <div class="form-group col-md-6 formBlock">
                                             <label class="formItem">结题形式：</label>
-                                            <select  class="form-control"  name="knotForm" placeholder="请选择结题形式" >
+                                            <select  class="form-control"  id="knotForm" placeholder="请选择结题形式" >
                                                 <option value="结题报告">结题报告</option>
                                                 <option value="论文">论文</option>
                                             </select>
@@ -158,14 +158,14 @@
                                             <i id="proofMaterial1" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
-                                                    <a class="input-file">上传<input type="file" id="lixiang" onchange="upFileFunc1()" /></a>
+                                                    <a class="input-file">上传<input type="file" id="file1" onchange="upFileFunc1()" /></a>
                                                 </button>
                                                 <a class="downfile downfile_1" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>
@@ -174,14 +174,14 @@
                                             <i id="proofMaterial2" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
-                                                    <a class="input-file">上传<input type="file" id="jieti" onchange="upFileFunc2()"></a>
+                                                    <a class="input-file">上传<input type="file" id="file2" onchange="upFileFunc2()"></a>
                                                 </button>
                                                 <a class="downfile downfile_2" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>
@@ -190,14 +190,14 @@
                                             <i id="proofMaterial3" class="fa fa-file-pdf-o fileNanme"></i>
                                             <div class="filebtn filebtn_before" role="group" aria-label="...">
                                                 <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                             </div>
                                             <div class="filebtn filebtn_after" role="group" aria-label="...">
                                                 <button type="button" class="btn btn-info fa fa-upload Uploadfile">
-                                                    <a class="input-file">上传<input type="file" id="hetong" onchange="upFileFunc3()"></a>
+                                                    <a class="input-file">上传<input type="file" id="file3" onchange="upFileFunc3()"></a>
                                                 </button>
                                                 <a class="downfile downfile_3" href="" ><button type="button" class="btn btn-info fa fa-download">下载</button></a>
-                                                <!--<button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>-->
+                                                <button type="button" class="btn btn-warning fa fa-eye PreviewFile">预览</button>
                                                 <button type="button" class="btn btn-danger fa fa-remove fileRemove"  data-toggle="modal" data-target="#sureDelete">删除</button>
                                             </div>
                                         </div>

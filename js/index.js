@@ -550,7 +550,7 @@ var cmap = {
                 }, {
                     id: 3,
                     title: '参加人',
-                    name: 'participantNames',
+                    name: 'relative',
                     flatten: true
                 }, {
                     id: 4,
@@ -923,7 +923,7 @@ function header(){
 	</a>\
 	</li>\
 	<li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">\
-	<img width="34" height="34" src="../../../img/head1.jpeg" />admin<b class="caret"></b></a>\
+	<img width="34" height="34" src="../../../img/head1.jpeg" />admin123456<b class="caret"></b></a>\
 	<ul class="dropdown-menu">\
 	<li><a href="../../reset.html">\
 	<i class="icon-gear"></i>修改密码</a>\
@@ -1294,7 +1294,7 @@ function buildTable(mainDirectory, subDirectory) {
         "bFilter": true, //过滤功能
         "aLengthMenu": [15],
         "columnDefs": orderableList,
-        initComplete: function () {
+        initComplete: function () { //筛选功能
             var api = this.api();
             api.columns(flatten).indexes().flatten().each(function (i) {
                 var column = api.column(i);
@@ -1340,23 +1340,17 @@ function fillTableDataAjax(mainDirectory, subDirectory, requestDataSource) {
 //填充数据具体操作 OK
 function setTableData(mainDirectory, subDirectory, obj) {
     console.log('setTableData')
-    // $('#' + subDirectory).dataTable().fnClearTable();
+    $('#' + subDirectory).dataTable().fnClearTable();
     var mapColums = cmap[mainDirectory][subDirectory]['columns'];
-
-
     var option_array = []
     var flattenObj = mapColums.filter(function(item, index){
         return mapColums[index].flatten == true;
     })
     var flattenCount = flattenObj.length
-
     for (var i = 0; i < flattenCount; i++) {
         option_array[i] = [];
     }
-    console.log(flattenObj)
-
     $.each(obj.data, function (index, item) {
-
         $.each(flattenObj, function (idx, obj) {
             if ($.inArray(item[obj.name], option_array[idx]) < 0) {
                 option_array[idx].push(item[obj.name])
@@ -1366,14 +1360,12 @@ function setTableData(mainDirectory, subDirectory, obj) {
 
         order = index + 1;
         var completeRate = Math.round(item.completeRate * 100)
-
         var columnContent = []
         columnContent.push('<input type="checkbox">')
         columnContent.push('<span>' + order + '</span>')
         $.each(mapColums, function (idx, para) {
-            switch(para.name) {
+            switch(para.name) {//根据不同的字段类型构建不同的表格块内容
                 case 'name':
-                    // columnContent.push('<a href="' + subDirectory + 'Detail.html" id="' + item.id + '">' + item.name + '</a>')
                     columnContent.push('<a href="' + subDirectory + 'Detail.html?id=' + item.id + '" id="' + item.id + '">' + item.name + '</a>')
                     break;
                 case 'type':
@@ -1386,7 +1378,7 @@ function setTableData(mainDirectory, subDirectory, obj) {
                 case 'guideTeacher':
                 case 'raceLevel':
                 case 'awardLevel':
-                case 'participantNames':
+                case 'relative':
                 case 'address':
                 case 'date':
                 case 'stuNumber':
@@ -1727,14 +1719,14 @@ function fillDetail(obj) {
             $("input[name='"+key+"']").parents(".formBlock").addClass('unfilled')
         };
     });
-    var participantNames
+    var relative
     var order
-    if (obj.data.participantNames) {
-        $.each(obj.data.participantNames, function(index, item) {
+    if (obj.data.relative) {
+        $.each(obj.data.relative, function(index, item) {
             if (index==0) {
-                participantNames = item
+                relative = item
             } else {
-                participantNames += ','+item
+                relative += ','+item
             }
             order = index +1
             if (order==1) {
@@ -1753,148 +1745,108 @@ function fillDetail(obj) {
     });
     $(".name").html(obj.data.name);
     $("input[name='name']").val(obj.data.name)
-
     $(".author").html(obj.data.author)
     $("input[name='author']").val(obj.data.author)
-
     $(".department").html(obj.data.department)
     $("input[name='department']").val(obj.data.department)
-
     $(".jobName").html(obj.data.jobName)
     $("input[name='jobName']").val(obj.data.jobName)
-
     $(".type").html(obj.data.type)
     $("input[name='type']").val(obj.data.type)
-
     $(".planTime").html(obj.data.date)
     $("input[name='date']").val(obj.data.date)
-
+    $(".knotForm").html(obj.data.knotForm)
+    $("input[name='knotForm']").val(obj.data.knotForm)
     $(".source").html(obj.data.source)
     $("input[name='source']").val(obj.data.source)
-
     $(".projectNumber").html(obj.data.projectNumber)
     $("input[name='projectNumber']").val(obj.data.projectNumber)
-
     $(".funds").html(obj.data.funds)
     $("input[name='funds']").val(obj.data.funds)
-
     $(".fund").html(obj.data.fund)
     $("input[name='fund']").val(obj.data.fund)
-
+    $(".approvalFunds").html(obj.data.approvalFunds)
+    $("input[name='approvalFunds']").val(obj.data.approvalFunds)
     $(".lavel").html(obj.data.lavel)
     $("input[name='lavel']").val(obj.data.lavel)
-
     $(".level").html(obj.data.level)
     $("input[name='level']").val(obj.data.level)
-
     $(".publicationName").html(obj.data.publicationName)
     $("input[name='publicationName']").val(obj.data.publicationName)
-
     $(".volume").html(obj.data.volume)
     $("input[name='volume']").val(obj.data.volume)
-
     $(".stage").html(obj.data.stage)
     $("input[name='stage']").val(obj.data.stage)
-
     $(".arrangement").html(obj.data.arrangement)
     $("input[name='arrangement']").val(obj.data.arrangement)
-
     $(".signatureType").html(obj.data.signatureType)
     $("input[name='signatureType']").val(obj.data.signatureType)
-
     $(".graduate").html(obj.data.graduate)
     $("input[name='graduate']").val(obj.data.graduate)
-
     $(".category").html(obj.data.category)
     $("input[name='category']").val(obj.data.category)
-
     $(".applyDate").html(obj.data.applyDate)
     $("input[name='applyDate']").val(obj.data.applyDate)
-
     $(".number").html(obj.data.number)
     $("input[name='number']").val(obj.data.number)
-
     $(".company").html(obj.data.company)
     $("input[name='company']").val(obj.data.company)
-
     $(".netNumber").html(obj.data.netNumber)
     $("input[name='netNumber']").val(obj.data.netNumber)
-
     $(".alisName").html(obj.data.alisName)
     $("input[name='alisName']").val(obj.data.alisName)
-
     $(".publish").html(obj.data.publish)
     $("input[name='publish']").val(obj.data.publish)
-
     $(".bookName").html(obj.data.bookName)
     $("input[name='bookName']").val(obj.data.bookName)
-
     $(".wordNumber").html(obj.data.wordNumber)
     $("input[name='wordNumber']").val(obj.data.wordNumber)
-
     $(".grade").html(obj.data.grade)
     $("input[name='grade']").val(obj.data.grade)
-
     $(".found").html(obj.data.found)
     $("input[name='found']").val(obj.data.found)
-
     $(".plannedTime").html(obj.data.plannedTime)
     $("input[name='plannedTime']").val(obj.data.plannedTime)
-
     $(".concludingForm").html(obj.data.concludingForm)
     $("input[name='concludingForm']").val(obj.data.concludingForm)
-
     $(".contractNum").html(obj.data.contractNum)
     $("input[name='contractNum']").val(obj.data.contractNum)
-
     $(".projectSource").html(obj.data.projectSource)
     $("input[name='projectSource']").val(obj.data.projectSource)
-
     $(".periodical").html(obj.data.periodical)
     $("input[name='periodical']").val(obj.data.periodical)
-
     $(".totalFee").html(obj.data.totalFee)
     $("input[name='totalFee']").val(obj.data.totalFee)
-
     $(".press").html(obj.data.press)
     $("input[name='press']").val(obj.data.press)
-
     $(".address").html(obj.data.address)
     $("input[name='address']").val(obj.data.address)
-
     $(".awardLevel").html(obj.data.awardLevel)
     $("input[name='awardLevel']").val(obj.data.awardLevel)
-
     $(".awardDepartment").html(obj.data.awardDepartment)
     $("input[name='awardDepartment']").val(obj.data.awardDepartment)
-
     $(".awardName").html(obj.data.awardName)
     $("input[name='awardName']").val(obj.data.awardName)
-
     $(".raceLevel").html(obj.data.raceLevel)
     $("input[name='raceLevel']").val(obj.data.raceLevel)
-
     $(".contactTeacher").html(obj.data.contactTeacher)
     $("input[name='contactTeacher']").val(obj.data.contactTeacher)
-
     $(".stuNumber").html(obj.data.stuNumber)
     $("input[name='stuNumber']").val(obj.data.stuNumber)
-
     $(".guideTeacher").html(obj.data.guideTeacher)
     $("input[name='guideTeacher']").val(obj.data.guideTeacher)
 
-    $(".otherPartners").html(participantNames)
+    $(".otherPartners").html(obj.data.relative)
     var completeRate=Math.round(obj.data.completeRate*100)
-
     $('.progress-bar').css('width', completeRate+'%');
     $('.progress-bar span').text(completeRate+'%');
 
-    $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[0]);
-    $('#proofMaterial1').html(obj.data.otherTextInfo[0])
-    $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[1]);
-    $('#proofMaterial2').html(obj.data.otherTextInfo[1])
-    $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherTextInfo[2]);
-    $('#proofMaterial3').html(obj.data.otherTextInfo[2])
+    $('#file1').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[1]);
+    $('#proofMaterial1').html(obj.data.otherTextInfo[1])
+    $('#file2').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[2]);
+    $('#proofMaterial2').html(obj.data.otherTextInfo[2])
+    $('#file3').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data.otherFileInfo[3]);
+    $('#proofMaterial3').html(obj.data.otherTextInfo[3])
 }
 
 //下载附件
@@ -1904,54 +1856,23 @@ $('.Uploadfile').click(function(event) {
 
 //上传附件
 function upFileFunc1() {
-    var files = $('#lixiang').prop('files');
-    var data = new FormData();
-
-    var filename = files[0].name
-    data.append('files', files[0]);
-    $.ajax({
-        url: prefixUrl + 'files',
-        type: 'POST',
-        data: data,
-        dataType: 'JSON',
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function (obj) {
-            console.log(obj)
-            var url = prefixUrl + obj.data[0].split("/")[3] + '/' + obj.data[0].split("/")[4];
-            $('#lixiang').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", url);
-            $('#proofMaterial1').html(filename)
-        },
-    });
+    upFileFuncByIndex(1);
 }
 
 function upFileFunc2() {
-    var files = $('#jieti').prop('files');
-    var data = new FormData();
-    var filename = files[0].name
-    data.append('jieti', files[0]);
-    $.ajax({
-        url: prefixUrl + '/files',
-        type: 'POST',
-        data: data,
-        dataType: 'JSON',
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function(obj) {
-            console.log(obj)
-            $('#jieti').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-            $('#proofMaterial2').html(filename)
-        },
-    });
+    upFileFuncByIndex(2);
 }
 
 function upFileFunc3() {
-    var files = $('#hetong').prop('files');
+    upFileFuncByIndex(3);
+}
+
+function upFileFuncByIndex(index) {
+    console.log('#file' + index)
+    var files = $('#file' + index).prop('files');
     var data = new FormData();
     var filename = files[0].name
-    data.append('hetong', files[0]);
+    data.append('files', files[0]);
     $.ajax({
         url: prefixUrl + '/files',
         type: 'POST',
@@ -1962,8 +1883,9 @@ function upFileFunc3() {
         contentType: false,
         success: function(obj) {
             console.log(obj)
-            $('#hetong').parents('.formBlock').children('.filebtn').children('.downfile').attr("href", obj.data[0]);
-            $('#proofMaterial3').html(filename)
+            var url = prefixUrl + obj.data[0].split("/")[3] + '/' + obj.data[0].split("/")[4];
+            $('#file'+index).parents('.formBlock').children('.filebtn').children('.downfile').attr("href", url);
+            $('#proofMaterial'+index).html(filename)
         },
     });
 }
@@ -1995,6 +1917,9 @@ $(document).on('click', '#btnChange', function(event) {
 });
 
 $(document).on('click', '#btnSave', function(event) {
+    var categoryTreeName = window.location.href.split("/admin/")[1].split('/')[0]
+    var categoryLeafName = window.location.href.split("/admin/")[1].split('/')[1].split('Detail.html')[0]
+    console.log('categoryTreeName',categoryTreeName,categoryLeafName)
     var tags = []
     $('.plus-tag span').each(function(index, el) {
         console.log($(el).text());
@@ -2005,23 +1930,31 @@ $(document).on('click', '#btnSave', function(event) {
         others.push($(el).val())
     });
 
+    var otherfile_text = []
+    var otherfile_url = []
+    for (var i = 1; i <= 3; i++) {
+        otherfile_text[i] =$('#proofMaterial' + i).html()
+        otherfile_url[i] = $('.downfile_' + i).attr('href')
+    }
+    var completeRate = $('.progress-bar span').text().split('%')[0];
+
     var id = window.location.href.split("?")[1].split("=")[1];
     var data = {
         "id": id,
         "name": $("input[name='name']").val(),
-        "type": $("input[name='type']").val(),
+        "type": $("#type option:selected").val(),
         "author": $("input[name='author']").val(),
         "date": $("input[name='date']").val(),
-        "completeRate": 0.55,
+        "completeRate": completeRate,
         "projectNumber": $("input[name='projectNumber']").val(),
         "source": $("input[name='source']").val(),
+        "approvalFunds": $("input[name='approvalFunds']").val(),
+
         "funds": $("input[name='funds']").val(),
         "fund": $("input[name='fund']").val(),
         "found": $("input[name='found']").val(),
-        "knotForm": $("input[name='knotForm']").val(),
-        "projectMaterial": $('.downfile_1').attr('href'),
-        "knotMaterial": $('.downfile_2').attr('href'),
-        "projectContract": $('.downfile_3').attr('href'),
+
+        "knotForm": $("#knotForm option:selected").val(),
         "lavel": $("input[name='lavel']").val(),
         "level": $("input[name='level']").val(),
         "publicationName": $("input[name='publicationName']").val(),
@@ -2030,16 +1963,12 @@ $(document).on('click', '#btnSave', function(event) {
         "arrangement": $("input[name='arrangement']").val(),
         "signatureType": $("input[name='signatureType']").val(),
         "graduate": $("input[name='graduate']").val(),
-        "paper": $('.downfile_1').attr('href'),
-        "certificate": $('.downfile_2').attr('href'),
         "department": $("input[name='department']").val(),
         "category": $("input[name='category']").val(),
         "applyDate": $("input[name='applyDate']").val(),
         "number": $("input[name='number']").val(),
         "company": $("input[name='company']").val(),
         "netNumber": $("input[name='netNumber']").val(),
-        "prove": $('.downfile_1').attr('href'),
-        "prove2": $('.downfile_2').attr('href'),
         "alisName": $("input[name='alisName']").val(),
         "achievementsName": $("input[name='achievementsName']").val(),
         "publish": $("input[name='publish']").val(),
@@ -2062,18 +1991,14 @@ $(document).on('click', '#btnSave', function(event) {
         "contactTeacher": $("input[name='contactTeacher']").val(),
         "stuNumber": $("input[name='stuNumber']").val(),
         "guideTeacher": $("input[name='guideTeacher']").val(),
-        "categoryLeafName": "ScienceProject",
-        "categoryTreeName": "TeacherResearch",
-        "uploader": "941112341",
-        "tag": tags,
+        "categoryLeafName": categoryLeafName,
+        "categoryTreeName": categoryTreeName,
+        "uploader": "admin123456",
+        "tags": tags,
         "relative":others,
-        "participantIds": [
-            "qtgnHbbUEP",
-            "qCdzULKrY4",
-            "PAoasU6xQS"
-        ],
-        "otherTextInfo": {},
-        "otherFileInfo": {},
+
+        "otherTextInfo": otherfile_text,
+        "otherFileInfo": otherfile_url,
     }
 
     $.ajax({
@@ -2084,9 +2009,8 @@ $(document).on('click', '#btnSave', function(event) {
         dataType: "json",
         contentType: "application/json",
         success: function(obj) {
-            if (!obj.err) {
+            if (obj.err) {
                 $('#saveSuccess').modal('show')
-            } else {
             }
         },
         Error: function() {

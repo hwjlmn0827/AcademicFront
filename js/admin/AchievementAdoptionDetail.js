@@ -106,10 +106,8 @@ $(function(){
 			dataType: "json",
 			contentType: "application/json",
 			success: function(obj) {
-				if (!obj.err) {
+				if (obj.err) {
 					$('#saveSuccess').modal('show')
-				} else {
-
 				}
 			},
 			Error: function() {
