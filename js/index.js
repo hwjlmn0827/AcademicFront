@@ -1893,10 +1893,13 @@ function upFileFuncByIndex(index) {
 //预览附件
 $('.PreviewFile').click(function(event) {
     var beforeRef = $(this).parents('.formBlock').children('.filebtn').children('.downfile').attr('href');
-    console.log(beforeRef)
-    var fid = beforeRef.split("/")[5]
-    var afterRef = "http://10.21.30.203:8012/onlinePreview?url="+beforeRef
-    window.open(afterRef)
+    var type = $(this).parents('.formBlock').children('.fileName').text().split('.')[1];
+    console.log(type)
+    if (type == 'pdf') {
+        window.open('../../../js/pdf/web/viewer.html?file=' + beforeRef);
+    } else {
+        window.open('../../pre.html?file=' + beforeRef);
+    }
 });
 
 $(document).on('click', '#btnChange', function(event) {

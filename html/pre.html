@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src="" id="show_pic">
+</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var fileName = window.location.href.split("?")[1].split("=")[1];
+        console.log('xxxxxxxxxxxxxxx', fileName)
+        $('#show_pic').attr('src', fileName);
+    })
+</script>
+
+<style>
+    img {
+        width: 80vw;
+        position: relative;
+        left: 10vw;
+        top: 10vh;
+    }
+</style>
