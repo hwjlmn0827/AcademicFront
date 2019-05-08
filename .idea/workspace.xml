@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7c54a1d-a01e-4932-ae22-7c92dff58e78" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/css/global.css" afterPath="$PROJECT_DIR$/css/global.css" />
-      <change beforePath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" afterPath="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/html/pre.html" afterPath="$PROJECT_DIR$/html/pre.html" />
+      <change beforePath="$PROJECT_DIR$/html/teacher/111.js" afterPath="$PROJECT_DIR$/html/teacher/TODO.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,18 +21,18 @@
       <file leaf-file-name="ScienceProjectDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="2520">
               <caret line="168" column="60" lean-forward="false" selection-start-line="168" selection-start-column="60" selection-end-line="168" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="1894" column="60" lean-forward="false" selection-start-line="1894" selection-start-column="60" selection-end-line="1894" selection-end-column="60" />
+            <state relative-caret-position="28560">
+              <caret line="1909" column="41" lean-forward="false" selection-start-line="1909" selection-start-column="41" selection-end-line="1909" selection-end-column="41" />
               <folding>
                 <marker date="1557153046428" expanded="true" signature="27583:27640" ph="..." />
                 <marker date="1557153046428" expanded="true" signature="27667:28502" ph="..." />
@@ -173,8 +173,48 @@
       <file leaf-file-name="pre.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/pre.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/teacher/TODO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/student/TODO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/student/TODO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/teacher/TODO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,8 +223,8 @@
       <file leaf-file-name="ScienceProject.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="435">
+              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -193,8 +233,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="945">
+              <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -203,28 +243,8 @@
       <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13275">
-              <caret line="885" column="0" lean-forward="false" selection-start-line="885" selection-start-column="0" selection-end-line="885" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminHomePage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state relative-caret-position="330">
+              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -370,7 +390,6 @@
         <option value="$PROJECT_DIR$/html/admin/TeachState/LaboratoryDetail.html" />
         <option value="$PROJECT_DIR$/html/admin/TeachState/PracticeBaseDetail.html" />
         <option value="$PROJECT_DIR$/html/admin/TablePageTemplate.html" />
-        <option value="$PROJECT_DIR$/css/global.css" />
         <option value="$PROJECT_DIR$/html/admin/RecycleBin/RecycleBin.html" />
         <option value="$PROJECT_DIR$/js/admin/TagStore.js" />
         <option value="$PROJECT_DIR$/html/admin/HomePage/adminHomePage.html" />
@@ -385,10 +404,11 @@
         <option value="$PROJECT_DIR$/js/admin/RecycleBin.js" />
         <option value="$PROJECT_DIR$/html/login.html" />
         <option value="$PROJECT_DIR$/css/login.css" />
-        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" />
-        <option value="$PROJECT_DIR$/html/pre.html" />
         <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html" />
         <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/css/global.css" />
+        <option value="$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html" />
+        <option value="$PROJECT_DIR$/html/pre.html" />
       </list>
     </option>
   </component>
@@ -467,8 +487,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -481,10 +499,23 @@
               <item name="AcademicFront" type="462c0819:PsiDirectoryNode" />
               <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AcademicFront" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AcademicFront" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AcademicFront" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AcademicFront" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,16 +530,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProject.html&#10;global&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;index&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;login&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/login.html&#10;adm&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/HomePage/adminHomePage.html&#10;colle&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/Collection/Collection.html&#10;rec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/RecycleBin.js&#10;stude&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;tab&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;Teacher&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/TeacherInfo.html&#10;tagdo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TagDocument.js&#10;tagDocu&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagDocument.html&#10;head&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/img/head1.jpg&#10;head1&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/img/head1.jpeg&#10;table&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;collec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/Collection/Collection.html&#10;TeacherInfo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/TeacherInfo.html&#10;other&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/OtherTeacherInfo.html&#10;studen&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;studentInfo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;stuff&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage&#10;admin&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/adminHomePage.js&#10;Tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagStore.html&#10;tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TagStore.js&#10;science&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;index.js&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;recy&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/RecycleBin/RecycleBin.html&#10;scienceDe&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;glo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;inde&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;tagsto&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagStore.html&#10;Scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;ind&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;TablePageTemplate&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;temp&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;lab&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/LaboratoryDetail.html&#10;prac&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/PracticeBaseDetail.html&#10;Com&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/CompetitionGuidanceDetail.html&#10;Teach&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeacherAwardDetail.html&#10;teacher&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeacherTrainingDetail.html&#10;teachingm&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeachingMaterialDetail.html&#10;education&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/EducationPaperDetail.html&#10;educa&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/EducationReformDetail.html&#10;TeachS&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState&#10;Proje&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch/StudentProjectDetail.html&#10;studentResearch&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch&#10;studentResearch/&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch&#10;Patent&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/PatentDetail.html&#10;Achi&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/AchievementAdoptionDetail.html&#10;achi&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/AchievementAdoptionDetail.html" />
+    <property name="SearchEverywhereHistoryKey" value="stuff&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage&#10;scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProject.html&#10;global&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;index&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;login&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/login.html&#10;adm&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/HomePage/adminHomePage.html&#10;colle&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/Collection/Collection.html&#10;rec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/RecycleBin.js&#10;stude&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;tab&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;Teacher&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/TeacherInfo.html&#10;tagdo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TagDocument.js&#10;tagDocu&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagDocument.html&#10;head&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/img/head1.jpg&#10;head1&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/img/head1.jpeg&#10;table&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;collec&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/Collection/Collection.html&#10;TeacherInfo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/TeacherInfo.html&#10;other&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/OtherTeacherInfo.html&#10;studen&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;studentInfo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StuffManage/StudentInfo.html&#10;admin&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/adminHomePage.js&#10;Tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagStore.html&#10;tag&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/admin/TagStore.js&#10;science&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;index.js&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;recy&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/RecycleBin/RecycleBin.html&#10;scienceDe&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;glo&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/css/global.css&#10;inde&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;tagsto&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TagManage/TagStore.html&#10;Scien&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/ScienceProjectDetail.html&#10;ind&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/js/index.js&#10;TablePageTemplate&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;temp&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TablePageTemplate.html&#10;lab&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/LaboratoryDetail.html&#10;prac&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/PracticeBaseDetail.html&#10;Com&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/CompetitionGuidanceDetail.html&#10;Teach&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeacherAwardDetail.html&#10;teacher&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeacherTrainingDetail.html&#10;teachingm&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/TeachingMaterialDetail.html&#10;education&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/EducationPaperDetail.html&#10;educa&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState/EducationReformDetail.html&#10;TeachS&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeachState&#10;Proje&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch/StudentProjectDetail.html&#10;studentResearch&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch&#10;studentResearch/&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/StudentResearch&#10;Patent&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/PatentDetail.html&#10;Achi&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/AchievementAdoptionDetail.html&#10;achi&#9;FILE&#9;file:///Users/ziyi/git/AcademicFront/html/admin/TeacherResearch/AchievementAdoptionDetail.html" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/html" />
       <recent name="$PROJECT_DIR$/js/teacher" />
+      <recent name="$PROJECT_DIR$/js/student" />
+      <recent name="$PROJECT_DIR$/html/student" />
+      <recent name="$PROJECT_DIR$/html" />
       <recent name="$PROJECT_DIR$/html/admin/StudentResearch" />
-      <recent name="$PROJECT_DIR$/html/admin/TeacherResearch" />
-      <recent name="$PROJECT_DIR$/html/admin/TeachState" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -617,12 +648,14 @@
       <workItem from="1555296155804" duration="43191000" />
       <workItem from="1555841929553" duration="11645000" />
       <workItem from="1556559659755" duration="22882000" />
-      <workItem from="1556909102412" duration="8680000" />
+      <workItem from="1556909102412" duration="10865000" />
+      <workItem from="1557227291395" duration="1361000" />
+      <workItem from="1557239545414" duration="715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189018000" />
+    <option name="totallyTimeSpent" value="193279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -631,7 +664,6 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -643,6 +675,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -659,32 +692,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/admin/AchievementAdoptionDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/admin/Detail.js" />
-    <entry file="file://$PROJECT_DIR$/html/admin/DetailPageTemplate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/TagManage/moban.html" />
     <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/AcademicPapersDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -692,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="111" column="53" lean-forward="false" selection-start-line="111" selection-start-column="53" selection-end-line="111" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="213" column="23" lean-forward="true" selection-start-line="213" selection-start-column="23" selection-end-line="213" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="89" column="45" lean-forward="false" selection-start-line="115" selection-start-column="40" selection-end-line="122" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="65" column="65" lean-forward="false" selection-start-line="65" selection-start-column="65" selection-end-line="65" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
           <caret line="225" column="51" lean-forward="false" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="189" column="5" lean-forward="false" selection-start-line="189" selection-start-column="5" selection-end-line="189" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="64" column="52" lean-forward="false" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="95" column="94" lean-forward="false" selection-start-line="95" selection-start-column="94" selection-end-line="95" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,15 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="110" column="52" lean-forward="false" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#4;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#4;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="e#11651#11657#0" expanded="false" />
-            <element signature="e#13395#13401#0" expanded="false" />
-            <element signature="e#15120#15126#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="787">
           <caret line="128" column="59" lean-forward="false" selection-start-line="128" selection-start-column="59" selection-end-line="128" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="98" column="63" lean-forward="true" selection-start-line="98" selection-start-column="63" selection-end-line="98" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="59" column="66" lean-forward="false" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -811,7 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -819,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="110" column="32" lean-forward="false" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,14 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="63" column="80" lean-forward="true" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="e#8555#8561#0" expanded="false" />
-            <element signature="e#10299#10305#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -849,13 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="523" column="11" lean-forward="false" selection-start-line="523" selection-start-column="11" selection-end-line="523" selection-end-column="11" />
-          <folding>
-            <element signature="e#968#1289#0" expanded="false" />
-            <element signature="e#1502#1823#0" expanded="false" />
-            <marker date="1556544186589" expanded="true" signature="5020:5040" ph="..." />
-            <marker date="1556544186589" expanded="true" signature="6497:6517" ph="..." />
-            <marker date="1556544186589" expanded="true" signature="8087:8107" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,9 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="154" column="41" lean-forward="false" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="267" column="43" lean-forward="false" selection-start-line="267" selection-start-column="43" selection-end-line="267" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,14 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13275">
-          <caret line="885" column="0" lean-forward="false" selection-start-line="885" selection-start-column="0" selection-end-line="885" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/student/111.js" />
     <entry file="file://$PROJECT_DIR$/js/teacher/111.js" />
     <entry file="file://$PROJECT_DIR$/html/student/111.js" />
@@ -987,54 +946,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-972">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="930">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/pre.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProjectDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="2520">
           <caret line="168" column="60" lean-forward="false" selection-start-line="168" selection-start-column="60" selection-end-line="168" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="7" lean-forward="false" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="1894" column="60" lean-forward="false" selection-start-line="1894" selection-start-column="60" selection-end-line="1894" selection-end-column="60" />
+        <state relative-caret-position="28560">
+          <caret line="1909" column="41" lean-forward="false" selection-start-line="1909" selection-start-column="41" selection-end-line="1909" selection-end-column="41" />
           <folding>
             <marker date="1557153046428" expanded="true" signature="27583:27640" ph="..." />
             <marker date="1557153046428" expanded="true" signature="27667:28502" ph="..." />
@@ -1168,6 +1118,54 @@
             <marker date="1557153046428" expanded="true" signature="57782:57794" ph="..." />
             <marker date="1557153046428" expanded="true" signature="58075:58089" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/admin/TeacherResearch/ScienceProject.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/pre.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/teacher/TODO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/student/TODO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/student/TODO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/teacher/TODO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

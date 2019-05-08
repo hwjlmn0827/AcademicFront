@@ -5,23 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+<div>
     <img src="" id="show_pic">
+</div>
 </body>
 </html>
 <script type="text/javascript" src="../js/jquery-1.12.3.min.js"></script>
 <script type="text/javascript">
     $(function() {
         var fileName = window.location.href.split("?")[1].split("=")[1];
-        console.log('xxxxxxxxxxxxxxx', fileName)
         $('#show_pic').attr('src', fileName);
     })
 </script>
 
 <style>
+    div {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+    }
     img {
-        width: 80vw;
+        height: 90vh;
+        width: auto;
         position: relative;
-        left: 10vw;
-        top: 10vh;
+        top: 5vh;
     }
 </style>
